@@ -5,6 +5,15 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Compartilhado", "Compartilhado\Compartilhado.csproj", "{2E95D659-C9D8-4226-A981-5CA308ED07F8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jonatas.Afonso.Console", "Jonatas.Afonso.Console\Jonatas.Afonso.Console.csproj", "{A5D8B45A-ABDE-46DF-8BF8-F229AB247D08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "catarina.neves", "catarina.neves\catarina.neves.csproj", "{CA4AB212-AF0B-47A7-9B52-BA875B372B13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcioS.Console", "MarcioS.Console\MarcioS.Console.csproj", "{200CC7A5-CB39-4AB2-802F-77885462E8F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ricardo.Ariza.Console", "Ricardo.Ariza.Console\Ricardo.Ariza.Console.csproj", "{8517AC3A-873C-455E-9B5D-03106F36A111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Compartilhado", "Compartilhado\Compartilhado.csproj", "{2E95D659-C9D8-4226-A981-5CA308ED07F8}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "marciomello.Console", "marciomello.Console\marciomello.Console.csproj", "{1EBA7168-2B99-463C-9862-7F8FD9BB9058}"
 EndProject
 Global
@@ -17,6 +26,14 @@ Global
 		{2E95D659-C9D8-4226-A981-5CA308ED07F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E95D659-C9D8-4226-A981-5CA308ED07F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E95D659-C9D8-4226-A981-5CA308ED07F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D8B45A-ABDE-46DF-8BF8-F229AB247D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D8B45A-ABDE-46DF-8BF8-F229AB247D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D8B45A-ABDE-46DF-8BF8-F229AB247D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D8B45A-ABDE-46DF-8BF8-F229AB247D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4AB212-AF0B-47A7-9B52-BA875B372B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4AB212-AF0B-47A7-9B52-BA875B372B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4AB212-AF0B-47A7-9B52-BA875B372B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4AB212-AF0B-47A7-9B52-BA875B372B13}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1EBA7168-2B99-463C-9862-7F8FD9BB9058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1EBA7168-2B99-463C-9862-7F8FD9BB9058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EBA7168-2B99-463C-9862-7F8FD9BB9058}.Release|Any CPU.ActiveCfg = Release|Any CPU
