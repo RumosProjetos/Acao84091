@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Compartilhado", "Compartilh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jonatas.Afonso.Console", "Jonatas.Afonso.Console\Jonatas.Afonso.Console.csproj", "{A5D8B45A-ABDE-46DF-8BF8-F229AB247D08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "catarina.neves", "catarina.neves\catarina.neves.csproj", "{CA4AB212-AF0B-47A7-9B52-BA875B372B13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A5D8B45A-ABDE-46DF-8BF8-F229AB247D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5D8B45A-ABDE-46DF-8BF8-F229AB247D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5D8B45A-ABDE-46DF-8BF8-F229AB247D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4AB212-AF0B-47A7-9B52-BA875B372B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4AB212-AF0B-47A7-9B52-BA875B372B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4AB212-AF0B-47A7-9B52-BA875B372B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4AB212-AF0B-47A7-9B52-BA875B372B13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
