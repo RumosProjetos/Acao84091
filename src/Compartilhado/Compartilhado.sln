@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Priscila.console", "Priscil
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ricardo.Ariza.Console", "Ricardo.Ariza.Console\Ricardo.Ariza.Console.csproj", "{7A499D26-E333-48E3-8788-EEB9D2B74D2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiguelMonteiro", "MiguelMonteiro\MiguelMonteiro.csproj", "{2B300917-B2E5-4F00-B78E-E6266D6B4987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiguelMonteiro1", "MiguelMonteiro1\MiguelMonteiro1.csproj", "{ED68C621-5399-432F-B7E6-4460FD93448C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{7A499D26-E333-48E3-8788-EEB9D2B74D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A499D26-E333-48E3-8788-EEB9D2B74D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A499D26-E333-48E3-8788-EEB9D2B74D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B300917-B2E5-4F00-B78E-E6266D6B4987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B300917-B2E5-4F00-B78E-E6266D6B4987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B300917-B2E5-4F00-B78E-E6266D6B4987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B300917-B2E5-4F00-B78E-E6266D6B4987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED68C621-5399-432F-B7E6-4460FD93448C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED68C621-5399-432F-B7E6-4460FD93448C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED68C621-5399-432F-B7E6-4460FD93448C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED68C621-5399-432F-B7E6-4460FD93448C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
