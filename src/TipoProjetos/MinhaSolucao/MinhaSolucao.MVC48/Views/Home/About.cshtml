@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <p>Use this area to provide additional information.</p>
+
+    <button type="button" id="btnOlaMundo" onclick="btnClick()">Ola Mundo</button>
+    
+    <input type="text" id="txtTexto" width="150" />
+    <h1 style="color:red" id="lblTexto"> MeuTexto </h1>
+
+
+    <script>
+        function btnClick() {
+            var texto = document.getElementById("txtTexto").value;
+            document.getElementById("lblTexto").innerHTML = texto;
+        }
+    </script>
+
+</main>

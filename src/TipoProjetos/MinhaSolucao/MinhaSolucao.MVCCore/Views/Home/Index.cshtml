@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+    <button type="button" id="btnOlaMundo" onclick="btnClick()">Ola Mundo</button>
+
+    <input type="text" id="txtTexto" width="150" />
+    <h1 style="color:red" id="lblTexto"> MeuTexto </h1>
+
+
+    <script>
+        function btnClick() {
+            var texto = document.getElementById("txtTexto").value;
+            document.getElementById("lblTexto").innerHTML = texto;
+        }
+    </script>
+</div>
