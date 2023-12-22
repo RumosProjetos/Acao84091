@@ -5,6 +5,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationIcon>webalys-kameleon.pics-student-3.ico</ApplicationIcon>
+    <Title>Meu titulo</Title>
+    <Description>Minha descricao</Description>
+    <Copyright>Todos os direitos são reservados</Copyright>
+    <AssemblyVersion>13.22.12</AssemblyVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="webalys-kameleon.pics-student-3.ico" />
+  </ItemGroup>
 
 </Project>
