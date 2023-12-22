@@ -6,7 +6,7 @@ public class Exercicio01
     // Escreva um programa que imprima todos os números inteiros de 1 a 100.
     // Se o número for par, imprima "PAR" ao lado do número.
     // [Resto da divisão por 2 é igual a 0]
-    public static void Resultado()
+    public static void Executar()
     {
         for (int i = 1; i <= 100; i++) 
         {

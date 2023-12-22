@@ -4,7 +4,7 @@ public class Exercicio03
 {
     // Exercicio 3
     // Crie um programa que imprima a tabuada de um número escolhido pelo usuário.
-    public static void Resultado()
+    public static void Executar()
     {
         //TODO: Ler o valor escolhido pelo usuário
         int valorEscolhido = 5;

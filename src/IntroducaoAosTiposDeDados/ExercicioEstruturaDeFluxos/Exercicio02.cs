@@ -7,7 +7,7 @@ public class Exercicio02
     // [Resto da divisão por 3 é igual a 0]
     // Para os múltiplos de 3, imprima "Múltiplo de 3".
     // Se o número for múltiplo de 6, imprima "Múltiplo de 6" ao invés de "Múltiplo de 3".
-    public static void Resultado()
+    public static void Executar()
     {
         for (int i = 1; i <= 100; i++)
         {
@@ -33,7 +33,7 @@ public class Exercicio02
     /// Ambos podem ser utilizados, mas o primeiro é mais performático. 
     /// Já que o segundo faz duas operações de resto de divisão.
     /// </summary>
-    public static void ResultadoSegundaForma()
+    public static void ExecutarSegundaForma()
     {
         for (int i = 1; i <= 100; i++)
         {
