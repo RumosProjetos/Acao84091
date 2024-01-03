@@ -1,0 +1,26 @@
+	
+Bom dia pessoal, ainda estamos naquela semana em que todos desejam Feliz Ano Novo, então vamos seguir a tradição e começar o exercício com essa frase :) ...
+
+
+
+Program.cs:
+
+Console.WriteLine("Feliz Ano Novo");
+
+
+
+Dito isso, vamos aos primeiros exemplos práticos do ano:
+
+
+
+1 - Vamos criar um exemplo simples de exercício de programação orientada a objetos em C#. Vamos criar uma classe Pessoa que representa uma pessoa com atributos como nome, idade e método para exibir informações sobre ela.
+
+csharpCopy code
+using System; class Pessoa { // Atributos da classe public string Nome { get; set; } public int Idade { get; set; } // Construtor da classe public Pessoa(string nome, int idade) { Nome = nome; Idade = idade; } // Método para exibir informações sobre a pessoa public void ExibirInformacoes() { Console.WriteLine($"Nome: {Nome}, Idade: {Idade} anos."); } } class Program { static void Main() { // Exemplo de uso da classe Pessoa Pessoa pessoa1 = new Pessoa("João", 25); pessoa1.ExibirInformacoes(); Pessoa pessoa2 = new Pessoa("Maria", 30); pessoa2.ExibirInformacoes(); } }
+Neste exemplo, a classe Pessoa possui atributos Nome e Idade, um construtor para inicializá-los e um método ExibirInformacoes para mostrar os detalhes da pessoa. O programa principal cria duas instâncias da classe Pessoa e exibe suas informações.
+
+Você pode expandir este exemplo adicionando mais funcionalidades à classe, como métodos para calcular a idade em determinado ano, verificar se a pessoa é maior de idade, etc. Isso ajuda a praticar os conceitos fundamentais de programação orientada a objetos em C#, como encapsulamento, herança e polimorfismo.
+
+
+
+Continua no exercício 02 de 03.
