@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ApoioAoAprendizado;
+using System.Collections;
 
 Console.WriteLine("Hello, World!");
 
@@ -20,7 +21,7 @@ foreach (var item in tiago.Notas)
 Console.WriteLine(tiago.Notas[3]);
 
 
-tiago.NotasPorDisciplina = new int[4,3];
+tiago.NotasPorDisciplina = new int[3, 4];
 tiago.NotasPorDisciplina[0, 0] = 20;
 tiago.NotasPorDisciplina[0, 1] = 15;
 tiago.NotasPorDisciplina[0, 2] = 18;
@@ -74,7 +75,7 @@ Pessoa joao = new Pessoa();
 var Maria = new Pessoa();
 Pessoa pedro = new();
 
-if(pedro is Pessoa)
+if (pedro is Pessoa)
 {
 
 }
@@ -140,17 +141,19 @@ switch (minhaCorFavorita)
         break;
 }
 
-if(2 == 2) { 
+if (2 == 2)
+{
     Console.WriteLine("Verdadeiro");
 }
-else {
+else
+{
     Console.WriteLine("Falso");
 }
 
 
-if(minhaCorFavorita == Cores.Azul)
+if (minhaCorFavorita == Cores.Azul)
 {
-    if(diaDaSemana == DiasSemana.Domingo)
+    if (diaDaSemana == DiasSemana.Domingo)
     {
         Console.WriteLine("Bom dia, lindo domingo de céu azul");
     }
@@ -161,19 +164,19 @@ if (minhaCorFavorita == Cores.Azul && diaDaSemana == DiasSemana.Domingo)
     Console.WriteLine("Bom dia, lindo domingo de céu azul");
 }
 
-if(minhaCorFavorita != Cores.Verde) { }
+if (minhaCorFavorita != Cores.Verde) { }
 
 bool MinhaCorFavoritaEhAzul = !(minhaCorFavorita == Cores.Azul);
 
 //Ou comum, tanto faz se a primeira ou a segunda sentença são verdadeiras
-if(minhaCorFavorita == Cores.Azul || minhaCorFavorita == Cores.Verde)
+if (minhaCorFavorita == Cores.Azul || minhaCorFavorita == Cores.Verde)
 {
     //....
 }
 
 
 //Ou exclusivo: Ou uma coisa ou outra, se ambos forem verdadeiro, não faz
-if(minhaCorFavorita == Cores.Azul ^ diaDaSemana == DiasSemana.Domingo)
+if (minhaCorFavorita == Cores.Azul ^ diaDaSemana == DiasSemana.Domingo)
 {
 
 }
@@ -194,3 +197,136 @@ idade *= 10;
 
 idade = idade / 10;
 idade /= 10;
+
+
+
+string[] frutas = { "Banana", "Maçã", "Uva", "Morango" };
+
+Console.WriteLine("A primeira fruta é:" + frutas[1]);
+
+
+//Ordem inserida
+Console.WriteLine("Ordem inserida");
+int[] numeros = { 0, 10, 40, 30, 20, 25 };
+foreach (int numero in numeros)
+{
+    Console.WriteLine(numero);
+}
+
+//Ordem invertida
+Console.WriteLine("Ordem invertida");
+var numerosInvertidos = numeros.Reverse();
+foreach (int numero in numerosInvertidos)
+{
+    Console.WriteLine(numero);
+}
+
+
+//Ordem correta
+Console.WriteLine("Ordem Correta");
+var ordemCorreta = numeros.Order();
+foreach (int numero in ordemCorreta)
+{
+    Console.WriteLine(numero);
+}
+
+//Ordem do menor para o maior
+Console.WriteLine("Ordem do menor para o maior");
+var ordemDoMaiorParaMenor = numeros.OrderDescending();
+foreach (int numero in ordemDoMaiorParaMenor)
+{
+    Console.WriteLine(numero);
+}
+
+
+string[] nomes = { "Ana","Zélia", "José", "João", "Daniel", "Carlos" };
+var nomesOrdenados = nomes.Order();
+foreach (var nome in nomesOrdenados)
+{
+    Console.WriteLine(nome);
+}
+
+Pessoa[] pessoas = new Pessoa[10];
+pessoas[0] = tiago;
+pessoas[0].Idade = 10;
+
+
+
+Tabuada tab = new Tabuada(13);
+tab.Calcular();
+
+Console.WriteLine(tab.ValoresCalculados[7]);
+
+
+
+
+//Coleção:
+//Fila - Queue
+// 1 entra é o primeiro que sai
+List<Pessoa> pessoas1 = new List<Pessoa>();
+pessoas1.Add(tiago);
+pessoas1.Add(Maria);
+pessoas1.Add(marta);
+pessoas1.Add(joao);
+//... 
+
+//foreach (var item in pessoas1)
+//{
+//    if (item.Nome.StartsWith("M"))
+//    {
+//        //
+//    }
+
+//}
+
+//pessoas1.Where(item => item.Nome.StartsWith("M"));
+
+
+
+
+List<object> minhaLista = new List<object>();
+minhaLista.Add(tiago);
+minhaLista.Add(1);
+minhaLista.Add("minha string");
+minhaLista.Add(DateTime.Now);
+
+
+
+
+foreach (var item in minhaLista)
+{
+    if(item is Pessoa)
+    {
+        //
+    }
+    if(item is string) { }
+
+    if (item is Int32) { }
+}
+
+
+//foreach (var item in minhaLista)
+//{
+//   switch(item.GetType()) {
+//        case typeof(string):
+//            break;
+//    }
+//}
+
+
+List<Pessoa> pessoasGenerico = new List<Pessoa>();
+pessoasGenerico.Add(tiago);
+tiago.Nome = "Tiago da Silva";
+
+
+PessoaColetiva minhaEmpresaSa = new PessoaColetiva();
+minhaEmpresaSa.Idade = 20;
+minhaEmpresaSa.Nome = "Minha multinacional";
+
+pessoasGenerico.Add(minhaEmpresaSa);
+
+
+foreach (var item in pessoasGenerico)
+{
+    Console.WriteLine("A idade da pessoa" + item.Nome + " é " + item.Idade);
+}
