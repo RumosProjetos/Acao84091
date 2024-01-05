@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConferenciaCientifica", "ConferenciaCientifica\ConferenciaCientifica.csproj", "{EFCF8517-8952-45BF-B571-379630D23235}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modelo", "Modelo", "{0B3F4D7D-D28D-4869-8128-B9B5FE95D27F}"
+	ProjectSection(SolutionItems) = preProject
+		Modelo.mermaid = Modelo.mermaid
+		Modelo.png = Modelo.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFCF8517-8952-45BF-B571-379630D23235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFCF8517-8952-45BF-B571-379630D23235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFCF8517-8952-45BF-B571-379630D23235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFCF8517-8952-45BF-B571-379630D23235}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31EBCCA3-91CE-4055-B7CB-5315ACD7241B}
+	EndGlobalSection
+EndGlobal
