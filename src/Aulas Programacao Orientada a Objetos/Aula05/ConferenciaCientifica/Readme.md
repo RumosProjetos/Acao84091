@@ -16,6 +16,4 @@ classDiagram
     Palestra *-- Palestrante   
     Palestra *-- Artigo   
 ```
-
-s
 **Diagrama 1** Conferência Científica
