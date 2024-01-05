@@ -7,8 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConferenciaCientifica", "Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modelo", "Modelo", "{0B3F4D7D-D28D-4869-8128-B9B5FE95D27F}"
 	ProjectSection(SolutionItems) = preProject
-		Modelo.mermaid = Modelo.mermaid
 		Modelo.png = Modelo.png
+		Modelo.txt = Modelo.txt
 	EndProjectSection
 EndProject
 Global
