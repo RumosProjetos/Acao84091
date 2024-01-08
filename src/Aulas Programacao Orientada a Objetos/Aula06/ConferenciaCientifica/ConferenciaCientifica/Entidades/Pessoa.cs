@@ -10,6 +10,15 @@ namespace ConferenciaCientifica.Entidades
     {
         public string Nome { get; set; }
 
-        public void RealizarInscricao() { }
+        public void RealizarInscricao()
+        {
+            int minhaInscricao = new Random().Next(0, 100);
+
+            //Exemplo forma antiga
+            //Console.WriteLine("Inscrição " + minhaInscricao + " foi gerada");
+
+            //Exemplo C# 6 em diante
+            Console.WriteLine($"Inscrição {minhaInscricao} foi gerada");
+        }
     }
 }

@@ -35,4 +35,9 @@ expectador2.Nome = "Aluno 02";
 Expectador expectador3 = new Expectador();
 expectador3.Nome = "Aluno 03";
 
+expectador3.TomarNotas("anotacoes");
+
 avaliador.Avaliar();
+
+autor.EscreverArtigo();
+autor.EntregarArtigo();
