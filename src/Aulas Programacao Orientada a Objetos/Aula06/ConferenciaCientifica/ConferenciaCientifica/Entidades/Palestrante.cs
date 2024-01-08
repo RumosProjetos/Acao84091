@@ -9,5 +9,8 @@ namespace ConferenciaCientifica.Entidades
     internal class Palestrante : Autor
     {
         public List<Palestra> Palestra { get; set; }
+
+        public void Palestrar() { }
+        public void ResponderPerguntas(string pergunta) { }
     }
 }

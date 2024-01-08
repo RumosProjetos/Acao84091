@@ -9,5 +9,7 @@ namespace ConferenciaCientifica.Entidades
     internal abstract class Pessoa
     {
         public string Nome { get; set; }
+
+        public void RealizarInscricao() { }
     }
 }

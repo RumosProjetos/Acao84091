@@ -30,11 +30,9 @@ Expectador expectador = new Expectador();
 expectador.Nome = "Aluno 01";
 
 Expectador expectador2 = new Expectador();
-expectador.Nome = "Aluno 02";
+expectador2.Nome = "Aluno 02";
 
 Expectador expectador3 = new Expectador();
-expectador.Nome = "Aluno 03";
+expectador3.Nome = "Aluno 03";
 
-
-
-
+avaliador.Avaliar();

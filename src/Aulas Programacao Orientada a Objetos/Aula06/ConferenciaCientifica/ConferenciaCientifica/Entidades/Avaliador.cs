@@ -9,5 +9,11 @@ namespace ConferenciaCientifica.Entidades
     internal class Avaliador : Participante
     {
         public List<Palestra> Palestras { get; set; }
+
+        public void GerarRelatorio() { }
+        public int Avaliar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

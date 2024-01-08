@@ -10,5 +10,11 @@ namespace ConferenciaCientifica.Entidades
     {
         public int NumeroInscricao { get; set; }
         public string Telefone { get; set; }
+
+        public void TomarNotas() { }
+        public string FazerPerguntas()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

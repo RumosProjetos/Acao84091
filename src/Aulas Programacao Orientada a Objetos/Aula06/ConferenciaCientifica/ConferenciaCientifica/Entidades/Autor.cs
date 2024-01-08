@@ -8,6 +8,7 @@ namespace ConferenciaCientifica.Entidades
 {
     internal class Autor : Participante
     {
-
+        public void EscreverArtigo() { }
+        public void EntregarArtigo() { }
     }
 }

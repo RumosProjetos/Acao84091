@@ -7,8 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConferenciaCientifica", "Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modelo", "Modelo", "{0B3F4D7D-D28D-4869-8128-B9B5FE95D27F}"
 	ProjectSection(SolutionItems) = preProject
-		Modelo.png = Modelo.png
 		Modelo.txt = Modelo.txt
+		Modelo_v1.png = Modelo_v1.png
+		Modelo_v2.png = Modelo_v2.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15A83639-DF1E-4A8D-8002-3EFE9B4597DD}"
