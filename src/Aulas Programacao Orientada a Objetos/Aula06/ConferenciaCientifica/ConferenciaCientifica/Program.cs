@@ -1,4 +1,5 @@
 ﻿using ConferenciaCientifica.Entidades;
+using ConferenciaCientifica.Tradutores;
 
 Console.WriteLine("Palestra sobre Física Quântica");
 
@@ -41,3 +42,9 @@ avaliador.Avaliar();
 
 autor.EscreverArtigo();
 autor.EntregarArtigo();
+
+
+string resultado = ConvertToEnglish.Translate("O rato roeu a roupa do rei");
+Console.WriteLine(resultado);
+
+artigo.Exemplo = 1;
