@@ -5,6 +5,7 @@ public class Consulta
     public Medico Medico { get; set; }
     public Paciente Paciente { get; set; }
     public DateTime DataConsulta { get; set; }
+    public List<Medicamento> Medicamentos { get; set; }
 
     public Consulta(Medico medico, Paciente paciente, DateTime dataConsulta)
     {

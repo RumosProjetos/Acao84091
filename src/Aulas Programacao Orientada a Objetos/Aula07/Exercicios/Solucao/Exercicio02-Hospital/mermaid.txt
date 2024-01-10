@@ -1,0 +1,58 @@
+---
+title: Hospital Exemplo
+---
+classDiagram
+    Pessoa <|-- Paciente  
+    Paciente *-- Medicamento : consome
+    Pessoa <|-- Medico 
+    Consulta *-- Medico : realiza
+    Consulta *-- Medicamento : prescreve
+    Consulta *-- Paciente : é consultado
+
+
+class Pessoa{
+    +String Nome
+    +int Idade
+
+    +Pessoa(string nome, int idade)
+    +void ExibirInformacoes()
+}
+
+
+class Paciente {
+    +String HistoricoClinico
+    +List<Medicamento> Medicamentos
+
+    +Paciente(string nome, int idade, string historicoClinico) : base(nome, idade)
+    +void ExibirInformacoes()
+}
+
+class Medico {
+    +String Especialidade 
+
+    +Medico(string nome, int idade, string especialidade) : base(nome, idade)
+    +void ExibirInformacoes()
+    +void PrescreverMedicacao(Paciente paciente)
+}
+
+
+class Consulta {
+    +Medico Medico
+    +Paciente Paciente
+    +DateTime DataConsulta
+    +List<Medicamento> Medicamentos
+
+    +Consulta(Medico medico, Paciente paciente, DateTime dataConsulta)
+    +void RealizarConsulta()
+}
+
+class Medicamento {
+    +string Nome
+    +string Dosagem
+    +string ModoPreparo
+    +List<string> PrincipioAtivo
+    +int Unidades
+    +DateTime DataValidade
+    +DateTime DataFabricao
+    +string Lote
+}

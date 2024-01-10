@@ -1,6 +1,6 @@
 ﻿namespace Hospital.Entidades;
 
-public class Pessoa
+public abstract class Pessoa
 {
     public string Nome { get; set; }
     public int Idade { get; set; }

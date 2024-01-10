@@ -3,6 +3,7 @@
 public class Paciente : Pessoa
 {
     public string HistoricoClinico { get; set; }
+    public List<Medicamento> Medicamentos { get; set; }
 
     public Paciente(string nome, int idade, string historicoClinico) : base(nome, idade)
     {
