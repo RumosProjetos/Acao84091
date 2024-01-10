@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModificadoresAcesso.Entidades
 {
@@ -13,6 +9,7 @@ namespace ModificadoresAcesso.Entidades
         {
             Nome = nome;
         }
+
 
         public Pessoa(string nome, DateTime dataNascimento)
         {
@@ -28,12 +25,12 @@ namespace ModificadoresAcesso.Entidades
 
         #region Métodos Públicos
 
-        public void Falar()
+        public void MeuMetodoPublico()
         {
             Console.WriteLine($"Oi Mundo, eu sou {Nome} e nasci no dia {DataNascimento}");
         }
 
-        protected void Escutar()
+        protected void MeuMetodoProtegido()
         {
             Console.WriteLine($"Escutei meu nome");
             MeuMetodoPrivado();
@@ -51,6 +48,23 @@ namespace ModificadoresAcesso.Entidades
             Console.WriteLine("Método privado foi invocado");
         }
         #endregion Métodos Privados
+
+
+        public static Pessoa operator +(Pessoa p1, Pessoa p2)
+        {
+            Pessoa resultado = new Pessoa(p1.Nome + p2.Nome);
+            return resultado;
+        }
+
+        public static bool operator ==(Pessoa p1, Pessoa p2)
+        {
+            return p1.Nome == p2.Nome && p1.DataNascimento == p2.DataNascimento;
+        }
+
+        public static bool operator !=(Pessoa p1, Pessoa p2)
+        {
+            return !(p1 == p2);
+        }
     }
 }
 
