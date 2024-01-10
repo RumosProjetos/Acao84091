@@ -1,0 +1,46 @@
+---
+title: Banco Exemplo
+---
+classDiagram
+    ContaCorrente <|-- IOperacoesFinanceiras : implements
+    ContaCorrente <|-- IOperacoesEspecificasDeConta : implements
+    ContaCorrente <|-- IPromocoesAnuais: implements
+    SeguroAutomovel <|-- IOperacoesFinanceiras : implements
+    SeguroAutomovel <|-- IPromocoesAnuais: implements
+
+class Cliente{
+    +String Nome
+    +List<ContaCorrente> ContaCorrente
+}
+
+class ContaCorrente{
+    +String NumeroConta
+    +Decimal Saldo
+
+    +void DepositarDinheiro(Decimal Saldo)
+    +void LevantarDinheiro(Decimal Saldo)
+    +decimal ConsultarSaldo()
+}
+
+class SeguroAutomovel{
+    +Decimal Premio
+
+    +void GerarFatura()
+    +void PagarSinistro()
+}
+
+
+class IOperacoesFinanceiras{
+    <<interface>>
+    void GerarExtrato()
+}
+
+class IOperacoesEspecificasDeConta{
+    <<interface>>    
+    void OperacaoEspecifica()
+}
+
+class IPromocoesAnuais{
+    <<interface>>
+    void AplicarDesconto(decimal valor)
+}
