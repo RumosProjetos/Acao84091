@@ -1,0 +1,40 @@
+<mxfile host="Electron" modified="2024-01-12T20:21:52.319Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="Dbm49_tPuCPgdoOM8j4G" version="21.2.8" type="device">
+  <diagram name="ModuloInicial" id="FydhDvgg5mY2WvKODlbM">
+    <mxGraphModel dx="1036" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0hbAimUqGEFIx8kNoadf-1" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="60" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="0hbAimUqGEFIx8kNoadf-2" value="Bom dia&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="70" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0hbAimUqGEFIx8kNoadf-3" value="Escolha a opção:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="100" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0hbAimUqGEFIx8kNoadf-4" value="L - Logar no Sistema&lt;br&gt;X - Sair do Sistema&amp;nbsp; &amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="130" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0hbAimUqGEFIx8kNoadf-5" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="60" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="0hbAimUqGEFIx8kNoadf-6" value="Tela Login" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="70" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0hbAimUqGEFIx8kNoadf-8" value="Informe Usuário&lt;br&gt;&lt;br&gt;Informe a Senha" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="110" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0hbAimUqGEFIx8kNoadf-10" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="230" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="0hbAimUqGEFIx8kNoadf-11" value="Escolha a opçáo:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="240" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0hbAimUqGEFIx8kNoadf-12" value="C - Cliente&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;&lt;br&gt;A - Automóvel" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="280" width="140" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

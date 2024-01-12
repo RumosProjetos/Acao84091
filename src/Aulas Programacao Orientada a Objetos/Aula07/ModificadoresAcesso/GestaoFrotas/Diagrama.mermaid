@@ -1,0 +1,24 @@
+---
+title: Exemplo Frota de Carros
+---
+classDiagram
+    Locacao *-- Cliente 
+    Locacao *-- Carro
+    
+
+class Cliente{
+    +String Nome
+    +String CartaConducao
+}
+
+class Carro{
+    +String Matricula
+    +Decimal Modelo
+}
+
+class Locacao{
+    +Carro Carro
+    +Cliente Cliente
+    +DateTime DataInicio 
+    +DateTime DataFim 
+}
