@@ -2,8 +2,15 @@
 {
     public class Automovel
     {
-        public string? Modelo { get; set; }
-        public string? Matricula { get; set; }
-        public bool Ativo { get; set; } = true;
+        public string? Matricula { get; set; } //Identificador
+        public string? Modelo { get; set; }        
+        public bool Ativo { get; set; }
+
+        public Automovel(string matricula, string modelo)
+        {
+            Matricula = matricula;
+            Modelo = modelo;
+            Ativo = true;
+        }
     }
 }

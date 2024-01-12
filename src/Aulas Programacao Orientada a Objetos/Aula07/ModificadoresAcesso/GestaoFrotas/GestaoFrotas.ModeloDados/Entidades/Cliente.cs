@@ -10,6 +10,13 @@ namespace GestaoFrotas.ModeloDados.Entidades
     {
         public string? Nome { get; set; }
         public string? CartaConducao { get; set; }
-        public bool Ativo { get; set; } = true;
+        public bool Ativo { get; set; }
+
+        public Cliente(string nome, string cartaConducao)
+        {
+            Nome = nome;
+            CartaConducao = cartaConducao;
+            Ativo = true;
+        }
     }
 }
