@@ -22,7 +22,7 @@ namespace GestaoFrotas.LogicaNegocio.Logica
 
         public List<Usuario> Adicionar(Usuario item)
         {
-            usuarios.Add(item); 
+            usuarios.Add(item);
             return usuarios;
         }
 
@@ -48,13 +48,18 @@ namespace GestaoFrotas.LogicaNegocio.Logica
         {
             foreach (var item in usuarios)
             {
-                if(item.Login == identificador)
+                if (item.Login == identificador)
                 {
                     return item;
                 }
             }
 
             return null;
+        }
+
+        public List<Usuario> MostrarTodos()
+        {
+            return usuarios;
         }
     }
 }

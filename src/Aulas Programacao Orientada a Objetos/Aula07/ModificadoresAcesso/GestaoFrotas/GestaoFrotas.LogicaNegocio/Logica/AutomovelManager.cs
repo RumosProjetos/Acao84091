@@ -50,5 +50,10 @@ namespace GestaoFrotas.LogicaNegocio.Logica
 
             return null;
         }
+
+        public List<Automovel> MostrarTodos()
+        {
+            return automoveis;
+        }
     }
 }

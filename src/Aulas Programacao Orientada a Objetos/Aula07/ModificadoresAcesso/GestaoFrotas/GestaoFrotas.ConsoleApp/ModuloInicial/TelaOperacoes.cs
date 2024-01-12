@@ -1,4 +1,5 @@
 ﻿using GestaoFrotas.ConsoleApp.Constantes;
+using GestaoFrotas.ConsoleApp.ModuloOperacional;
 
 namespace GestaoFrotas.ConsoleApp.ModuloInicial
 {
@@ -14,7 +15,7 @@ namespace GestaoFrotas.ConsoleApp.ModuloInicial
     
             if ( operacao == Sistema.TeclaTelaCliente)
             {
-                //Cliente
+                TelaCliente telaCliente = new TelaCliente();
             }
 
             if (operacao == Sistema.TeclaTelaAutomovel)
