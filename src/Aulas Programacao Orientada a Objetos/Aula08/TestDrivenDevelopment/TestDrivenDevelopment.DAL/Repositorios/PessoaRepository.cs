@@ -18,10 +18,10 @@ namespace TestDrivenDevelopment.DAL.Repositorios
         {
             pessoaList = new List<Pessoa>();
             GerarDatabase();
-            //Falta tentarmos ler o conteúdo
+             //Falta tentarmos ler o conteúdo
         }
 
- 
+
 
         public void Adicionar(Pessoa entidade)
         {
@@ -29,14 +29,42 @@ namespace TestDrivenDevelopment.DAL.Repositorios
             Gravar();
         }
 
+
         public void Apagar(int id)
         {
-            throw new NotImplementedException();
+            List<Pessoa> listaLocal = new List<Pessoa>();
+
+            foreach (var p in pessoaList)
+            {
+                if (p.Id != id)
+                {
+                    listaLocal.Add(p);
+                }
+            }
+
+            pessoaList = listaLocal;
+            Gravar();
         }
+
 
         public void Atualizar(int id, Pessoa entidade)
         {
-            throw new NotImplementedException();
+            List<Pessoa> listaLocal = new List<Pessoa>();
+            foreach (var p in pessoaList)
+            {
+                if (p.Id != id)
+                {
+                    listaLocal.Add(p);
+                }
+                else
+                {
+                    entidade.Id = p.Id;
+                    listaLocal.Add(entidade);
+                }
+            }
+
+            pessoaList = listaLocal;
+            Gravar();
         }
 
         public Pessoa Buscar(int id)
