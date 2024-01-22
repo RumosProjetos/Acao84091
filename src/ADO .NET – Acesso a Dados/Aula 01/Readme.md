@@ -18,6 +18,17 @@ Agora, no diagrama:
 - Se um livro pode ter vários autores ou vice-versa, use notação de "crow's foot" (um símbolo semelhante a uma pata de corvo) na extremidade da linha para indicar a multiplicidade. Por exemplo, um "crow's foot" no lado do "Autor" indicaria "muitos autores".
 
 
+Para instalar o SQLServer Express, siga as instruções em:
+https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16#install-localdb
+
+(localdb)\MSSQLLocalDB
+localhost\SQLEXPRESS
+
+
+Para instalar o SQLServer Management Studio, siga as instruções em:
+https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16 
+
+
 ```mermaid	
 erDiagram
    Autores }|..|{ Livros : escrevem
