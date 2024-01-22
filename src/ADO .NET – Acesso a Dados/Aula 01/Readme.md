@@ -122,35 +122,128 @@ SELECT Nome, NIF, Id
 FROM Autor
 
 --Listar os livros
-SELECT Titulo, AnoPublicacao, AutorId
+SELECT Titulo, AnoPublicacao
 FROM Livro
 
 --Listar os livros com autores //JOIN Implícito
 SELECT Titulo, AnoPublicacao, Nome, NIF
-FROM Livro, Autor 
-WHERE autor.Id = livro.AutorId
+FROM Livro, Autor, Autoria
+WHERE autor.Id = Autoria.AutorId
+  AND Autoria.LivroId = livro.Id
 
 --Listar os livros com autores //JOIN Explícito
 SELECT Titulo, AnoPublicacao, Nome, NIF
 FROM Livro
-JOIN Autor ON autor.Id = livro.AutorId
+JOIN Autoria ON Autoria.LivroId = Livro.Id
+JOIN Autor ON autor.Id = Autoria.AutorId
 WHERE Autor.Nome = 'Ziraldo'
 
 
 -- 'O menino maluquinho', trazer nome do autor
 SELECT autor.Nome
-FROM Autor, Livro 
-WHERE autor.Id = livro.AutorId
+FROM Autor, Livro, Autoria 
+WHERE autor.Id = Autoria.AutorId
+  AND Autoria.LivroId = livro.Id
   AND livro.Titulo = 'O menino maluquinho'
 
 SELECT autor.Nome
 FROM Livro
-JOIN Autor ON autor.Id = livro.AutorId
+JOIN Autoria ON Autoria.LivroId = Livro.Id
+JOIN Autor ON autor.Id = Autoria.AutorId
 WHERE livro.Titulo = 'O menino maluquinho'
 
 SELECT a.Nome
 FROM Livro l
-JOIN Autor a ON a.Id = l.AutorId
+JOIN Autoria ON Autoria.LivroId = l.Id
+JOIN Autor a ON a.Id = Autoria.AutorId
 WHERE l.Titulo = 'O menino maluquinho'
 
+--Busca dos dados após a normalização para Autoria
+-- Agora consigo muitos livros para muitos autores
+SELECT Autor.Nome, Livro.Titulo 
+FROM Autor
+JOIN Autoria ON Autoria.AutorId = Autor.Id 
+JOIN Livro ON Livro.Id = Autoria.LivroId
+
+
+INSERT INTO Livro (Titulo, ISBN, AnoPublicacao) VALUES ('O Duplo', '123', 1990)
+SELECT * FROM Livro
+--7
+
+INSERT INTO Autor (Nome, NIF, DataNascimento) VALUES ('Dostoievski', '1234', 1821)
+INSERT INTO Autor (Nome, NIF, DataNascimento) VALUES ('Catarina', '12345', 2000)
+
+SELECT * FROM Autor
+
+
+--3,4
+
+INSERT INTO Autoria (AutorId, LivroId) VALUES (3, 7)
+INSERT INTO Autoria (AutorId, LivroId) VALUES (4, 7)
+
+SELECT Autor.Nome, Livro.Titulo
+FROM Autor
+JOIN Autoria ON Autoria.AutorId = Autor.Id
+JOIN Livro ON Livro.Id = Autoria.LivroId
+WHERE Livro.Titulo = 'O Duplo'
+
+
+
+SELECT * FROM Autoria
+WHERE AutorId = 15 
+  AND LivroId = 8
+
+INSERT INTO Autoria (AutorId, LivroId) VALUES (15, 8)
+
+
+DELETE FROM Autoria
+WHERE AutorId = 15 
+  AND LivroId = 8
+
+
+SELECT *
+FROM Autor
+WHERE Autor.DataNascimento >= '01-01-2000'
+
+SELECT UPPER('Nome')
+
+SELECT TOP 5 * FROM Autor
+
 ```
+
+
+**Exemplo de diagrama entidade-relacionamento - Conferência Científica**
+
+```mermaid
+erDiagram
+   Pessoas }|..|{ Palestras : participam
+   Pessoas }|..|{ Artigos : Escrevem
+   Pessoas }|..|{ Artigos : Apresentam
+
+
+   Pessoas {
+      Id int      
+      Nome varchar(50)   
+      Especialidade varchar(50)
+      Filiacao varchar(50)
+      NumeroInscricao int
+      Telefone varchar(14)
+      Participacao  varchar(50)        
+   }
+
+   Palestras {
+      Id int  
+      AutorId int 
+      ArtigoId int        
+      DataEHora datetime
+   }
+
+   Artigos {
+      Id int
+      Titulo varchar(50)
+      Abstract varchar(50)
+      AutorId int
+      PalestranteId int  
+   }
+```
+
