@@ -113,3 +113,44 @@ UPDATE Livros SET AnoPublicacao = 1977 WHERE ISBN = 1;
 Se você estiver usando uma ferramenta específica para criar diagramas de entidade-relacionamento, como o MySQL Workbench, você pode arrastar e soltar entidades e relacionamentos para construir seu diagrama visualmente.
 
 Lembre-se de que este é apenas um exemplo simples. Diagramas de entidade-relacionamento podem se tornar mais complexos com mais entidades e relacionamentos dependendo dos requisitos do sistema que você está modelando.
+
+**Exemplos de queries**
+
+```SQL
+--Listar os autores
+SELECT Nome, NIF, Id
+FROM Autor
+
+--Listar os livros
+SELECT Titulo, AnoPublicacao, AutorId
+FROM Livro
+
+--Listar os livros com autores //JOIN Implícito
+SELECT Titulo, AnoPublicacao, Nome, NIF
+FROM Livro, Autor 
+WHERE autor.Id = livro.AutorId
+
+--Listar os livros com autores //JOIN Explícito
+SELECT Titulo, AnoPublicacao, Nome, NIF
+FROM Livro
+JOIN Autor ON autor.Id = livro.AutorId
+WHERE Autor.Nome = 'Ziraldo'
+
+
+-- 'O menino maluquinho', trazer nome do autor
+SELECT autor.Nome
+FROM Autor, Livro 
+WHERE autor.Id = livro.AutorId
+  AND livro.Titulo = 'O menino maluquinho'
+
+SELECT autor.Nome
+FROM Livro
+JOIN Autor ON autor.Id = livro.AutorId
+WHERE livro.Titulo = 'O menino maluquinho'
+
+SELECT a.Nome
+FROM Livro l
+JOIN Autor a ON a.Id = l.AutorId
+WHERE l.Titulo = 'O menino maluquinho'
+
+```
