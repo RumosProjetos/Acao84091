@@ -247,3 +247,107 @@ erDiagram
    }
 ```
 
+### Lista de exercícios sobre comandos SQL para praticar suas habilidades:
+
+1. **Seleção de Dados:**
+   - Escreva uma consulta para selecionar todos os dados de uma tabela específica.
+   - Selecione apenas algumas colunas de uma tabela.
+   - Use a cláusula WHERE para filtrar os resultados com base em uma condição específica.
+
+2. **Ordenação e Limitação:**
+   - Ordene os resultados de uma consulta em ordem ascendente e descendente.
+   - Limite o número de resultados retornados em uma consulta.
+
+3. **Agregação de Dados:**
+   - Escreva uma consulta para calcular a média, soma e contagem de uma coluna numérica.
+   - Utilize GROUP BY para agrupar dados com base em uma coluna específica.
+
+4. **Filtragem Avançada:**
+   - Use a cláusula LIKE para buscar registros que contenham um padrão específico.
+   - Utilize IN ou NOT IN para filtrar registros com base em uma lista de valores.
+
+5. **Junção de Tabelas:**
+   - Faça uma consulta que envolva a junção de duas ou mais tabelas.
+   - Experimente INNER JOIN, LEFT JOIN e RIGHT JOIN em diferentes cenários.
+
+6. **Atualização e Inserção de Dados:**
+   - Atualize registros em uma tabela com base em uma condição específica.
+   - Insira novos registros em uma tabela.
+
+7. **Exclusão de Dados:**
+   - Exclua registros com base em uma condição.
+   - Experimente usar a cláusula CASCADE para excluir registros relacionados em cascata.
+
+8. **Subconsultas:**
+   - Escreva uma subconsulta para encontrar dados com base em resultados de outra consulta.
+   - Utilize as cláusulas EXISTS ou NOT EXISTS em uma subconsulta.
+
+9. **Transações:**
+   - Inicie uma transação, faça algumas alterações e depois faça o commit.
+   - Realize uma transação de rollback para desfazer alterações.
+
+10. **Restrições e Índices:**
+    - Adicione uma restrição UNIQUE a uma coluna.
+    - Crie um índice em uma tabela para melhorar o desempenho da consulta.
+
+Lembre-se de adaptar os exercícios de acordo com o sistema de gerenciamento de banco de dados que você está utilizando (por exemplo, MySQL, PostgreSQL, SQL Server, etc.). Boa prática!
+
+### Referências
+
+```SQL
+SELECT COUNT(Id), Participacao
+FROM Pessoas
+WHERE Filiacao IS NOT NULL
+GROUP BY Participacao
+
+
+SELECT Nome
+FROM Pessoas 
+WHERE Participacao IN ('Autor','Palestrante')
+
+
+
+SELECT Nome
+FROM Pessoas 
+WHERE Participacao = 'Autor'
+   OR Participacao ='Palestrante'
+
+
+SELECT * from Pessoas
+
+--COUNT
+--ORDER BY 
+--MAX
+--AVG
+--MIN
+
+
+SELECT COUNT(Id), Participacao
+FROM Pessoas
+GROUP BY Participacao
+HAVING COUNT(Id) > 2
+
+
+SELECT * 
+FROM Pessoas P1
+WHERE P1.Nome IN (
+	SELECT Nome
+	FROM Pessoas P2
+	WHERE P2.Filiacao = 'ISCTE'
+)
+
+
+INSERT INTO Artigos (Titulo, Abstract, AutorId, PalestranteId)
+	          VALUES ('Artigo 01', 'Abstract 01', 1, 1)
+
+
+SELECT p.Nome, a.Titulo
+FROM Pessoas p
+LEFT JOIN Artigos a ON a.AutorId = p.Id
+
+DELETE FROM Artigos WHERE Id = 15
+
+UPDATE Artigos SET Abstract = '' WHERE Id = 15
+
+
+```
