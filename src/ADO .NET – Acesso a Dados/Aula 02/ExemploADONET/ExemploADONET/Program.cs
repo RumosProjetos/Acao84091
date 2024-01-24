@@ -1,80 +1,43 @@
-﻿/*
-SQLCOnnection - Efetiva a conexão com o database
-SQLCommand - Executa um comando
-*/
-
+﻿using ExemploADONET.DataAccessLayer;
+using ExemploADONET.Model;
 using System.Data.SqlClient;
 
 string nomeServidor = "localhost\\SQLEXPRESS";//(localdb)\MSSQLLocalDB
 string caminhoParaOBanco = $"Server={nomeServidor};Database=ConferenciaCientifica;Trusted_Connection=True;";
 
 
-try
+SqlConnection minhaConexao = new SqlConnection(caminhoParaOBanco);
+minhaConexao.Open();
+
+PessoaRepository pessoaRepository = new PessoaRepository(minhaConexao);
+
+Pessoa Carlos = new Pessoa
 {
-    SqlConnection minhaConexao = new SqlConnection(caminhoParaOBanco);
-    minhaConexao.Open();
+    Nome = "Carlos da Silva",
+    Participacao = "Participante",
+    Especialidade = "Engenheiro",
+    Filiacao = "USP",
+    NumeroInscricao = 122233,
+    Telefone = "987654321"
+};
 
-    string? NomeSelecionado = ExemploConsultaBaseadoNaParticipacaoComRiscoDeSQLInjection(minhaConexao, "Autor';SELECT @@ServerName;--");
+//pessoaRepository.CriarNovo(Carlos);
 
-    minhaConexao.Close();
+//pessoaRepository.Apagar(5);
 
-
-    Console.WriteLine($"O nome selecionado foi: {NomeSelecionado}");
-}
-catch (SqlException ex)
+Pessoa MariaDadosNovos = new Pessoa
 {
-    Console.WriteLine($"Erro na consulta: {ex.Message}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Erro genérico: {ex.Message}");
-}
+    Nome = "Maria Casada",
+    Participacao = "Autor",
+    Especialidade = "Medicina",
+    Filiacao = "ULISBOA",
+    NumeroInscricao = 122233,
+    Telefone = "123456789"
+};
+//pessoaRepository.Atualizar(1, MariaDadosNovos);
 
+//Pessoa pessoa = pessoaRepository.ObterPorId(2);
 
+List<Pessoa> pessoas = pessoaRepository.BuscarTodos();
 
-
-
-static string? ExemploConsulta(SqlConnection minhaConexao)
-{
-    //Consulta....
-    string comandoSQL = "SELECT TOP 1 Nome FROM Pessoas";
-
-    //SqlCommand command = new SqlCommand(comandoSQL, minhaConexao); //Poderia utilizar dessa forma
-    SqlCommand command = new SqlCommand();
-    command.CommandText = comandoSQL;
-    command.Connection = minhaConexao;
-
-    var NomeSelecionado = command.ExecuteScalar().ToString();
-    return NomeSelecionado;
-}
-
-
-static string? ExemploConsultaBaseadoNaParticipacaoComRiscoDeSQLInjection(SqlConnection minhaConexao, string participacao)
-{
-    //Consulta....
-    string comandoSQL = "SELECT TOP 1 Nome FROM Pessoas WHERE Participacao = '"+participacao+"'";
-
-    //SqlCommand command = new SqlCommand(comandoSQL, minhaConexao); //Poderia utilizar dessa forma
-    SqlCommand command = new SqlCommand();
-    command.CommandText = comandoSQL;
-    command.Connection = minhaConexao;
-
-    var NomeSelecionado = command.ExecuteScalar().ToString();
-    return NomeSelecionado;
-}
-
-
-static string? ExemploConsultaBaseadoNaParticipacaoComParametros(SqlConnection minhaConexao, string participacao)
-{
-    //Consulta....
-    string comandoSQL = "SELECT TOP 1 Nome FROM Pessoas WHERE Participacao = @part";
-
-    //SqlCommand command = new SqlCommand(comandoSQL, minhaConexao); //Poderia utilizar dessa forma
-    SqlCommand command = new SqlCommand();
-    command.CommandText = comandoSQL;
-    command.Connection = minhaConexao;
-    command.Parameters.AddWithValue("part", participacao);
-
-    var NomeSelecionado = command.ExecuteScalar().ToString();
-    return NomeSelecionado;
-}
+minhaConexao.Close();
