@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ConferenciaCientificaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Artigos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Abstract" Type="varchar" MaxLength="50" />
+          <Property Name="AutorId" Type="int" Nullable="false" />
+          <Property Name="PalestranteId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Palestras">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AutorId" Type="int" Nullable="false" />
+          <Property Name="ArtigoId" Type="int" Nullable="false" />
+          <Property Name="DataEHora" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pessoas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Especialidade" Type="varchar" MaxLength="50" />
+          <Property Name="Filiacao" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroInscricao" Type="int" />
+          <Property Name="Telefone" Type="varchar" MaxLength="14" />
+          <Property Name="Participacao" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Artigos__AutorId__4BAC3F29">
+          <End Role="Pessoas" Type="Self.Pessoas" Multiplicity="1" />
+          <End Role="Artigos" Type="Self.Artigos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artigos">
+              <PropertyRef Name="AutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Artigos__Palestr__4CA06362">
+          <End Role="Pessoas" Type="Self.Pessoas" Multiplicity="1" />
+          <End Role="Artigos" Type="Self.Artigos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artigos">
+              <PropertyRef Name="PalestranteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Palestras__Artig__48CFD27E">
+          <End Role="Artigos" Type="Self.Artigos" Multiplicity="1" />
+          <End Role="Palestras" Type="Self.Palestras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artigos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Palestras">
+              <PropertyRef Name="ArtigoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Palestras__Autor__4D94879B">
+          <End Role="Pessoas" Type="Self.Pessoas" Multiplicity="1" />
+          <End Role="Palestras" Type="Self.Palestras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Palestras">
+              <PropertyRef Name="AutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ConferenciaCientificaModelStoreContainer">
+          <EntitySet Name="Artigos" EntityType="Self.Artigos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Palestras" EntityType="Self.Palestras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pessoas" EntityType="Self.Pessoas" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Artigos__AutorId__4BAC3F29" Association="Self.FK__Artigos__AutorId__4BAC3F29">
+            <End Role="Pessoas" EntitySet="Pessoas" />
+            <End Role="Artigos" EntitySet="Artigos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Artigos__Palestr__4CA06362" Association="Self.FK__Artigos__Palestr__4CA06362">
+            <End Role="Pessoas" EntitySet="Pessoas" />
+            <End Role="Artigos" EntitySet="Artigos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Palestras__Artig__48CFD27E" Association="Self.FK__Palestras__Artig__48CFD27E">
+            <End Role="Artigos" EntitySet="Artigos" />
+            <End Role="Palestras" EntitySet="Palestras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Palestras__Autor__4D94879B" Association="Self.FK__Palestras__Autor__4D94879B">
+            <End Role="Pessoas" EntitySet="Pessoas" />
+            <End Role="Palestras" EntitySet="Palestras" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ConferenciaCientificaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Artigos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Abstract" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AutorId" Type="Int32" Nullable="false" />
+          <Property Name="PalestranteId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pessoas" Relationship="Self.FK__Artigos__AutorId__4BAC3F29" FromRole="Artigos" ToRole="Pessoas" />
+          <NavigationProperty Name="Pessoas1" Relationship="Self.FK__Artigos__Palestr__4CA06362" FromRole="Artigos" ToRole="Pessoas" />
+          <NavigationProperty Name="Palestras" Relationship="Self.FK__Palestras__Artig__48CFD27E" FromRole="Artigos" ToRole="Palestras" />
+        </EntityType>
+        <EntityType Name="Palestras">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AutorId" Type="Int32" Nullable="false" />
+          <Property Name="ArtigoId" Type="Int32" Nullable="false" />
+          <Property Name="DataEHora" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Artigos" Relationship="Self.FK__Palestras__Artig__48CFD27E" FromRole="Palestras" ToRole="Artigos" />
+          <NavigationProperty Name="Pessoas" Relationship="Self.FK__Palestras__Autor__4D94879B" FromRole="Palestras" ToRole="Pessoas" />
+        </EntityType>
+        <EntityType Name="Pessoas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Especialidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Filiacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroInscricao" Type="Int32" />
+          <Property Name="Telefone" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Participacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Artigos" Relationship="Self.FK__Artigos__AutorId__4BAC3F29" FromRole="Pessoas" ToRole="Artigos" />
+          <NavigationProperty Name="Artigos1" Relationship="Self.FK__Artigos__Palestr__4CA06362" FromRole="Pessoas" ToRole="Artigos" />
+          <NavigationProperty Name="Palestras" Relationship="Self.FK__Palestras__Autor__4D94879B" FromRole="Pessoas" ToRole="Palestras" />
+        </EntityType>
+        <Association Name="FK__Artigos__AutorId__4BAC3F29">
+          <End Role="Pessoas" Type="Self.Pessoas" Multiplicity="1" />
+          <End Role="Artigos" Type="Self.Artigos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artigos">
+              <PropertyRef Name="AutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Artigos__Palestr__4CA06362">
+          <End Role="Pessoas" Type="Self.Pessoas" Multiplicity="1" />
+          <End Role="Artigos" Type="Self.Artigos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artigos">
+              <PropertyRef Name="PalestranteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Palestras__Artig__48CFD27E">
+          <End Role="Artigos" Type="Self.Artigos" Multiplicity="1" />
+          <End Role="Palestras" Type="Self.Palestras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artigos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Palestras">
+              <PropertyRef Name="ArtigoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Palestras__Autor__4D94879B">
+          <End Role="Pessoas" Type="Self.Pessoas" Multiplicity="1" />
+          <End Role="Palestras" Type="Self.Palestras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Palestras">
+              <PropertyRef Name="AutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ConferenciaCientificaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Artigos" EntityType="Self.Artigos" />
+          <EntitySet Name="Palestras" EntityType="Self.Palestras" />
+          <EntitySet Name="Pessoas" EntityType="Self.Pessoas" />
+          <AssociationSet Name="FK__Artigos__AutorId__4BAC3F29" Association="Self.FK__Artigos__AutorId__4BAC3F29">
+            <End Role="Pessoas" EntitySet="Pessoas" />
+            <End Role="Artigos" EntitySet="Artigos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Artigos__Palestr__4CA06362" Association="Self.FK__Artigos__Palestr__4CA06362">
+            <End Role="Pessoas" EntitySet="Pessoas" />
+            <End Role="Artigos" EntitySet="Artigos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Palestras__Artig__48CFD27E" Association="Self.FK__Palestras__Artig__48CFD27E">
+            <End Role="Artigos" EntitySet="Artigos" />
+            <End Role="Palestras" EntitySet="Palestras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Palestras__Autor__4D94879B" Association="Self.FK__Palestras__Autor__4D94879B">
+            <End Role="Pessoas" EntitySet="Pessoas" />
+            <End Role="Palestras" EntitySet="Palestras" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ConferenciaCientificaModelStoreContainer" CdmEntityContainer="ConferenciaCientificaEntities">
+          <EntitySetMapping Name="Artigos">
+            <EntityTypeMapping TypeName="ConferenciaCientificaModel.Artigos">
+              <MappingFragment StoreEntitySet="Artigos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Abstract" ColumnName="Abstract" />
+                <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+                <ScalarProperty Name="PalestranteId" ColumnName="PalestranteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Palestras">
+            <EntityTypeMapping TypeName="ConferenciaCientificaModel.Palestras">
+              <MappingFragment StoreEntitySet="Palestras">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+                <ScalarProperty Name="ArtigoId" ColumnName="ArtigoId" />
+                <ScalarProperty Name="DataEHora" ColumnName="DataEHora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pessoas">
+            <EntityTypeMapping TypeName="ConferenciaCientificaModel.Pessoas">
+              <MappingFragment StoreEntitySet="Pessoas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Especialidade" ColumnName="Especialidade" />
+                <ScalarProperty Name="Filiacao" ColumnName="Filiacao" />
+                <ScalarProperty Name="NumeroInscricao" ColumnName="NumeroInscricao" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Participacao" ColumnName="Participacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
