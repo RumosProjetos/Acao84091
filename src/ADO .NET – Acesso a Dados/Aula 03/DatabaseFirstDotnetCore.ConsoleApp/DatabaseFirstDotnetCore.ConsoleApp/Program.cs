@@ -4,7 +4,7 @@ using StackExchange.Profiling;
 
 
 var profiler = MiniProfiler.StartNew("My Profiler Name");
-MiniProfiler.Configure(new MiniProfilerOptions { }.AddEntityFramework());
+//MiniProfiler.Configure(new MiniProfilerOptions { }.AddEntityFramework());
 
 using (profiler.Step("Main Work"))
 {
