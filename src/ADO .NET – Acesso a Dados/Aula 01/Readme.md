@@ -363,7 +363,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 
-dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Chinook" Microsoft.EntityFrameworkCore.SqlServer
+dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ConferenciaCientifica" Microsoft.EntityFrameworkCore.SqlServer
 ```
 
 
