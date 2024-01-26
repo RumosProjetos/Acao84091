@@ -351,3 +351,11 @@ UPDATE Artigos SET Abstract = '' WHERE Id = 15
 
 
 ```
+
+### Gerar classes a partir do database
+
+https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=dotnet-core-cli
+
+```PowerShell
+dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Chinook" Microsoft.EntityFrameworkCore.SqlServer
+```
