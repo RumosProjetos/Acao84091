@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DatabaseFirstDotnetCore.ConsoleApp.Modelo;
+﻿namespace DatabaseFirstDotnetCore.ConsoleApp.Modelo;
 
 public partial class Artigo
 {

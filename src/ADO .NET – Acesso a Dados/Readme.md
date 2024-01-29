@@ -366,6 +366,43 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ConferenciaCientifica" Microsoft.EntityFrameworkCore.SqlServer
 ```
 
+
+```csharp
+ConferenciaCientificaContext db = new ConferenciaCientificaContext();
+
+Pessoa pessoa = new Pessoa();
+pessoa.Nome = "Maria das Couves 29/01/2024 - 1 ";
+pessoa.Participacao = "Autor";
+db.Pessoas.Add(pessoa);
+
+Artigo artigo = new Artigo();
+artigo.Abstract = "Meu artigo abstract - 1";
+artigo.Titulo = "Título do Artigo - 1";
+artigo.Palestrante = pessoa;
+artigo.Autor = pessoa;
+db.Artigos.Add(artigo);
+
+
+Palestra palestra01 = new Palestra();
+palestra01.Autor = pessoa;
+palestra01.Artigo = artigo;
+palestra01.DataEhora = new DateTime(2024, 01, 29, 20, 30, 0);
+db.Palestras.Add(palestra01);
+
+Palestra palestra02 = new Palestra();
+palestra02.Autor = pessoa;
+palestra02.Artigo = artigo;
+palestra02.DataEhora = new DateTime(2024, 01, 30, 10, 30, 0);
+db.Palestras.Add(palestra02);
+
+
+db.SaveChanges();
+
+```
+***Código*** - Exemplo de inserção de dados em tabelas relacionadas
+
+```csharp
+
 ## Aula 04 - Introdução ao CodeFirst e Migrations
 
 ***Referências:***
