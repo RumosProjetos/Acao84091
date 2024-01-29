@@ -465,5 +465,12 @@ dotnet ef database update
 
 
 
+´´´SQL
+SELECT p.Titulo, g.Nome, c.Texto
+FROM  Postagens p
+LEFT JOIN Comentarios c ON c.PostagemId = p.Id
+LEFT JOIN Comentaristas g ON g.Id = c.ComentaristaId
 
+
+´´´
 

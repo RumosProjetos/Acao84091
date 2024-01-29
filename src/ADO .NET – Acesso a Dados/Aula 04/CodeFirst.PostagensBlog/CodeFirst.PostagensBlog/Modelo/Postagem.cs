@@ -9,13 +9,20 @@ namespace CodeFirst.PostagensBlog.Modelo
 {
     public class Postagem
     {
+        public Postagem()
+        {
+            Comentarios = new List<Comentario>();
+        }
+
         [Key] //Primary Key - Chave Primária
         public int Id { get; set; }
 
         [Required]
-        public string Titulo { get; set; }
+        public string? Titulo { get; set; }
 
         [Required]
-        public string Conteudo { get; set; }
+        public string? Conteudo { get; set; }
+
+        public List<Comentario>? Comentarios { get; set; }
     }
 }
