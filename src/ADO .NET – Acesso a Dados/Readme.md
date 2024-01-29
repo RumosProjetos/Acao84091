@@ -366,6 +366,45 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ConferenciaCientifica" Microsoft.EntityFrameworkCore.SqlServer
 ```
 
+## Aula 04 - Introdução ao CodeFirst e Migrations
+
+***Referências:***
+
+1 - https://learn.microsoft.com/pt-pt/training/modules/build-web-api-minimal-database/5-exercise-use-sqlite-database
+
+2 - https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli
+
+3 - https://docs.microsoft.com/en-us/ef/core/cli/dotnet
+
+4 - 
+https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6 
+
+5 - https://learn.microsoft.com/en-us/ef/core/modeling/relationships/mapping-attributes
+
+´´´PowerShell
+dotnet tool install --global dotnet-ef
+
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite 
+
+dotnet add package Microsoft.EntityFrameworkCore.Design
+´´´ 
+***Código 01*** - Instalação de pacotes
+
+
+```csharp
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlite("Data Source=Pizzas.db");
+```
+***Código 02*** - Criação da connectionstring no DBContext
+
+
+´´´PowerShell
+dotnet ef migrations add InitialCreate
+
+dotnet ef database update
+´´´ 
+***Código 03*** - Criação da primeira migração
+
+
 
 
 
