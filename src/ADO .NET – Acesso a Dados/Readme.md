@@ -405,6 +405,26 @@ db.SaveChanges();
 
 ## Aula 04 - Introdução ao CodeFirst e Migrations
 
+
+```mermaid
+erDiagram
+   Postagem |o..|{ Comentarios : escrevem
+
+   Postagem {
+      Id int
+      Titulo varchar(50)    
+      Conteudo varchar(MAX)    
+   }
+
+   Comentarios {
+      Id int
+      Texto varchar(MAX)
+      DataEHora datetime
+      EmailComentarista varchar(100)
+   }
+```
+
+
 ***Referências:***
 
 1 - https://learn.microsoft.com/pt-pt/training/modules/build-web-api-minimal-database/5-exercise-use-sqlite-database
