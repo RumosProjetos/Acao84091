@@ -14,7 +14,7 @@ namespace IntroducaoAoLinq.ConsoleApp.Builder
         public FotoBuilder()
         {
             Fotos = new List<Foto>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 9; i++)
             {
                 Foto fotoAtual = new Foto
                 {
@@ -36,7 +36,9 @@ namespace IntroducaoAoLinq.ConsoleApp.Builder
         {
             List<Comentario> resultado = new List<Comentario>();
 
-            for (int i = 0; i < quantidadeComentarios * 10; i++)
+            int comentarios = new Random().Next(0, 100);
+
+            for (int i = 0; i < quantidadeComentarios * comentarios; i++)
             {
                 Comentario comentarioNovo = new Comentario
                 {
