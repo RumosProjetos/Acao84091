@@ -2,8 +2,8 @@
 using IntroducaoAoMongoDB.Modelo;
 using MongoDB.Bson;
 using System.Text.Json;
-using MongoDB.Bson;
-using MongoDB.Driver;
+//using MongoDB.Bson;
+//using MongoDB.Driver;
 
 Console.WriteLine("Hello, World!");
 
@@ -54,7 +54,7 @@ primeira.Comentarios.Add(new Comentario
 
 string meuJson = JsonSerializer.Serialize(primeira);
 
-//File.WriteAllText(@$"c:\temp\postagem2.txt", meuJson);
+File.WriteAllText(@$"c:\temp\postagem2.txt", meuJson);
 
 
 
