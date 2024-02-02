@@ -474,3 +474,15 @@ LEFT JOIN Comentaristas g ON g.Id = c.ComentaristaId
 
 ´´´
 
+
+
+
+### Databases não relacionais
+
+https://cloud.mongodb.com/
+
+https://www.mongodb.com/products/tools/compass 
+
+https://www.mongodb.com/developer/products/mongodb/cheat-sheet/#crud
+
+https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/introduction
