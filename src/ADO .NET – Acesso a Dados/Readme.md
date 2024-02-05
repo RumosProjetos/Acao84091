@@ -486,3 +486,9 @@ https://www.mongodb.com/products/tools/compass
 https://www.mongodb.com/developer/products/mongodb/cheat-sheet/#crud
 
 https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/introduction
+
+
+
+## Create a web.api with MongoDB/CosmosDB
+
+https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-8.0&tabs=visual-studio
