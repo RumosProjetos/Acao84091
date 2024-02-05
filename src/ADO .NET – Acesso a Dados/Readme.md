@@ -492,3 +492,7 @@ https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/introduction
 ## Create a web.api with MongoDB/CosmosDB
 
 https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-8.0&tabs=visual-studio
+
+
+## Usar um banco de dados com API mínima, Entity Framework Core e ASP.NET Core
+https://learn.microsoft.com/pt-pt/training/modules/build-web-api-minimal-database/1-introduction
