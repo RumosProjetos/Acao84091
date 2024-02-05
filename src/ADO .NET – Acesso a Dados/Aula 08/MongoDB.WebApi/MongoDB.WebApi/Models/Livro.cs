@@ -21,7 +21,7 @@ namespace MongoDB.WebApi.Models
         [Required]
         [MaxLength(150)]
         public string? Autor { get; set; }
-        
+
         [MaxLength(150)]
         public string? Categoria { get; set; }
 

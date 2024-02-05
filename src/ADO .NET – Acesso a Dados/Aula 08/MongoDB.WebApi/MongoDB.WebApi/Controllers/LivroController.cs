@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MongoDB.WebApi.Models;
+using MongoDB.WebApi.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +10,35 @@ namespace MongoDB.WebApi.Controllers
     [ApiController]
     public class LivroController : ControllerBase
     {
+        private readonly LivroService _livroService;
+
+        public LivroController(LivroService livroService)
+        {
+            _livroService = livroService;
+        }
+
+
         // GET: api/<LivroController>
         [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        public IEnumerable<Livro> Get() => _livroService.Livros;
+
 
         // GET api/<LivroController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        public Livro Get(string id) => _livroService.Obter(id);
 
         // POST api/<LivroController>
         [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        public void Post(Livro livro) => _livroService.CriarLivro(livro);
+
 
         // PUT api/<LivroController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        public void Put(string id, Livro novosDados) => _livroService.AtualizarLivro(id, novosDados);
+
 
         // DELETE api/<LivroController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        public void Delete(string id) => _livroService.ApagarLivro(id);
     }
 }
