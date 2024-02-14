@@ -15,12 +15,12 @@
 - [CSS Tutorial](https://www.w3schools.com/css/default.asp)
 
 
-## Aula 04 - Bootstrap
+## Aula 04 - Bootstrap Fundamentos
 
 - [Bootstrap 5](https://www.w3schools.com/bootstrap5/index.php)
 
 
-## Aula 05 - Bootstrap
+## Aula 05 - Bootstrap Construindo uma Aplicação
 
 - [Bootswatch](https://bootswatch.com/)
 
@@ -40,9 +40,7 @@
 
 ## Aula 09 - JavaScript no Servidor - NODE.JS
 
-- [Node.js Tutorial] (https://www.w3schools.com/nodejs/default.asp)
-
-
+- [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp)
 ## Links interessantes:
 
 - [Exemplos Bootstrap](https://bootswatch.com/cerulean/)
