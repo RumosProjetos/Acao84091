@@ -41,3 +41,13 @@
 ## Aula 09 - JavaScript no Servidor - NODE.JS
 
 - [Node.js Tutorial] (https://www.w3schools.com/nodejs/default.asp)
+
+
+## Links interessantes:
+
+- [Exemplos Bootstrap](https://bootswatch.com/cerulean/)
+- [Datatable](https://datatables.net/)
+- [JQuery](https://jquery.com/)
+- [JqueryTutorial](https://www.w3schools.com/jquery/)
+- [Google Charts](https://developers.google.com/chart/)
+- [Galeria Google Charts](https://developers.google.com/chart/interactive/docs/gallery?hl=pt-br)
