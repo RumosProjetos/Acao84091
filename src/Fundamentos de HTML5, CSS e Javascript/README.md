@@ -10,7 +10,7 @@
 
 - [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
-Claro! Aqui estão alguns exemplos de exercícios sobre formulários HTML:
+Aqui estão alguns exemplos de exercícios sobre formulários HTML:
 
 1. **Formulário de Login Simples:**
    Crie um formulário de login com campos para nome de usuário e senha. Valide os campos para garantir que ambos sejam preenchidos antes de permitir o envio.
