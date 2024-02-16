@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Cadastro de Clientes</title>
+    <link href="Styles/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Dados Obrigatórios</legend>
+            <div>
+                <label for="txtNome">Nome do Cliente</label>
+                <input id="txtNome" type="text" maxlength="100"
+                       required placeholder="Insira o nome do cliente"
+                       oninvalid="this.setCustomValidity('Nome do Cliente Inválido')" />
+            </div>
+            <div>
+                <label for="dtNascimento">Data de Nascimento</label>
+                <input id="dtNascimento" type="date" min="01/01/2000" max="01/01/2024" />
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados Opcionais</legend>
+            <div>
+                <label for="cbxPais">País</label>
+                <select id="cbxPais">
+                    <optgroup label="África">
+                        <option value="Angola">Angola</option>
+                        <option value="Cabo Verde">Cabo Verde</option>
+                        <option value="Guiné Bissau">Guiné Bissau</option>
+                        <option value="Moçambique">Moçambique</option>
+                        <option value="São Tomé">São Tomé</option>
+                    </optgroup>
+
+                    <optgroup label="Ásia">
+                        <option value="Goa">Goa [Índia]</option>
+                        <option value="Damão ">Damão [Índia]</option>
+                        <option value="Dio">Dio [Índia]</option>
+                        <option value="Macau">Macau</option>
+                    </optgroup>
+
+                    <optgroup label="Outros">
+                        <option value="Timor">Timor</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Outros">Outros</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="txtObservacao">Observação</label>
+                <textarea id="txtObservacao" rows="10" cols="80"></textarea>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Testes dos demais INPUT</legend>
+            <div>
+                <label for="colorCorFavorita">Cor favorita do Cliente</label>
+                <input type="color" id="colorCorFavorita" />
+            </div>
+
+            <div>
+                <label for="txtEmail">Email</label>
+                <input type="email" id="txtEmail" />
+            </div>
+
+            <div>
+                <label for="txtTelefone">Telefone</label>
+                <input type="tel" id="txtTelefone" pattern="[d]{4}-[d]{4}" autofocus />
+            </div>
+
+            <div>
+                <label for="fileDocumento">Enviar Documento</label>
+                <input type="file" id="fileDocumento" />
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Inputs de Data e Hora</legend>
+
+            <div>
+                <label for="txtQuantidadeFilhos">Quantidade de Filhos</label>
+                <input type="number" id="txtQuantidadeFilhos" min="0" max="10" step="2" />
+            </div>
+
+            <div>
+                <label for="txtHoraDeAcordar">Hora de Acordar</label>
+                <input type="time" id="txtHoraDeAcordar" />
+            </div>
+
+            <div>
+                <label for="txtHoraEData">Data e Hora</label>
+                <input type="datetime" required id="txtHoraEData" placeholder="14/02/2024" />
+            </div>
+
+            <div>
+                <label for="txtSemanaAtual">Semana atual</label>
+                <input type="week" id="txtSemanaAtual" disabled />
+            </div>
+
+
+            <div>
+                <label for="rangeLimitador">Range Operações</label>
+                <input type="range" id="rangeLimitador" />
+            </div>
+
+
+            <div>
+                <label for="txtEtnia">Cor da Pele</label>
+                <input type="text" id="txtEtnia" list="corDaPele" />
+
+                <datalist id="corDaPele">
+                    <option value="Asiáticos">
+                    <option value="Brancos">
+                    <option value="Mestiços">
+                    <option value="Negros">
+                </datalist>
+            </div>
+        </fieldset>
+
+
+
+
+
+
+        <div>
+            <input type="submit" value="Enviar" />
+        </div>
+    </form>
+
+    <a href="Index.html">Index.html</a>
+</body>
+</html>

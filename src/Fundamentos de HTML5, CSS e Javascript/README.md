@@ -10,6 +10,14 @@
 
 - [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
+- [HTML Forms](https://www.w3schools.com/html/html_forms.asp)
+
+- [Galeria de Gráficos do Google](https://developers.google.com/chart/interactive/docs/gallery?hl=pt-br)
+
+- [Http Status Dogs](https://httpstatusdogs.com/)
+
+- [Http Cats](https://http.cat/)
+
 ## Aula 03 - Conceitos fundamentais do CSS 
 
 - [CSS Tutorial](https://www.w3schools.com/css/default.asp)
