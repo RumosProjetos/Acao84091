@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout com Flexbox</title>
+    <style>
+        /* Estilizando o contêiner */
+        .container {
+            display: flex;
+            /* Define o contêiner como flexível */
+            justify-content: space-between;
+            /* Distribui os itens igualmente ao longo do contêiner */
+            padding: 20px;
+            /* Adiciona um espaçamento interno de 20px */
+            background-color: #f0f0f0;
+            /* Adiciona uma cor de fundo ao contêiner */
+        }
+
+        /* Estilizando os itens */
+        .item {
+            flex: 1;
+            /* Define a flexibilidade dos itens para ocupar o espaço disponível */
+            background-color: #ccc;
+            /* Adiciona uma cor de fundo aos itens */
+            padding: 20px;
+            /* Adiciona um espaçamento interno de 20px */
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Crie uma estrutura de layout básica usando Flexbox. Tenha um contêiner com três itens dentro. Faça com que
+        esses itens se distribuam igualmente ao longo do contêiner e mantenham uma distância de 20px entre si.</h1>
+
+    <!-- Contêiner com três itens -->
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+</body>
+
+</html>

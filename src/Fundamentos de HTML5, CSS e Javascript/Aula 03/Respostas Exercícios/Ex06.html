@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade CSS Grid</title>
+    <style>
+        /* Estilos para o contêiner da grade */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 colunas de largura igual */
+            gap: 10px;
+            /* Espaçamento entre os itens */
+        }
+
+        /* Estilos para os itens da grade */
+        .grid-item {
+            border: 1px solid black;
+            /* Borda sólida de 1px */
+            padding: 20px;
+            /* Espaçamento interno */
+            text-align: center;
+            /* Alinhamento de texto ao centro */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Crie uma grade de 3x3 usando CSS Grid. Insira conteúdo nos itens da grade e estilize-os de forma que ocupem
+        espaços iguais e tenham uma borda sólida de 1px.</h1>
+
+    <!-- Contêiner da grade -->
+    <div class="grid-container">
+        <!-- Itens da grade -->
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+        <div class="grid-item">Item 7</div>
+        <div class="grid-item">Item 8</div>
+        <div class="grid-item">Item 9</div>
+    </div>
+
+</body>
+
+</html>

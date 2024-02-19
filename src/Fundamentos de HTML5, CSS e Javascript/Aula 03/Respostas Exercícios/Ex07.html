@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Estilizado</title>
+    <style>
+        /* Estilos para o contêiner do formulário */
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para os campos de entrada de texto */
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para o botão */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Estilizando o botão quando o mouse passa por cima */
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Crie um formulário HTML básico com campos de entrada de texto, área de texto e botões. Estilize esses elementos usando CSS para melhorar a aparência e a usabilidade do formulário.</h1>
+    
+    <!-- Contêiner do formulário -->
+    <div class="form-container">
+        <h2>Formulário de Contato</h2>
+        <!-- Campos do formulário -->
+        <form action="#">
+            <input type="text" id="nome" name="nome" placeholder="Seu Nome">
+            <input type="text" id="email" name="email" placeholder="Seu Email">
+            <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" rows="4"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <p> Neste exemplo:</p>
+
+    <ul>
+        <li>
+            O formulário está contido em um <code> <div></code> com a classe .form-container, que define a largura
+            máxima, o preenchimento, a cor de fundo, o raio de borda e a sombra para melhorar a aparência.</li>
+        <li>Os campos de entrada de texto e a área de texto têm largura de 100%, preenchimento interno, margem, borda
+            sólida, borda arredondada e tamanho de caixa de conteúdo para uma aparência uniforme.</li>
+        <li> O botão de envio (<code><button></code>) tem largura de 100%, preenchimento interno, cor de fundo, cor do
+            texto, borda sem estilo, borda arredondada e cursor de apontador. Além disso, tem uma regra de estilo de
+            hover para alterar a cor de fundo quando o mouse passa por cima.</li>
+    </ul>
+
+</body>
+
+</html>

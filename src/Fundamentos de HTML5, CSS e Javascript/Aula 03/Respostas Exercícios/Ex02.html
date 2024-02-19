@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Lista Estilizada</title>
+    <style>
+        /* Estilizando a lista não ordenada */
+        ul {
+            list-style-type: none;
+            /* Remove os marcadores padrão da lista */
+            padding: 0;
+            /* Remove o preenchimento padrão da lista */
+        }
+
+        /* Estilizando os itens da lista */
+        ul li {
+            background-color: #f0f0f0;
+            /* Define a cor de fundo cinza claro */
+            border: 1px solid #ccc;
+            /* Adiciona uma borda sólida de 1px */
+            padding: 10px;
+            /* Adiciona um preenchimento interno de 10px */
+            margin-bottom: 5px;
+            /* Adiciona um espaçamento inferior entre os itens */
+            transition: background-color 0.3s, border-color 0.3s;
+            /* Transição suave de cor de fundo e cor da borda */
+        }
+
+        /* Estilizando os itens da lista ao passar o mouse sobre eles */
+        ul li:hover {
+            background-color: #ddd;
+            /* Altera a cor de fundo para cinza mais escuro */
+            border-color: #999;
+            /* Altera a cor da borda para cinza mais escuro */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Crie uma lista não ordenada (<ul>) e estilize os itens da lista para terem uma cor de fundo cinza claro e uma
+            borda sólida de 1px em volta. Use pseudo-classes para estilizar os itens da lista ao passar o mouse sobre
+            eles.</h1>
+
+    <!-- Lista não ordenada -->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+</body>
+
+</html>
