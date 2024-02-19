@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Responsiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            img {
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exemplo de Página Responsiva</h1>
+        <img src="https://via.placeholder.com/800x400" alt="Imagem de exemplo">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ipsum vel felis finibus, at cursus nulla tristique. Nullam eget tristique purus, id ultricies magna. Sed sit amet volutpat libero, et hendrerit mauris.</p>
+        <img src="https://via.placeholder.com/800x400" alt="Imagem de exemplo">
+        <p>Donec ultrices malesuada justo, nec sodales purus luctus eget. Fusce suscipit erat et ex blandit ultricies.</p>
+    </div>
+
+    <a href="../index.html">../index.html</a>
+</body>
+</html>
