@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso de Bootstrap 5</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>	
+
+</head>
+<body>
+<section>
+<div class="container-fluid mt-3">
+
+<div id="meuslide" class="carousel carousel-dark carousel slide " data-bs-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-bs-target="#meuslide" data-bs-slide-to="0" class="active"></li>
+		<li data-bs-target="#meuslide" data-bs-slide-to="1"></li>
+		<li data-bs-target="#meuslide" data-bs-slide-to="2"></li>
+
+	</ol>
+
+
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img class="d-block w-100" src="images/capa-face.jpg" alt="teste">
+			<div class="carousel-caption">
+				<h5>Meu Slide</h5>
+				<p>Texto de teste</p>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img class="d-block w-100" src="images/fundo-face.png" alt="teste">
+			<div class="carousel-caption">
+				<h5>Meu Slide Dois</h5>
+				<p>Texto de teste novamente</p>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<div class="carousel-caption">
+				<h2>Teste</h2>
+				<h5>Meu Sem imagem</h5>
+				<p>Texto de teste</p>
+			</div>
+		</div>
+		
+		
+	</div>
+
+	<a class="carousel-control-prev" href="#meuslide" role="button" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+		<span class="visually-hidden">Anterior</span>
+	</a>
+	<a class="carousel-control-next" href="#meuslide" role="button" data-bs-slide="next">
+		<span class="carousel-control-next-icon"></span>
+		<span class="visually-hidden">Próximo</span>
+	</a>
+
+
+</div>
+		
+</div>		
+</section>
+
+</body>
+</html>

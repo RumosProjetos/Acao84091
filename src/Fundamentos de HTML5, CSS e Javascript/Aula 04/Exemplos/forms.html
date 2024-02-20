@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Curso de Bootstrap Forms</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>	
+
+</head>
+<body>
+	<section>
+		<div class="container ">
+			
+			<a class="btn btn-lg btn-danger" href="#" >Acesse Aqui</a>
+			<a class="btn  btn-dark" href="#" >Acesse Aqui</a>
+
+			<a class="btn btn-sm btn-outline-danger" href="#" >Acesse Aqui</a>
+			<a class="btn btn-outline-dark" href="#" >Acesse Aqui</a>
+
+
+			<div class="row justify-content-center mt-3">
+				<div class="col-6">
+					<form class="needs-validation" name="formulario-teste" method="post" action="">
+						<div class="row mt-3">
+							<label class="form-label col-12">Nome de usuário:</label>
+							<div class="input-group">
+								<span class="input-group-text">@</span>
+								<input class="form-control" type="text" name="usuario">
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-12">Link Personalizado:</label>
+							<div class="input-group">
+								<span class="input-group-text">http//exemplo.com/usuario/</span>
+								<input class="form-control" type="text" name="link">
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-12">Preço do Produto:</label>
+							<div class="input-group">
+								<span class="input-group-text">R$ </span>
+								<input class="form-control" type="text" name="pp">
+							</div>
+						</div>
+						<div class="row mt-3 ">
+							<label class="form-label col-4">Nome:</label>
+							<div class="col-8">
+								<input required class="form-control " type="text" name="nome" >
+								<div class="valid-feedback">
+									Correto!
+								</div>
+								<div class="invalid-feedback">
+									Preencha o seu nome completo!
+								</div>
+								
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-4">E-mail:</label>
+							<div class="col-8">
+								<input required class="form-control" type="email" name="email">
+								<div class="invalid-feedback">
+									Preencha um e-mail válido!
+								</div>
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-4">Envie seu Arquivo:</label>
+							<div class="col-8">
+								<input class="form-control" type="file" name="file">
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-4">Selecione a cor:</label>
+							<div class="col-8">
+								<input class="form-control form-control-color" type="color" name="cor">
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-4">Encontre seu curso:</label>
+							<div class="col-8">
+								<input list="listaCursos" class="form-control" name="cursos" placeholder="Escreva o nome do curso">
+
+								<datalist id="listaCursos">
+									<option value="HTML 5"></option>
+									<option value="HTML Básico"></option>
+									<option value="CSS 3"></option>
+									<option value="JS"></option>
+									<option value="PHP"></option>
+
+								</datalist>
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-4">Selecione o curso:</label>
+							<div class="col-8">
+								<select required class="form-select" >
+									<option value="">--Selecione--</option>
+									<option>HTML 5</option>
+									<option>CSS 3</option>
+									<option>JS</option>
+									<option>PHP</option>
+								</select>
+								
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-4">Central de Notificações:</label>
+							<div class="col-8">
+								<div class="form-check ">							
+									<input id="promo" class="form-check-input" type="checkbox" name="not">
+									<label for="promo" class="form-check-label">Promoções</label>
+								</div>
+								<div class="form-check ">							
+									<input checked id="info" class="form-check-input" type="checkbox" name="info">
+									<label for="info" class="form-check-label">Informações úteis</label>
+								</div>								
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-4">Gênero:</label>
+							<div class="col-8">
+								<div class="form-check form-check-inline">							
+									<input required class="form-check-input" type="radio" name="genero">
+									<label class="form-check-label">Masculino</label>
+								</div>
+								<div class="form-check form-check-inline">							
+									<input  id="fem" class="form-check-input" type="radio" name="genero">
+									<label for="fem" class="form-check-label">Feminimo</label>
+								</div>
+								
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-4">Gostaria de Receber Nossas Promoções:</label>
+							<div class="col-8">
+								<div class="form-check form-switch">							
+									<input id="news" class="form-check-input" type="checkbox" name="not">
+									<label for="news" class="form-check-label">Receber Promoções e Novidades.</label>
+								</div>																
+							</div>
+						</div>
+						<div class="row mt-3">
+							<label class="form-label col-12">Faixa de Preços</label>
+							<div class="col-12">
+								<input class="form-range" step="0.5" min="1" max="10" type="range" name="precos">															
+							</div>
+						</div>
+						<button class="btn btn-success" onclick="validador()" type="submit" >Enviar</button>
+					</form>
+
+				</div>
+			</div>
+
+		<!--		
+			<form>
+			<div class="col-4">
+				<div class="row">
+					<label class="form-label col-4">Seu Nome</label>
+					<div class="col-8">
+						<input value="Roberto" disabled class="form-control-plaintext " type="text" name="nome">
+					</div>
+				</div>
+				<div>
+					<label for="input-email" class="form-label">Seu E-mail</label>
+					<input id="input-email" class="form-control form-control-lg" value="teste@email" type="email" name="email">
+				</div>
+				<div>
+					
+					<input id="input-email" class="form-control" value="teste@email" type="email" name="email">
+				</div>
+				<div>
+					
+					<input id="input-email" class="form-control form-control-sm" value="teste@email" type="email" name="email">
+				</div>
+				<div>
+					<label for="input-msg" class="form-label">Sua Mensagem:</label>
+					<textarea id="input-msg" class="form-control" name="msg"></textarea>
+				</div>
+			</div>
+			</form>	-->		
+			<!--
+			<form>
+			<div class="row">
+				<div class="col">					
+					<input class="form-control" placeholder="Seu Nome" type="text" name="nome">
+				</div>
+				<div class="col">
+					<input class="form-control" placeholder="Seu E-mail" type="email" name="email">
+				</div>
+			</div>
+			</form>	
+			-->	
+		</div>		
+	</section>
+
+<script type="text/javascript">
+var campoAtivo = document.activeElement;	
+campoAtivo.addEventListener("focusin", verificarCampo);
+
+function verificarCampo() {
+	var valida = document.activeElement.parentNode;
+	valida.classList.add('was-validated');
+}
+
+function validador(){		
+	var nome = document.getElementsByName("nome")[0];
+	var email = document.getElementsByName("email")[0];
+	
+	if (nome.value.length == "") {
+		nome.parentNode.classList.add('was-validated');
+		return false;
+	}
+	if (email.value.length < 3) {
+		email.parentNode.classList.add('was-validated');
+		return false;
+	}	
+};
+</script>
+
+
+</body>
+</html>
