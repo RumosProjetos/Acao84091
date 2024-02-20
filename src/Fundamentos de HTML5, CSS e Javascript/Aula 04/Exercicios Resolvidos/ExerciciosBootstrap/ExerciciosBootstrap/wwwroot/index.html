@@ -7,6 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <style>
+        p.resposta {
+            background-color: yellow;
+        }
+
+        p.observacao, li.observacao, ul.observacao {
+            background-color: darksalmon;
+        }
+    </style>
+
     <script>
         function Mudarestado(el) {
             var display = document.getElementById(el).style.display;
@@ -31,7 +41,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">                                 
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-unsp-sanitized="clean">Respostas</a>
                         <div class="dropdown-menu">
@@ -57,22 +67,27 @@
             <div class="col-sm-3">
                 <h3>&#128512; Exercício 01 - Criação de um layout básico:</h3>
                 <p>Crie uma página HTML usando Bootstrap v5 que tenha um cabeçalho, uma barra de navegação, uma seção principal com algumas informações de texto e uma seção de rodapé.</p>
-            
+
                 <div id="div01" style="display:none">
-                    <p>Aqui está um exemplo de como você pode criar uma página HTML básica usando Bootstrap v5 com um cabeçalho, barra de navegação, seção principal e rodapé:</p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+                    <p class="resposta">Aqui está um exemplo de como você pode criar uma página HTML básica usando Bootstrap v5 com um cabeçalho, barra de navegação, seção principal e rodapé:</p>
                     <a href="respostas/resposta01.html">respostas/resposta01.html</a>
+
+                    <p class="observacao">Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
                 </div>
                 <button type="button" onclick="Mudarestado('div01')">Mostrar / Esconder</button>
             </div>
             <div class="col-sm-3">
                 <h3>&#128512; Exercício 02 - Responsividade</h3>
                 <p>Modifique o layout criado no exercício 1 para que seja totalmente responsivo, ou seja, deve se ajustar bem em telas de diferentes tamanhos, desde smartphones até desktops.</p>
-                
+
                 <div id="div02" style="display:none">
-                    <p>Para tornar o layout totalmente responsivo, podemos usar as classes de grid do Bootstrap para garantir que os elementos se ajustem automaticamente em telas de diferentes tamanhos. Aqui está o código HTML atualizado:</p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+                    <p class="resposta">Para tornar o layout totalmente responsivo, podemos usar as classes de grid do Bootstrap para garantir que os elementos se ajustem automaticamente em telas de diferentes tamanhos. Aqui está o código HTML atualizado:</p>
                     <a href="respostas/resposta02.html">respostas/resposta02.html</a>
+
+                    <p class="observacao">
+                        Neste exemplo, usei a classe <strong>container</strong> para envolver todo o conteúdo e a classe container dentro das seções para garantir que o conteúdo permaneça centralizado e responsivo.
+                        Para a seção principal, usei a classe <strong>col-lg-8 offset-lg-2</strong> para garantir que o conteúdo seja exibido em uma largura de 8 colunas no layout grande (desktop) e centralizado horizontalmente. O offset-lg-2 cria um espaço em branco equivalente a 2 colunas no lado esquerdo. Isso garante que o conteúdo fique alinhado com a barra de navegação.
+                    </p>
                 </div>
                 <button type="button" onclick="Mudarestado('div02')">Mostrar / Esconder</button>
             </div>
@@ -82,9 +97,19 @@
 
 
                 <div id="div03" style="display:none">
-                    <p></p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+                    <p class="resposta">Aqui está um exemplo de como você pode criar uma grade de layout responsiva dividindo a página em pelo menos 3 colunas usando o sistema de grid do Bootstrap v5:</p>
                     <a href="respostas/resposta03.html">respostas/resposta03.html</a>
+                    <p class="observacao">
+                        Neste exemplo:
+                    </p>
+                    <ul class="observacao">
+                        <li class="observacao">Usei a classe container para envolver o conteúdo e garantir que as colunas estejam alinhadas corretamente.</li>
+                        <li class="observacao">Dentro da classe <strong>container</strong>, criei uma row para conter as colunas.</li>
+                        <li class="observacao">Cada coluna é definida com a classe <strong> col-md-4 </strong>, o que significa que em dispositivos médios (como tablets), cada coluna ocupará 4 das 12 colunas disponíveis (ou seja, 1/3 da largura total).</li>
+                        <li class="observacao">Usei classes de cores de fundo diferentes (<strong>bg-primary, bg-secondary, bg-info</strong>) para destacar cada coluna, tornando mais fácil distinguir uma da outra.</li>
+                        <li class="observacao">Dentro de cada coluna, adicionei algum conteúdo fictício para ilustrar como você pode preencher cada seção.</li>
+                    </ul>
+
                 </div>
                 <button type="button" onclick="Mudarestado('div03')">Mostrar / Esconder</button>
             </div>
@@ -95,9 +120,23 @@
 
 
                 <div id="div04" style="display:none">
-                    <p></p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+                    <p class="resposta">
+                        Aqui está um exemplo de como você pode criar uma série de botões com diferentes estilos e tamanhos fornecidos pelo Bootstrap v5:
+                    </p>
+
                     <a href="respostas/resposta04.html">respostas/resposta04.html</a>
+
+                    <p class="observacao">
+                        Neste exemplo:
+                    </p>
+                    <ul class="observacao">
+                        <li>
+                            Criei uma série de botões com diferentes estilos, incluindo os estilos padrão e outline, usando as classes <strong>.btn</strong> e <strong>.btn-outline-{color}</strong>.
+                        </li>
+                        <li>
+                            Também incluí botões com diferentes tamanhos usando as classes <strong> .btn-lg</strong> para botões grandes, <strong>.btn-sm</strong> para botões pequenos e sem adicionar nenhuma classe para botões de tamanho padrão.
+                        </li>
+                    </ul>
                 </div>
                 <button type="button" onclick="Mudarestado('div04')">Mostrar / Esconder</button>
             </div>
@@ -110,7 +149,7 @@
 
                 <div id="div05" style="display:none">
                     <p></p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+
                     <a href="respostas/resposta05.html">respostas/resposta05.html</a>
                 </div>
                 <button type="button" onclick="Mudarestado('div05')">Mostrar / Esconder</button>
@@ -122,7 +161,7 @@
 
                 <div id="div06" style="display:none">
                     <p></p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+
                     <a href="respostas/resposta06.html">respostas/resposta06.html</a>
                 </div>
                 <button type="button" onclick="Mudarestado('div06')">Mostrar / Esconder</button>
@@ -134,7 +173,7 @@
 
                 <div id="div07" style="display:none">
                     <p></p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+
                     <a href="respostas/resposta07.html">respostas/resposta07.html</a>
                 </div>
                 <button type="button" onclick="Mudarestado('div07')">Mostrar / Esconder</button>
@@ -147,7 +186,7 @@
 
                 <div id="div08" style="display:none">
                     <p></p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+
                     <a href="respostas/resposta08.html">respostas/resposta08.html</a>
                 </div>
                 <button type="button" onclick="Mudarestado('div08')">Mostrar / Esconder</button>
@@ -162,7 +201,7 @@
 
                 <div id="div09" style="display:none">
                     <p></p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+
                     <a href="respostas/resposta09.html">respostas/resposta09.html</a>
                 </div>
                 <button type="button" onclick="Mudarestado('div09')">Mostrar / Esconder</button>
@@ -174,7 +213,7 @@
 
                 <div id="div10" style="display:none">
                     <p></p>
-                    <p>Certifique-se de ajustar os links do Bootstrap para a versão correta, pois a versão 5.3.0-alpha1 pode ser atualizada no futuro. Essa página inclui um cabeçalho simples, uma barra de navegação com três itens, uma seção principal com um título e algum texto de exemplo, e um rodapé contendo o ano e o nome do site.</p>
+
                     <a href="respostas/resposta10.html">respostas/resposta10.html</a>
                 </div>
                 <button type="button" onclick="Mudarestado('div10')">Mostrar / Esconder</button>
