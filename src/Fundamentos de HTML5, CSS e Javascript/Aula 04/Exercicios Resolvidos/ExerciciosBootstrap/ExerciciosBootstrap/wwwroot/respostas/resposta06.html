@@ -1,16 +1,43 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <title>Resposta 01 </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Imagens com Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-    <footer>
-        <a href="../index.html">Início</a>
-    </footer>
+    <div class="container mt-5">
+        <h2>Carrossel de Imagens com Bootstrap</h2>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../img/palestrante01.jpg" class="d-block w-100" alt="Imagem 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/palestrante02.jpg" class="d-block w-100" alt="Imagem 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/palestrante03.jpg" class="d-block w-100" alt="Imagem 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="../index.html">Início</a>
+
+
+    <!-- Bootstrap JavaScript (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Ativação do carrossel
+        var myCarousel = document.querySelector('#carouselExampleSlidesOnly')
+        var carousel = new bootstrap.Carousel(myCarousel, {
+            interval: 2000, // Avança automaticamente a cada 2 segundos
+            wrap: true // Volta para o primeiro slide depois do último slide
+        })
+    </script>
 </body>
 </html>
