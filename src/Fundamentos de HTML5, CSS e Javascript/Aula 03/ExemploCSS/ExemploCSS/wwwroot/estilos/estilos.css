@@ -1,0 +1,132 @@
+﻿h1, h2, p { /*Vai ser usado em toda a página*/
+    color: #7287FF;
+    font-family: Arial;
+    font-size: 24px;
+    border-color: tomato;
+    border-style: dashed;
+    background-color: rgb(158, 154, 70, 0.35)
+    /*font-weight:bold;*/
+    /*RGBA*/
+    /*CMYK*/
+}
+
+
+    h1.minhaClasse {
+        color: rebeccapurple;
+    }
+
+.tudoVermelho {
+    color: mediumvioletred;
+    background-color: palevioletred;
+}
+
+.letrasGrandes {
+    font-size: 100px;
+    font-weight: 700;
+    background-image: url('../img/tiles.png');
+    background-repeat: round;
+    opacity: 0.5
+}
+
+.combordas {
+    border: 10px dashed blue;
+    /*border: cima direita baixo esquerda;*/
+    /*border: 10px 5px 10px 5px dashed blue;*/
+    /*   border-width: 10px;
+    border-style: dashed;
+    border-color:blue;*/
+    border-bottom-color: red;
+    border-radius: 90px;
+}
+
+
+p.dotted {
+    border-style: dotted;
+}
+
+p.dashed {
+    border-style: dashed;
+}
+
+p.solid {
+    border-style: solid;
+}
+
+p.double {
+    border-style: double;
+}
+
+p.groove {
+    border-style: groove;
+}
+
+p.ridge {
+    border-style: ridge;
+}
+
+p.inset {
+    border-style: inset;
+}
+
+p.outset {
+    border-style: outset;
+}
+
+p.none {
+    border-style: none;
+}
+
+p.hidden {
+    border-style: hidden;
+}
+
+p.mix {
+    border-style: dotted dashed solid double;
+}
+
+
+
+div {
+    border: 10px solid red;
+    margin: 15px;
+    padding:50px
+}
+
+.textoAlterado {
+    text-align: revert;
+    direction: rtl;
+    unicode-bidi: bidi-override;    
+}
+
+.fontebonita {
+    font-family: "Sofia", sans-serif;
+}
+
+a:visited{
+    color:lime;
+}
+
+a:hover {
+    color: yellow;
+}
+
+
+p {
+    display: none;
+    background-color: yellow;
+    padding: 20px;
+}
+
+div:hover p {
+    display: block;
+}
+
+
+p::first-letter {
+    color: #ff0000;
+    font-size: xx-large;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
