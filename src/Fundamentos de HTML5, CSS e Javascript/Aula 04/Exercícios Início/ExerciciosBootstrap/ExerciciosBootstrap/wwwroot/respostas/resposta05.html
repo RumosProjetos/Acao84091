@@ -9,6 +9,71 @@
 </head>
 <body>
 
+    <!--Crie um formulário básico usando os estilos de formulário fornecidos pelo Bootstrap v5.
+    Inclua campos de texto, caixas de seleção, botões de rádio.-->
+
+
+    <form>
+
+        <div class="row">
+            <div class="col-md-3">
+                <label for="txtNome">Seu nome sem bootstrap</label>
+                <input type="text" id="txtNome" placeholder="Seu Nome" />
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label" for="txtNome2">Seu nome</label>
+                <input type="text" class="form-control" id="txtNome2" placeholder="Seu Nome" />
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label" for="SelectExemplo">Fruta Favorita</label>
+                <select id="SelectExemplo" class="form-control">
+                    <option>Uva</option>
+                    <option>Maçã</option>
+                    <option>Pera</option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Sim / Não</label>
+                <input type="radio" id="rdSim" checked value="Sim" class="form-control" />
+                <input type="radio" id="rdNao" value="Não" class="form-control" />
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="form-check col-md-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                </label>
+            </div>
+            <div class="form-check col-md-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Checked checkbox
+                </label>
+            </div>
+
+
+            <div class="form-check col-md-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Default radio
+                </label>
+            </div>
+            <div class="form-check col-md-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Default checked radio
+                </label>
+            </div>
+        </div>
+    </form>
+
     <footer>
         <a href="../index.html">Início</a>
     </footer>
