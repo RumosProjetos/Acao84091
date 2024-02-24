@@ -164,6 +164,108 @@ Aqui estão alguns exemplos de exercícios sobre Bootstrap que podem ajudar a pr
 
 - [JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
 
+### Exercícios JavaScript
+
+Aqui estão 10 exercícios iniciais sobre JavaScript que cobrem conceitos básicos da linguagem:
+
+1. **Variáveis e Operadores:**
+```javascript
+// Exercício 1: Declare duas variáveis, atribua valores a elas e faça a soma.
+let a = 5;
+let b = 10;
+let soma = a + b;
+console.log("A soma é:", soma);
+```
+
+2. **Condicionais:**
+```javascript
+// Exercício 2: Verifique se um número é par ou ímpar.
+let numero = 7;
+if (numero % 2 === 0) {
+    console.log(numero + " é par.");
+} else {
+    console.log(numero + " é ímpar.");
+}
+```
+
+3. **Laços (Loop):**
+```javascript
+// Exercício 3: Imprima os números de 1 a 5 usando um loop.
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+```
+
+4. **Funções:**
+```javascript
+// Exercício 4: Crie uma função que retorne a soma de dois números.
+function soma(a, b) {
+    return a + b;
+}
+console.log("A soma é:", soma(3, 4));
+```
+
+5. **Arrays:**
+```javascript
+// Exercício 5: Declare um array e imprima cada elemento.
+let frutas = ["maçã", "banana", "laranja"];
+for (let i = 0; i < frutas.length; i++) {
+    console.log(frutas[i]);
+}
+```
+
+6. **Métodos de Array:**
+```javascript
+// Exercício 6: Adicione um elemento a um array e remova outro.
+let numeros = [1, 2, 3];
+numeros.push(4); // Adiciona o número 4 ao array
+numeros.pop();   // Remove o último elemento do array
+console.log(numeros);
+```
+
+7. **Objetos:**
+```javascript
+// Exercício 7: Crie um objeto representando uma pessoa e imprima suas propriedades.
+let pessoa = {
+    nome: "João",
+    idade: 30,
+    profissao: "engenheiro"
+};
+console.log(pessoa.nome + " tem " + pessoa.idade + " anos e é " + pessoa.profissao + ".");
+```
+
+8. **Métodos de Objeto:**
+```javascript
+// Exercício 8: Adicione um método a um objeto e chame-o.
+let carro = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    ano: 2020,
+    descricao: function() {
+        return this.marca + " " + this.modelo + " " + this.ano;
+    }
+};
+console.log(carro.descricao());
+```
+
+9. **Manipulação de Strings:**
+```javascript
+// Exercício 9: Concatene duas strings.
+let string1 = "Olá, ";
+let string2 = "mundo!";
+let mensagem = string1 + string2;
+console.log(mensagem);
+```
+
+10. **Tratamento de Eventos (DOM):**
+```javascript
+// Exercício 10: Adicione um evento de clique a um elemento HTML.
+document.getElementById("meuBotao").addEventListener("click", function() {
+    alert("O botão foi clicado!");
+});
+```
+
+Certifique-se de executar esses códigos em um ambiente que suporte JavaScript, como um navegador web ou um ambiente Node.js.
 
 ## Aula 07 - JQUERY
 
