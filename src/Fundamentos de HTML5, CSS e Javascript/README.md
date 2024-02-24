@@ -164,6 +164,15 @@ Aqui estão alguns exemplos de exercícios sobre Bootstrap que podem ajudar a pr
 
 - [JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
 
+- [Javascript Minifier](https://medium.com/@anandkiit94/minifying-typescript-code-d0529189daf0)
+
+```powershell
+npm i — save -dev jsmin
+npm i — — save-dev uglify.js
+npm run minify
+```
+
+
 ### Exercícios JavaScript
 
 Aqui estão 20 exercícios iniciais sobre JavaScript que cobrem conceitos básicos da linguagem:
