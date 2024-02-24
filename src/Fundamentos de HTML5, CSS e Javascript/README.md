@@ -164,6 +164,12 @@ Aqui estão alguns exemplos de exercícios sobre Bootstrap que podem ajudar a pr
 
 - [JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
 
+- [LearnTypeScript](https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript/)
+
+- [TypeScript](https://www.typescriptlang.org/)
+
+- [TypeScript Tutorial](https://www.w3schools.com/typescript/default.asp)
+
 - [Javascript Minifier](https://medium.com/@anandkiit94/minifying-typescript-code-d0529189daf0)
 
 ```powershell
