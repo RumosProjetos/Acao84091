@@ -166,7 +166,7 @@ Aqui estão alguns exemplos de exercícios sobre Bootstrap que podem ajudar a pr
 
 ### Exercícios JavaScript
 
-Aqui estão 10 exercícios iniciais sobre JavaScript que cobrem conceitos básicos da linguagem:
+Aqui estão 20 exercícios iniciais sobre JavaScript que cobrem conceitos básicos da linguagem:
 
 1. **Variáveis e Operadores:**
 ```javascript
