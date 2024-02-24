@@ -265,7 +265,236 @@ document.getElementById("meuBotao").addEventListener("click", function() {
 });
 ```
 
-Certifique-se de executar esses códigos em um ambiente que suporte JavaScript, como um navegador web ou um ambiente Node.js.
+11. **Exercício 1: Validar Campo Obrigatório**
+   Crie um formulário com um campo de texto obrigatório. Escreva um script que valide se o campo está preenchido antes de permitir o envio do formulário.
+
+12. **Exercício 2: Validar E-mail**
+   Adicione um campo de e-mail ao formulário. Escreva um script que valide se o e-mail inserido possui um formato válido antes de permitir o envio do formulário.
+
+13. **Exercício 3: Contador de Caracteres**
+   Adicione um campo de texto ao formulário e exiba um contador de caracteres ao lado. Escreva um script que atualize o contador à medida que o usuário digita no campo.
+
+14. **Exercício 4: Seleção de Opções**
+   Crie um campo de seleção (dropdown) com algumas opções. Escreva um script que exiba um alerta com a opção selecionada quando o usuário escolher uma opção e clicar em um botão.
+
+15. **Exercício 5: Checkbox**
+   Adicione um checkbox ao formulário. Escreva um script que verifique se o checkbox está marcado antes de permitir o envio do formulário.
+
+16. **Exercício 6: Radio Buttons**
+   Adicione um grupo de radio buttons ao formulário. Escreva um script que verifique se pelo menos uma das opções foi selecionada antes de permitir o envio do formulário.
+
+17. **Exercício 7: Máscara de Campo**
+   Adicione um campo de telefone ao formulário. Escreva um script que formate automaticamente o número de telefone enquanto o usuário digita (por exemplo, "(XX) XXXX-XXXX").
+
+18. **Exercício 8: Upload de Arquivos**
+   Adicione um campo de upload de arquivos ao formulário. Escreva um script que verifique se um arquivo foi selecionado antes de permitir o envio do formulário.
+
+19. **Exercício 9: Autocompletar**
+   Adicione um campo de autocompletar ao formulário, por exemplo, para cidades. Escreva um script que sugira opções enquanto o usuário digita e preencha automaticamente o campo com a opção selecionada.
+
+20. **Exercício 10: Validação de Formulário Completo**
+    Combine todas as validações anteriores para criar um formulário completo com diferentes tipos de campos e valide-o antes de permitir o envio.
+
+Esses exercícios são progressivos em dificuldade e cobrem uma variedade de conceitos relacionados a componentes de formulários em JavaScript, desde validações simples até interações mais complexas.
+
+
+<details>
+  <summary>Respostas de 11 a 20</summary>
+
+11. **Validar Campo Obrigatório:**
+```html
+<form id="meuFormulario" onsubmit="return validarForm()">
+    <input type="text" id="campoObrigatorio" required>
+    <input type="submit" value="Enviar">
+</form>
+
+<script>
+function validarForm() {
+    let campo = document.getElementById("campoObrigatorio");
+    if (campo.value.trim() === "") {
+        alert("Por favor, preencha o campo obrigatório.");
+        return false;
+    }
+    return true;
+}
+</script>
+```
+
+12. **Validar E-mail:**
+```html
+<form id="meuFormulario" onsubmit="return validarForm()">
+    <input type="email" id="campoEmail" required>
+    <input type="submit" value="Enviar">
+</form>
+
+<script>
+function validarForm() {
+    let email = document.getElementById("campoEmail").value;
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regex.test(email)) {
+        alert("Por favor, insira um e-mail válido.");
+        return false;
+    }
+    return true;
+}
+</script>
+```
+
+13. **Contador de Caracteres:**
+```html
+<form>
+    <textarea id="campoTexto" oninput="contarCaracteres()"></textarea>
+    <span id="contador">0 caracteres</span>
+</form>
+
+<script>
+function contarCaracteres() {
+    let texto = document.getElementById("campoTexto").value;
+    let contador = document.getElementById("contador");
+    contador.textContent = texto.length + " caracteres";
+}
+</script>
+```
+
+14. **Seleção de Opções:**
+```html
+<form>
+    <select id="opcoes">
+        <option value="">Selecione uma opção</option>
+        <option value="opcao1">Opção 1</option>
+        <option value="opcao2">Opção 2</option>
+        <option value="opcao3">Opção 3</option>
+    </select>
+    <button onclick="exibirOpcaoSelecionada()">Exibir Opção Selecionada</button>
+</form>
+
+<script>
+function exibirOpcaoSelecionada() {
+    let select = document.getElementById("opcoes");
+    let opcaoSelecionada = select.options[select.selectedIndex].text;
+    alert("Opção selecionada: " + opcaoSelecionada);
+}
+</script>
+```
+
+15. **Checkbox:**
+```html
+<form>
+    <input type="checkbox" id="checkbox"> Concordo com os termos.
+    <button onclick="validarCheckbox()">Enviar</button>
+</form>
+
+<script>
+function validarCheckbox() {
+    let checkbox = document.getElementById("checkbox");
+    if (!checkbox.checked) {
+        alert("Por favor, concorde com os termos.");
+        return false;
+    }
+    return true;
+}
+</script>
+```
+
+16. **Radio Buttons:**
+```html
+<form>
+    <input type="radio" name="opcao" value="opcao1"> Opção 1
+    <input type="radio" name="opcao" value="opcao2"> Opção 2
+    <input type="radio" name="opcao" value="opcao3"> Opção 3
+    <button onclick="validarRadio()">Enviar</button>
+</form>
+
+<script>
+function validarRadio() {
+    let opcoes = document.getElementsByName("opcao");
+    let selecionado = false;
+    for (let i = 0; i < opcoes.length; i++) {
+        if (opcoes[i].checked) {
+            selecionado = true;
+            break;
+        }
+    }
+    if (!selecionado) {
+        alert("Por favor, selecione uma opção.");
+        return false;
+    }
+    return true;
+}
+</script>
+```
+
+
+17. **Máscara de Campo:**
+```html
+<form>
+    <input type="text" id="campoTelefone" oninput="formatarTelefone()">
+</form>
+
+<script>
+function formatarTelefone() {
+    let campo = document.getElementById("campoTelefone");
+    let valor = campo.value.replace(/\D/g, "");
+    let regex = /^(\d{2})(\d{4,5})(\d{4})$/;
+    valor = valor.replace(regex, "($1) $2-$3");
+    campo.value = valor;
+}
+</script>
+```
+
+18. **Upload de Arquivos:**
+```html
+<form>
+    <input type="file" id="arquivo">
+    <button onclick="validarArquivo()">Enviar</button>
+</form>
+
+<script>
+function validarArquivo() {
+    let arquivo = document.getElementById("arquivo");
+    if (arquivo.files.length === 0) {
+        alert("Por favor, selecione um arquivo.");
+        return false;
+    }
+    return true;
+}
+</script>
+```
+
+19. **Autocompletar:**
+```html
+<form>
+    <input type="text" id="campoCidade" list="cidades">
+    <datalist id="cidades">
+        <option value="São Paulo">
+        <option value="Rio de Janeiro">
+        <option value="Belo Horizonte">
+        <option value="Curitiba">
+        <option value="Porto Alegre">
+    </datalist>
+</form>
+```
+
+20. **Validação de Formulário Completo:**
+```html
+<form onsubmit="return validarForm()">
+    <!-- Adicione aqui os campos de outros exercícios -->
+    <input type="submit" value="Enviar">
+</form>
+
+<script>
+function validarForm() {
+    if (!validarCampoObrigatorio() || !validarEmail() || !validarCheckbox() || !validarRadio() || !validarArquivo()) {
+        return false;
+    }
+    return true;
+}
+</script>
+```
+
+Estas são as soluções para os exercícios relacionados a componentes de formulários em JavaScript.
+
+</details>
 
 ## Aula 07 - JQUERY
 
