@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="js/MeuJavaScript.js"></script>
+
+</head>
+<body>
+
+    <input type="text" id="txtMensagem" />
+    <input type="button" onclick="HelloWorld(document.getElementById('txtMensagem').value)" value="Meu botao" />
+
+    <p id="lblMensagem" style="color:red; border-color: yellow"></p>
+
+
+    <hr />
+    <h1>Calculadora</h1>
+    <label for="txtNumero1">Primeiro Número</label>
+    <input type="number" id="txtNumero1" value="0" />
+
+    <label for="txtNumero2">Segundo Número</label>
+    <input type="number" id="txtNumero2" value="0" />
+
+    <select id="cbOperacao">
+        <option value="soma">Somar</option>
+        <option value="subtracao">Subtração</option>
+        <option value="multi">Multiplicação</option>
+        <option value="div">Divisão</option>
+    </select>
+
+    <input type="button" onclick="Calcular()" />
+
+    <p style="background-color:lime; color:red" id="txtResultado"></p>
+
+    <input type="button" onclick="ExemploException()" value="BtnException" />
+
+
+    <form>
+        <div>
+            <label for="txtNomeForm">Nome</label>
+            <!--Quando digito-->
+            <input type="text" id="txtNomeForm" oninput="PassarParaMaiusculo(this)" /> 
+        </div>
+        <div>
+            <label for="txtEmailForm">Email</label>
+            <!--Quando saio da caixinha-->
+            <input type="email" id="txtEmailForm" onchange="PassarParaMinusculo(this)" />
+        </div>
+
+        <input type="button" value="ValidarDados" onclick="ValidarFormulario()" />
+
+        <div style="display:hidden" id="divErros">
+            <p>Dados incorretos</p>
+        </div>
+    </form>
+
+    <input type="button" id="meuBotao" value="MeuBotaoSemEvento" />
+</body>
+</html>
