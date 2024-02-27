@@ -662,6 +662,126 @@ class DogRecord implements Dog {
 let dog = new DogRecord({name: "Fido", age: 3, description: "A friendly dog"});
 ```
 
+5.2 **Herança:**
+```typescript
+// Exercício 5.2. Crie uma classe que herde de outra classe.
+
+class Animal {
+    nome: string;
+
+    constructor(nome: string) {
+        this.nome = nome;
+    }
+
+    fazerBarulho(): void {
+        console.log("Barulho de animal");
+    }
+}
+
+class Cachorro extends Animal {
+    fazerBarulho(): void {
+        console.log("Au au!");
+    }
+}
+
+let cachorro = new Cachorro("Rex");
+
+cachorro.fazerBarulho();
+```
+
+5.3 **Métodos Estáticos:**
+```typescript
+// Exercício 5.3. Crie um método estático em uma classe.
+
+class Matematica {
+    static somar(a: number, b: number): number {
+        return a + b;
+    }
+}
+
+console.log(Matematica.somar(3, 4));
+```
+
+5.4 **Métodos Get e Set:**
+```typescript
+// Exercício 5.4. Crie métodos get e set em uma classe.
+
+class Pessoa {
+    private _nome: string;
+
+    get nome(): string {
+        return this._nome;
+    }
+
+    set nome(nome: string) {
+        this._nome = nome;
+    }
+}
+
+let pessoa = new Pessoa();
+
+pessoa.nome = "João";
+
+console.log(pessoa.nome);
+```
+
+
+5.5 **Métodos Abstratos:**
+```typescript
+
+// Exercício 5.5. Crie um método abstrato em uma classe.
+
+abstract class Animal {
+    abstract fazerBarulho(): void;
+}
+
+class Cachorro extends Animal {
+    fazerBarulho(): void {
+        console.log("Au au!");
+    }
+}
+
+let cachorro = new Cachorro();
+
+cachorro.fazerBarulho();
+```
+
+
+5.6 **Métodos de Classe:**
+```typescript
+
+// Exercício 5.6. Crie um método de classe em uma classe.
+
+
+class Matematica {
+    static somar(a: number, b: number): number {
+        return a + b;
+    }
+}
+
+console.log(Matematica.somar(3, 4));
+```
+
+5.7 **Métodos de Instância:**
+```typescript
+
+// Exercício 5.7. Crie um método de instância em uma classe.
+
+class Pessoa {
+    nome: string;
+
+    constructor(nome: string) {
+        this.nome = nome;
+    }
+
+    apresentar(): void {
+        console.log("Olá, meu nome é " + this.nome);
+    }
+}
+
+let pessoa = new Pessoa("João");
+pessoa.apresentar();
+```
 
 
 
