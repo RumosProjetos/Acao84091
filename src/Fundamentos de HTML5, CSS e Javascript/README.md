@@ -812,6 +812,21 @@ let primeiroNumero: number = primeiroElemento(numeros);
 let frutas: string[] = ["maçã", "banana", "laranja"];
 
 let primeiraFruta: string = primeiroElemento(frutas);
+
+
+function identity<T, U> (value: T, message: U) : T {
+    console.log(message);
+    return value
+}
+
+
+let returnNumber = identity<number, string>(100, 'Hello!');
+let returnString = identity<string, string>('100', 'Hola!');
+let returnBoolean = identity<boolean, string>(true, 'Bonjour!');
+
+returnNumber = returnNumber * 100;   // OK
+returnString = returnString * 100;   // Error: Type 'number' not assignable to type 'string'
+returnBoolean = returnBoolean * 100; // Error: Type 'number' not assignable to type 'boolean'
 ```
 
 8. **Decorators:**
