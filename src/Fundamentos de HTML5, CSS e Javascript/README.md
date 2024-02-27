@@ -625,6 +625,45 @@ let meuCarro = new Carro("Toyota", "Corolla", 2020);
 console.log(meuCarro.descricao());
 ```
 
+5.1 **Implementação de interfaces:**
+```typescript
+// Exercício 5.1. Crie uma classe que implemente uma interface.
+
+interface Dog {
+    id?: number;
+    name: string;
+    age: number;
+    description: string;
+}
+
+class DogRecord implements Dog {
+    id: number;
+    name: string;
+    age: number;
+    description: string;
+
+    constructor({name, age, description, id = 0}: Dog) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.description = description;
+    }
+
+    static load(id: number): DogRecord {
+        // code to load dog from database
+        return dog;
+    }
+
+    save() {
+        // code to save dog to database
+    }
+}
+
+let dog = new DogRecord({name: "Fido", age: 3, description: "A friendly dog"});
+```
+
+
+
 
 
 6. **Módulos:**
