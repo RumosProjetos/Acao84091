@@ -482,11 +482,264 @@ function validarForm() {
 ```
 
 
-## Aula 07 - JQUERY
+## Aula 07 - TypeScript
+
+
+
+0 - Instalar o Node.js
+[Node.js](https://nodejs.org/en/)
+
+```powershell
+npm install
+```
+
+1 - Instalar o TypeScript
+```powershell
+npm install -g typescript
+```
+
+2 - Verificar a versão do TypeScript
+```powershell   
+tsc -v
+```
+
+3 - Criar um arquivo TypeScript
+```typescript
+let mensagem: string = "Olá, mundo!";
+console.log(mensagem);
+```
+
+4 - Configurar o arquivo tsconfig.json
+```Powershell
+tsc --init
+```
+
+```json
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "outDir": "build",
+    "strict": true
+  }
+}
+```
+
+5 - Compilar o arquivo TypeScript
+```powershell
+tsc nome-do-arquivo.ts
+```
+
+
+- [TypeScript](https://www.typescriptlang.org/)
+
+- [TypeScript Tutorial](https://www.w3schools.com/typescript/default.asp)
+
+- [TypeScript Playground](https://www.typescriptlang.org/play)
+
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+
+- [TypeScript Microsoft Learn](https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript/?source=learn)
+
+
+### Exercícios TypeScript
+
+Aqui estão alguns exemplos de exercícios sobre TypeScript que podem ajudar a praticar e entender melhor os conceitos:
+
+1. **Declaração de Variáveis:**
+```typescript
+// Exercício 1: Declare duas variáveis, atribua valores a elas e faça a soma.
+let a: number = 5;
+let b: number = 10;
+let soma: number = a + b;
+console.log("A soma é:", soma);
+```
+
+
+2. **Tipos de Dados:**
+```typescript
+// Exercício 2: Declare variáveis com diferentes tipos de dados e imprima seus valores.
+
+let numero: number = 7;
+let texto: string = "Olá, mundo!";
+let ativo: boolean = true;
+let lista: number[] = [1, 2, 3];
+let pessoa: { nome: string, idade: number } = { nome: "João", idade: 30 };
+let funcao: (a: number, b: number) => number = function(a, b) { return a + b; };
+let qualquer: any = "qualquer coisa";
+let nulo: null = null;
+let indefinido: undefined = undefined;
+let uniao: string | number = "texto";
+let tipo: "A" | "B" = "A";
+let generico: Array<number> = [1, 2, 3];
+let tupla: [string, number] = ["João", 30];
+let enum: enum Cor { Vermelho, Verde, Azul };
+let tipoNulo: string | null = "texto";
+```
+
+3. **Funções:**
+```typescript
+// Exercício 3: Crie uma função que retorne a soma de dois números.
+function soma(a: number, b: number): number {
+    return a + b;
+}
+console.log("A soma é:", soma(3, 4));
+```
+
+4. **Interfaces:**
+```typescript
+// Exercício 4: Crie uma interface para representar uma pessoa e imprima suas propriedades.
+interface Pessoa {
+    nome: string;
+    idade: number;
+    profissao?: string;
+}
+
+let joao: Pessoa = { nome: "João", idade: 30 };
+
+function imprimirPessoa(pessoa: Pessoa) {
+    console.log(pessoa.nome + " tem " + pessoa.idade + " anos.");
+}
+```	
+
+5. **Classes:**
+```typescript
+// Exercício 5: Crie uma classe para representar um carro e imprima suas propriedades.
+class Carro {
+    marca: string;
+    modelo: string;
+    ano: number;
+
+    constructor(marca: string, modelo: string, ano: number) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    descricao(): string {
+        return this.marca + " " + this.modelo + " " + this.ano;
+    }
+}
+
+let meuCarro = new Carro("Toyota", "Corolla", 2020);
+
+console.log(meuCarro.descricao());
+```
+
+
+
+6. **Módulos:**
+```typescript
+// Exercício 6: Crie um módulo com uma função e importe-a em outro arquivo.
+// arquivo1.ts
+export function mensagem(): string {
+    return "Olá, mundo!";
+}
+
+// arquivo2.ts
+import { mensagem } from "./arquivo1";
+console.log(mensagem());
+```
+
+7. **Generics:**
+```typescript
+// Exercício 7: Crie uma função genérica que retorne o primeiro elemento de um array.
+function primeiroElemento<T>(array: T[]): T {
+    return array[0];
+}
+
+let numeros: number[] = [1, 2, 3];
+let primeiroNumero: number = primeiroElemento(numeros);
+
+let frutas: string[] = ["maçã", "banana", "laranja"];
+
+let primeiraFruta: string = primeiroElemento(frutas);
+```
+
+8. **Decorators:**
+```typescript
+// Exercício 8: Crie um decorator para registrar a data e hora de execução de uma função.
+function registrarExecucao(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    let metodoOriginal = descriptor.value;
+    descriptor.value = function(...args: any[]) {
+        console.log("Método executado em:", new Date());
+        return metodoOriginal.apply(this, args);
+    };
+}
+
+class MinhaClasse {
+    @registrarExecucao
+    minhaFuncao() {
+        console.log("Função executada!");
+    }
+}
+
+let instancia = new MinhaClasse();
+instancia.minhaFuncao();
+```
+
+9. **Promises:**
+```typescript
+// Exercício 9: Crie uma função que retorne uma Promise e use async/await para lidar com o resultado.
+function aguardarTempo(tempo: number): Promise<void> {
+    return new Promise(resolve => {
+        setTimeout(resolve, tempo);
+    });
+}
+
+async function executar() {
+    console.log("Início");
+    await aguardarTempo(2000);
+    console.log("Fim");
+}
+
+executar();
+```
+
+10. **Type Guards:**
+```typescript
+// Exercício 10: Crie uma função que verifica se um valor é um número e use um type guard para lidar com o resultado.
+function eNumero(valor: any): valor is number {
+    return typeof valor === "number";
+}
+
+function dobrar(valor: any): number {
+    if (eNumero(valor)) {
+        return valor * 2;
+    }
+    return 0;
+}
+
+console.log(dobrar(5));
+console.log(dobrar("texto"));
+```
+
+11. **Namespaces:**
+```typescript
+// Exercício 11: Crie um namespace com uma classe e use um alias para importá-la em outro arquivo.
+
+// arquivo1.ts
+namespace MeuNamespace {
+    export class MinhaClasse {
+        mensagem(): string {
+            return "Olá, mundo!";
+        }
+    }
+}
+
+// arquivo2.ts
+import { MinhaClasse as Classe } from "./arquivo1";
+
+let instancia = new Classe();
+console.log(instancia.mensagem());
+```
+
+
+
+
+
+## Aula 08 - JQUERY e JQUERY AJAX
 
 - [jQuery Tutorial](https://www.w3schools.com/jquery/default.asp)
-
-## Aula 08 - JQUERY AJAX
 
 - [JQUERY AJAX Introduction](https://www.w3schools.com/jquery/jquery_ajax_intro.asp)
 
