@@ -517,7 +517,7 @@ tsc --init
 ```json
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es6",
     "outDir": "build",
     "strict": true
   }
