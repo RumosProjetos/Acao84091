@@ -1,0 +1,1 @@
+let minhaVar: string = 'minha variável';

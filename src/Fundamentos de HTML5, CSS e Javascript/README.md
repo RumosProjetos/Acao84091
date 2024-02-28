@@ -523,6 +523,8 @@ console.log(mensagem);
 4 - Configurar o arquivo tsconfig.json
 ```Powershell
 tsc --init
+
+npx -p typescript tsc --init
 ```
 
 ```json
