@@ -487,7 +487,7 @@ function validarForm() {
 
 - [TypeScript](https://www.typescriptlang.org/)
 
-- [TypeScript Tutorial](https://www.w3schools.com/typescript/default.asp)
+- [TypeScript Tutorial](https://www.w3schools.com/typescript/)
 
 - [TypeScript Playground](https://www.typescriptlang.org/play)
 
