@@ -485,6 +485,17 @@ function validarForm() {
 ## Aula 07 - TypeScript
 
 
+- [TypeScript](https://www.typescriptlang.org/)
+
+- [TypeScript Tutorial](https://www.w3schools.com/typescript/default.asp)
+
+- [TypeScript Playground](https://www.typescriptlang.org/play)
+
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+
+- [TypeScript Microsoft Learn](https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript/?source=learn)
+
+
 
 0 - Instalar o Node.js
 [Node.js](https://nodejs.org/en/)
@@ -528,17 +539,6 @@ tsc --init
 ```powershell
 tsc nome-do-arquivo.ts
 ```
-
-
-- [TypeScript](https://www.typescriptlang.org/)
-
-- [TypeScript Tutorial](https://www.w3schools.com/typescript/default.asp)
-
-- [TypeScript Playground](https://www.typescriptlang.org/play)
-
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-
-- [TypeScript Microsoft Learn](https://learn.microsoft.com/pt-br/training/paths/build-javascript-applications-typescript/?source=learn)
 
 
 ### Exercícios TypeScript
