@@ -1008,3 +1008,205 @@ Crie um modal simples usando HTML, CSS e jQuery. Exiba o modal ao clicar em um b
 Estes exemplos demonstram diferentes recursos e técnicas utilizando HTML, CSS e jQuery para criar interfaces interativas e responsivas.
 
 
+## Exercícios de JQuery com AJAX
+
+### Chamada AJAX a partir de um arquivo HTML usando JavaScript puro, sem usar jQuery:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX Call Example</title>
+</head>
+<body>
+  <h1>AJAX Call Example</h1>
+  <button onclick="getData()">Get Data</button>
+  <div id="dataContainer"></div>
+
+  <script>
+    function getData() {
+      var xhr = new XMLHttpRequest(); // Criação de um objeto XMLHttpRequest
+      xhr.onreadystatechange = function() { // Definição do callback a ser chamado quando o estado da requisição mudar
+        if (xhr.readyState === XMLHttpRequest.DONE) { // Verifica se a requisição está concluída
+          if (xhr.status === 200) { // Verifica se o status da resposta é OK (200)
+            var response = JSON.parse(xhr.responseText); // Converte a resposta JSON em um objeto JavaScript
+            document.getElementById('dataContainer').innerText = response.message; // Atualiza o conteúdo da div com a resposta recebida
+          } else {
+            console.error('Error fetching data:', xhr.status); // Exibe uma mensagem de erro caso a requisição falhe
+          }
+        }
+      };
+      xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true); // Configura a requisição
+      xhr.send(); // Envio da requisição
+    }
+  </script>
+</body>
+</html>
+```
+
+Neste exemplo:
+
+- Temos um botão que, quando clicado, chama a função `getData`.
+- Dentro da função `getData`, criamos um novo objeto `XMLHttpRequest`.
+- Definimos um evento `onreadystatechange` para o objeto XMLHttpRequest. Esta função será chamada sempre que o estado da requisição mudar.
+- Quando o `readyState` torna-se `XMLHttpRequest.DONE` (o que significa que a operação está concluída), verificamos se o status é `200` (o que significa que a requisição foi bem-sucedida).
+- Se a requisição for bem-sucedida (`status === 200`), analisamos a resposta JSON e atualizamos o conteúdo da div `dataContainer` com a mensagem da resposta.
+- Se houver um erro, registramos uma mensagem de erro no console.
+
+Este é um exemplo básico de como fazer uma chamada AJAX usando JavaScript puro, sem depender do jQuery.
+
+
+### Chamada AJAX a partir de um arquivo HTML usando jQuery:
+
+```html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX Call Example with jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>AJAX Call Example with jQuery</h1>
+  <button id="getDataButton">Get Data</button>
+  <div id="dataContainer"></div>
+
+  <script>
+    $(document).ready(function() {
+      $('#getDataButton').click(function() {
+        $.ajax({
+          url: 'https://jsonplaceholder.typicode.com/posts/1',
+          method: 'GET',
+          success: function(response) {
+            $('#dataContainer').text(response.message);
+          },
+          error: function(xhr, status, error) {
+            console.error('Error fetching data:', status, error);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
+```
+
+Neste exemplo:  
+
+- Temos um botão com o id `getDataButton` que, quando clicado, chama a função `getData`.
+- Dentro da função `getData`, usamos o método `$.ajax` do jQuery para fazer uma chamada AJAX.
+- Configuramos a URL e o método da requisição, bem como as funções de sucesso e erro.
+- Se a requisição for bem-sucedida, atualizamos o conteúdo da div `dataContainer` com a mensagem da resposta.
+- Se houver um erro, registramos uma mensagem de erro no console.
+
+Este é um exemplo de como fazer uma chamada AJAX usando jQuery, que simplifica a sintaxe e fornece métodos convenientes para lidar com requisições AJAX.
+
+
+### Exemplo de chamada AJAX com jQuery para carregar dados de um arquivo JSON:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX Call Example with jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>AJAX Call Example with jQuery</h1>
+  <button id="getDataButton">Get Data</button>
+  <div id="dataContainer"></div>
+
+  <script>
+    $(document).ready(function() {
+      $('#getDataButton').click(function() {
+        $.ajax({
+          url: 'data.json',
+          method: 'GET',
+          dataType: 'json',
+          success: function(response) {
+            var html = '';
+            response.forEach(function(item) {
+              html += '<p>' + item.name + ': ' + item.message + '</p>';
+            });
+            $('#dataContainer').html(html);
+          },
+          error: function(xhr, status, error) {
+            console.error('Error fetching data:', status, error);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+```
+
+Neste exemplo:
+
+- Temos um botão com o id `getDataButton` que, quando clicado, chama a função `getData`.
+- Dentro da função `getData`, usamos o método `$.ajax` do jQuery para fazer uma chamada AJAX.
+- Configuramos a URL e o método da requisição, bem como o tipo de dados esperado (`dataType: 'json'`).
+- Se a requisição for bem-sucedida, iteramos sobre os itens da resposta JSON e construímos uma string HTML para exibir os dados na div `dataContainer`.
+- Se houver um erro, registramos uma mensagem de erro no console.
+
+Este é um exemplo de como fazer uma chamada AJAX com jQuery para carregar dados de um arquivo JSON.
+
+
+### Exemplo de chamada AJAX com jQuery para enviar dados para um servidor:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX Call Example with jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>AJAX Call Example with jQuery</h1>
+  <form id="dataForm">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="message" placeholder="Message">
+    <button type="submit">Submit</button>
+  </form>
+  <div id="responseContainer"></div>
+
+  <script>
+    $(document).ready(function() {
+      $('#dataForm').submit(function(event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        $.ajax({
+          url: 'https://jsonplaceholder.typicode.com/posts',
+          method: 'POST',
+          data: formData,
+          success: function(response) {
+            $('#responseContainer').text('Data submitted successfully');
+          },
+          error: function(xhr, status, error) {
+            console.error('Error submitting data:', status, error);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+```
+
+Neste exemplo:
+
+- Temos um formulário com o id `dataForm` que, quando enviado, chama a função `submit`.
+- Dentro da função `submit`, usamos o método `$.ajax` do jQuery para fazer uma chamada AJAX.
+- Configuramos a URL e o método da requisição, bem como os dados a serem enviados (obtidos do formulário usando `$(this).serialize()`).
+- Se a requisição for bem-sucedida, atualizamos o conteúdo da div `responseContainer` com uma mensagem de sucesso.
+- Se houver um erro, registramos uma mensagem de erro no console.
+
+Este é um exemplo de como fazer uma chamada AJAX com jQuery para enviar dados para um servidor.

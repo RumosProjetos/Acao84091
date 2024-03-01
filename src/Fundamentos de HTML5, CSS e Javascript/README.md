@@ -155,6 +155,34 @@ tsc nome-do-arquivo.ts
 
 - [JQUERY AJAX Introduction](https://www.w3schools.com/jquery/jquery_ajax_intro.asp)
 
+- [AJAX Getting Started](https://udn.realityripple.com/docs/Web/Guide/AJAX/Getting_Started)
+
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carregamento de Conteúdo com AJAX e jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#load_content_button').click(function(){
+                $('#content').load('conteudo.html');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="load_content_button">Carregar Conteúdo</button>
+    <div id="content"></div>
+</body>
+</html>
+```
+*conteudo.html*
+```html
+<p>Este é um conteúdo carregado dinamicamente.</p>
+```
+
 ## Aula 09 - JavaScript no Servidor - NODE.JS
 
 - [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp)
