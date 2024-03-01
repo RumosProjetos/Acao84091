@@ -149,7 +149,6 @@ tsc nome-do-arquivo.ts
 ```
 
 
-
 ## Aula 08 - JQUERY e JQUERY AJAX
 
 - [jQuery Tutorial](https://www.w3schools.com/jquery/default.asp)
@@ -159,6 +158,8 @@ tsc nome-do-arquivo.ts
 ## Aula 09 - JavaScript no Servidor - NODE.JS
 
 - [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp)
+
+
 ## Links interessantes:
 
 - [Exemplos Bootstrap](https://bootswatch.com/cerulean/)
