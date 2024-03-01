@@ -2,13 +2,13 @@ Certamente, aqui estão 10 exemplos de exercícios com suas respostas envolvendo
 
 ## Exercícios de Formulários HTML e jQuery
 
-</details>
+
 
 ### Exercício 1: Validação de Email
 **Exercício:**
 Crie um formulário com um campo de entrada para o email. Use jQuery para validar se o email inserido tem um formato válido quando o usuário sai do campo de entrada.
 
-<details><summary>**Resposta:**</summary></summary>
+**Resposta:**</summary>
 
 ```html
 <!DOCTYPE html>
@@ -42,14 +42,14 @@ Crie um formulário com um campo de entrada para o email. Use jQuery para valida
 </html>
 ```
 
-</details>
+
 
 ### Exercício 2: Verificação de Senha
 
 **Exercício:**
 Crie um formulário com campos de entrada para senha e confirmação de senha. Use jQuery para verificar se os campos de senha e confirmação de senha correspondem quando o usuário sai do campo de confirmação de senha.
 
-<details><summary>**Resposta:**</summary></summary>
+**Resposta:**</summary>
 ```html
 <!DOCTYPE html>
 <html>
@@ -80,13 +80,13 @@ Crie um formulário com campos de entrada para senha e confirmação de senha. U
 </html>
 ```
 
-</details>
+
 
 ### Exercício 3: Contador de Caracteres
 **Exercício:**
 Crie um formulário com um campo de entrada de texto. Use jQuery para contar o número de caracteres conforme o usuário digita e exiba o resultado em tempo real.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -113,13 +113,13 @@ Crie um formulário com um campo de entrada de texto. Use jQuery para contar o n
 
 Claro, aqui estão os próximos exemplos:
 
-</details>
+
 
 ### Exercício 4: Seleção de Opção Dependente
 **Exercício:**
 Crie um formulário com um campo de seleção e outro campo dependente. Use jQuery para alterar dinamicamente as opções do campo dependente com base na seleção feita pelo usuário no campo de seleção.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -159,13 +159,13 @@ Crie um formulário com um campo de seleção e outro campo dependente. Use jQue
 </html>
 ```
 
-</details>
+
 
 ### Exercício 5: Autocomplete
 **Exercício:**
 Crie um formulário com um campo de entrada. Use jQuery para fornecer sugestões de preenchimento automático à medida que o usuário digita no campo de entrada, baseando-se em uma lista de opções pré-definidas.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -195,13 +195,13 @@ Crie um formulário com um campo de entrada. Use jQuery para fornecer sugestões
 
 Claro, aqui estão mais exemplos:
 
-</details>
+
 
 ### Exercício 6: Envio Assíncrono de Formulário
 **Exercício:**
 Crie um formulário com campos de entrada para nome e email. Use jQuery para enviar os dados do formulário para um servidor de forma assíncrona, sem atualizar a página.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -236,13 +236,13 @@ Crie um formulário com campos de entrada para nome e email. Use jQuery para env
 </html>
 ```
 
-</details>
+
 
 ### Exercício 7: Máscara de Entrada
 **Exercício:**
 Crie um formulário com um campo de entrada para telefone. Use jQuery para aplicar uma máscara de entrada ao campo de telefone para formatá-lo automaticamente à medida que o usuário digita.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -266,13 +266,13 @@ Crie um formulário com um campo de entrada para telefone. Use jQuery para aplic
 
 Claro, aqui estão mais exemplos:
 
-</details>
+
 
 ### Exercício 8: Campo de Data com Calendário Pop-up
 **Exercício:**
 Crie um formulário com um campo de entrada para data. Use jQuery para adicionar um calendário pop-up ao campo de data para facilitar a seleção da data pelo usuário.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -297,13 +297,13 @@ Crie um formulário com um campo de entrada para data. Use jQuery para adicionar
 </html>
 ```
 
-</details>
+
 
 ### Exercício 9: Validação de Campos Obrigatórios
 **Exercício:**
 Crie um formulário com campos obrigatórios. Use jQuery para verificar se os campos obrigatórios estão preenchidos antes de permitir que o formulário seja enviado.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -335,13 +335,13 @@ Crie um formulário com campos obrigatórios. Use jQuery para verificar se os ca
 
 Claro, aqui está o último exemplo:
 
-</details>
+
 
 ### Exercício 10: Adicionar e Remover Campos Dinamicamente
 **Exercício:**
 Crie um formulário com um botão para adicionar campos de entrada dinamicamente. Use jQuery para permitir que o usuário adicione e remova campos de entrada conforme necessário, como adicionar vários campos de endereço em um formulário de envio.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -383,13 +383,13 @@ Neste exemplo, os campos de entrada são adicionados dinamicamente quando o usu�
 
 Claro, aqui estão 10 exemplos de exercícios com suas respostas envolvendo HTML, CSS e jQuery:
 
-</details>
+
 
 ### Exercício 1: Toggle de Classe com jQuery
 **Exercício:**
 Crie uma página HTML com um botão. Ao clicar no botão, alterne a classe de um elemento na página para alterar seu estilo usando jQuery.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -416,13 +416,13 @@ Crie uma página HTML com um botão. Ao clicar no botão, alterne a classe de um
 </html>
 ```
 
-</details>
+
 
 ### Exercício 2: Animação com jQuery
 **Exercício:**
 Crie uma página HTML com um botão. Ao clicar no botão, faça um elemento na página se mover usando uma animação jQuery.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -454,13 +454,13 @@ Crie uma página HTML com um botão. Ao clicar no botão, faça um elemento na p
 
 Claro, aqui estão mais exemplos:
 
-</details>
+
 
 ### Exercício 3: Dropdown Menu com CSS e jQuery
 **Exercício:**
 Crie um menu suspenso (dropdown menu) usando HTML, CSS e jQuery. Ao clicar em um item do menu, exiba seus subitens.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -511,13 +511,13 @@ Crie um menu suspenso (dropdown menu) usando HTML, CSS e jQuery. Ao clicar em um
 </html>
 ```
 
-</details>
+
 
 ### Exercício 4: Slideshow com HTML, CSS e jQuery
 **Exercício:**
 Crie um slideshow simples usando HTML, CSS e jQuery para exibir uma sequência de imagens com controles de navegação.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -640,13 +640,13 @@ Crie um slideshow simples usando HTML, CSS e jQuery para exibir uma sequência d
 
 Claro, aqui estão mais exemplos:
 
-</details>
+
 
 ### Exercício 5: Carregamento de Conteúdo com AJAX e jQuery
 **Exercício:**
 Crie uma página HTML com um botão. Ao clicar no botão, carregue conteúdo de um arquivo externo usando AJAX e jQuery e exiba-o na página.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -672,13 +672,13 @@ Crie uma página HTML com um botão. Ao clicar no botão, carregue conteúdo de 
 <p>Este é um conteúdo carregado dinamicamente.</p>
 ```
 
-</details>
+
 
 ### Exercício 6: Tabs com HTML, CSS e jQuery
 **Exercício:**
 Crie um sistema de abas (tabs) usando HTML, CSS e jQuery. Ao clicar em uma aba, exiba o conteúdo correspondente e oculte os outros.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -719,13 +719,13 @@ Crie um sistema de abas (tabs) usando HTML, CSS e jQuery. Ao clicar em uma aba, 
 
 Claro, aqui estão mais exemplos:
 
-</details>
+
 
 ### Exercício 7: Drag and Drop com HTML, CSS e jQuery
 **Exercício:**
 Crie uma interface de arrastar e soltar (drag and drop) usando HTML, CSS e jQuery. Permita que o usuário arraste elementos para diferentes áreas na página.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -764,13 +764,13 @@ Crie uma interface de arrastar e soltar (drag and drop) usando HTML, CSS e jQuer
 </html>
 ```
 
-</details>
+
 
 ### Exercício 8: Tooltip com HTML, CSS e jQuery
 **Exercício:**
 Crie um tooltip personalizado usando HTML, CSS e jQuery. Exiba o tooltip ao passar o mouse sobre um elemento e oculte-o ao remover o mouse.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -814,13 +814,13 @@ Crie um tooltip personalizado usando HTML, CSS e jQuery. Exiba o tooltip ao pass
 
 Claro, aqui estão mais exemplos:
 
-</details>
+
 
 ### Exercício 9: Menu de Navegação Responsivo com HTML, CSS e jQuery
 **Exercício:**
 Crie um menu de navegação responsivo usando HTML, CSS e jQuery. Ao clicar no ícone do menu, exiba ou oculte o menu de navegação.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -940,13 +940,13 @@ Crie um menu de navegação responsivo usando HTML, CSS e jQuery. Ao clicar no �
 </html>
 ```
 
-</details>
+
 
 ### Exercício 10: Modal com HTML, CSS e jQuery
 **Exercício:**
 Crie um modal simples usando HTML, CSS e jQuery. Exiba o modal ao clicar em um botão e permita que o usuário o feche clicando fora do modal ou em um botão de fechar.
 
-<details><summary>**Resposta:**</summary>
+**Resposta:**
 ```html
 <!DOCTYPE html>
 <html>
