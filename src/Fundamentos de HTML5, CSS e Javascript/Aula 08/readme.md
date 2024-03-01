@@ -111,10 +111,6 @@ Crie um formulário com um campo de entrada de texto. Use jQuery para contar o n
 </html>
 ```
 
-Claro, aqui estão os próximos exemplos:
-
-
-
 ### Exercício 4: Seleção de Opção Dependente
 **Exercício:**
 Crie um formulário com um campo de seleção e outro campo dependente. Use jQuery para alterar dinamicamente as opções do campo dependente com base na seleção feita pelo usuário no campo de seleção.
@@ -193,7 +189,6 @@ Crie um formulário com um campo de entrada. Use jQuery para fornecer sugestões
 </html>
 ```
 
-Claro, aqui estão mais exemplos:
 
 
 
@@ -264,9 +259,6 @@ Crie um formulário com um campo de entrada para telefone. Use jQuery para aplic
 </html>
 ```
 
-Claro, aqui estão mais exemplos:
-
-
 
 ### Exercício 8: Campo de Data com Calendário Pop-up
 **Exercício:**
@@ -333,8 +325,6 @@ Crie um formulário com campos obrigatórios. Use jQuery para verificar se os ca
 </html>
 ```
 
-Claro, aqui está o último exemplo:
-
 
 
 ### Exercício 10: Adicionar e Remover Campos Dinamicamente
@@ -381,8 +371,7 @@ Crie um formulário com um botão para adicionar campos de entrada dinamicamente
 
 Neste exemplo, os campos de entrada são adicionados dinamicamente quando o usuário clica no botão "Adicionar Campo" e podem ser removidos clicando no link "Remover" ao lado de cada campo. O número máximo de campos é definido pela variável `max_fields`.
 
-Claro, aqui estão 10 exemplos de exercícios com suas respostas envolvendo HTML, CSS e jQuery:
-
+### Exemplos de exercícios com suas respostas envolvendo HTML, CSS e jQuery:
 
 
 ### Exercício 1: Toggle de Classe com jQuery
@@ -452,7 +441,7 @@ Crie uma página HTML com um botão. Ao clicar no botão, faça um elemento na p
 </html>
 ```
 
-Claro, aqui estão mais exemplos:
+
 
 
 
@@ -638,7 +627,7 @@ Crie um slideshow simples usando HTML, CSS e jQuery para exibir uma sequência d
 </html>
 ```
 
-Claro, aqui estão mais exemplos:
+
 
 
 
@@ -717,7 +706,7 @@ Crie um sistema de abas (tabs) usando HTML, CSS e jQuery. Ao clicar em uma aba, 
 </html>
 ```
 
-Claro, aqui estão mais exemplos:
+
 
 
 
@@ -812,7 +801,7 @@ Crie um tooltip personalizado usando HTML, CSS e jQuery. Exiba o tooltip ao pass
 </html>
 ```
 
-Claro, aqui estão mais exemplos:
+
 
 
 
