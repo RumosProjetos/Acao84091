@@ -12,8 +12,6 @@
 
 - [HTML Forms](https://www.w3schools.com/html/html_forms.asp)
 
-- [Galeria de Gráficos do Google](https://developers.google.com/chart/interactive/docs/gallery?hl=pt-br)
-
 - [Http Status Dogs](https://httpstatusdogs.com/)
 
 - [Http Cats](https://http.cat/)
@@ -26,8 +24,8 @@
 
 ## Aula 04 - Bootstrap Fundamentos
 
-- [Bootstrap 5](https://www.w3schools.com/bootstrap5/index.php)
-- [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [Bootstrap 5 - W3Schools](https://www.w3schools.com/bootstrap5/index.php)
+- [Bootstrap 5 - GetBootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 ### Componentes Bootstrap
 
@@ -49,7 +47,7 @@
 ## Aula 05 - Bootstrap Construindo uma Aplicação
 
 - [Bootswatch](https://bootswatch.com/)
-
+- [Exemplos Bootstrap](https://bootswatch.com/cerulean/)
 
 ## Aula 06 - Javascript
 
@@ -133,11 +131,15 @@ tsc nome-do-arquivo.ts
 
 ## Aula 08 - JQUERY e JQUERY AJAX
 
+- [JQuery](https://jquery.com/)
+
 - [jQuery Tutorial](https://www.w3schools.com/jquery/default.asp)
 
 - [JQUERY AJAX Introduction](https://www.w3schools.com/jquery/jquery_ajax_intro.asp)
 
 - [AJAX Getting Started](https://udn.realityripple.com/docs/Web/Guide/AJAX/Getting_Started)
+
+- [Datatable](https://datatables.net/)
 
 
 ```html
@@ -172,9 +174,5 @@ tsc nome-do-arquivo.ts
 
 ## Links interessantes:
 
-- [Exemplos Bootstrap](https://bootswatch.com/cerulean/)
-- [Datatable](https://datatables.net/)
-- [JQuery](https://jquery.com/)
-- [JqueryTutorial](https://www.w3schools.com/jquery/)
 - [Google Charts](https://developers.google.com/chart/)
 - [Galeria Google Charts](https://developers.google.com/chart/interactive/docs/gallery?hl=pt-br)
