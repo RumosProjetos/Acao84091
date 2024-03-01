@@ -1,0 +1,22 @@
+﻿.formatoMensagem{
+    background-color:yellow;
+    color:brown;
+    font-size: large;
+}
+
+
+.formatoMensagemDois {
+    background-color: green;
+    color: blue;
+    font-size: small;
+    border:5px solid red;
+}
+
+.minhaClasse{
+    display: block;
+    background-color:aqua;
+}
+
+.minhaClasseInvisivel {
+    display: none;
+}

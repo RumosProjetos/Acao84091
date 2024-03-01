@@ -1,3 +1,5 @@
+### Aqui estão alguns exemplos de exercícios sobre Bootstrap que podem ajudar a praticar e entender melhor os conceitos:
+
 
 1. **Criação de um layout básico:**
    Crie uma página HTML usando Bootstrap v5 que tenha um cabeçalho, uma barra de navegação, uma seção principal com algumas informações de texto e uma seção de rodapé.
