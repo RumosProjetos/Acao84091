@@ -29,39 +29,21 @@
 - [Bootstrap 5](https://www.w3schools.com/bootstrap5/index.php)
 - [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
-### Exercícios Bootstrap
+### Componentes Bootstrap
 
-1. [Containers](https://getbootstrap.com/docs/5.0/layout/containers/)
-2. [Grid System](https://getbootstrap.com/docs/5.0/layout/grid/)
-3. [Typography](https://getbootstrap.com/docs/5.0/content/typography/)
-4. [Tables](https://getbootstrap.com/docs/5.0/content/tables/)
-5. [Forms](https://getbootstrap.com/docs/5.0/forms/overview/)
-6. [Buttons](https://getbootstrap.com/docs/5.0/components/buttons/)
-7. [Images](https://getbootstrap.com/docs/5.0/content/images/)
-8. [Alerts](https://getbootstrap.com/docs/5.0/components/alerts/)
-9. [Badges](https://getbootstrap.com/docs/5.0/components/badge/)
-10. [Progress](https://getbootstrap.com/docs/5.0/components/progress/)
-11. [Spinners](https://getbootstrap.com/docs/5.0/components/spinners/)
-12. [Dropdowns](https://getbootstrap.com/docs/5.0/components/dropdowns/)
-13. [Navs](https://getbootstrap.com/docs/5.0/components/navs/)
-14. [Navbar](https://getbootstrap.com/docs/5.0/components/navbar/)
-15. [Pagination](https://getbootstrap.com/docs/5.0/components/pagination/)
-16. [Breadcrumbs](https://getbootstrap.com/docs/5.0/components/breadcrumb/)
-17. [Tooltips](https://getbootstrap.com/docs/5.0/components/tooltips/)
-18. [Popovers](https://getbootstrap.com/docs/5.0/components/popovers/)
-19. [Modals](https://getbootstrap.com/docs/5.0/components/modal/)
-20. [Carousel](https://getbootstrap.com/docs/5.0/components/carousel/)
-21. [Accordions](https://getbootstrap.com/docs/5.0/components/accordion/)
-22. [List Groups](https://getbootstrap.com/docs/5.0/components/list-group/)
-23. [Cards](https://getbootstrap.com/docs/5.0/components/card/)
-24. [Spinners](https://getbootstrap.com/docs/5.0/components/spinners/)
-25. [Toasts](https://getbootstrap.com/docs/5.0/components/toasts/)
-26. [Offcanvas](https://getbootstrap.com/docs/5.0/components/offcanvas/)
-27. [Collapse](https://getbootstrap.com/docs/5.0/components/collapse/)
-28. [Scrollspy](https://getbootstrap.com/docs/5.0/components/scrollspy/)
-29. [Utilities](https://getbootstrap.com/docs/5.0/utilities/borders/)
-30. [Responsive Breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/)
-31. [Starter Template](https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template)
+| Grupo 1 | Grupo 2 | Grupo 3|
+|----|----|---|
+|1. [Containers](https://getbootstrap.com/docs/5.0/layout/containers/)|2. [Grid System](https://getbootstrap.com/docs/5.0/layout/grid/)|3. [Typography](https://getbootstrap.com/docs/5.0/content/typography/)|
+|4. [Tables](https://getbootstrap.com/docs/5.0/content/tables/)|5. [Forms](https://getbootstrap.com/docs/5.0/forms/overview/)|6. [Buttons](https://getbootstrap.com/docs/5.0/components/buttons/)|
+|7. [Images](https://getbootstrap.com/docs/5.0/content/images/)|8. [Alerts](https://getbootstrap.com/docs/5.0/components/alerts/)|9. [Badges](https://getbootstrap.com/docs/5.0/components/badge/)|
+|10. [Progress](https://getbootstrap.com/docs/5.0/components/progress/)|11. [Spinners](https://getbootstrap.com/docs/5.0/components/spinners/)|12. [Dropdowns](https://getbootstrap.com/docs/5.0/components/dropdowns/)|
+|13. [Navs](https://getbootstrap.com/docs/5.0/components/navs/)|14. [Navbar](https://getbootstrap.com/docs/5.0/components/navbar/)|15. [Pagination](https://getbootstrap.com/docs/5.0/components/pagination/)|
+|16. [Breadcrumbs](https://getbootstrap.com/docs/5.0/components/breadcrumb/)|17. [Tooltips](https://getbootstrap.com/docs/5.0/components/tooltips/)|18. [Popovers](https://getbootstrap.com/docs/5.0/components/popovers/)|
+|19. [Modals](https://getbootstrap.com/docs/5.0/components/modal/)|20. [Carousel](https://getbootstrap.com/docs/5.0/components/carousel/)|21. [Accordions](https://getbootstrap.com/docs/5.0/components/accordion/)|
+|22. [List Groups](https://getbootstrap.com/docs/5.0/components/list-group/)|23. [Cards](https://getbootstrap.com/docs/5.0/components/card/)|24. [Spinners](https://getbootstrap.com/docs/5.0/components/spinners/)|
+|25. [Toasts](https://getbootstrap.com/docs/5.0/components/toasts/)|26. [Offcanvas](https://getbootstrap.com/docs/5.0/components/offcanvas/)|27. [Collapse](https://getbootstrap.com/docs/5.0/components/collapse/)|
+|28. [Scrollspy](https://getbootstrap.com/docs/5.0/components/scrollspy/)|29. [Utilities](https://getbootstrap.com/docs/5.0/utilities/borders/)|30. [Responsive Breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/)|
+|31. [Starter Template](https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template)||
 
 
 ## Aula 05 - Bootstrap Construindo uma Aplicação
