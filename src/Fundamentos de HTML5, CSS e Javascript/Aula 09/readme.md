@@ -26,7 +26,7 @@ npm install -g npx
 
 
 2 - Configure o eslint para o projeto
-![alt text](img/image.png)
+![alt text](img/__image.png)
 
 3 - Adicione o primeiro comando para correr do lado do servidor: 
 ```javascript
@@ -41,7 +41,7 @@ http.createServer(function (req, res) {
 }).listen(port);
 ```	
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 
 4 - Execute o projeto
@@ -52,7 +52,7 @@ exports.myDateTime = function () {
     return Date();
 };
 ```
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 6 - Adicione o módulo ao projeto
 ```javascript
@@ -70,7 +70,7 @@ http.createServer(function (req, res) {
     console.log('The result is displayed in the Command Line Interface');
 }).listen(port);
 ```	
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 7 - Para recuperar a QueryString
 ```javascript
@@ -90,7 +90,7 @@ http.createServer(function (req, res) {
     console.log('The result is displayed in the Command Line Interface');
 }).listen(port);
 ```
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 
 8 - Existem funções para recuperar partes da QueryString
@@ -114,7 +114,7 @@ http.createServer(function (req, res) {
     console.log('The result is displayed in the Command Line Interface');
 }).listen(port);
 ```	
-![alt text](image-6.png)
+![alt text](img/image-6.png)
 
 
 9 - Vamos aprender a ler arquivos
@@ -133,7 +133,7 @@ http.createServer(function (req, res) {
 }).listen(port);
 ```	
 
-![alt text](image-7.png)
+![alt text](img/image-7.png)
 
 10 - Vamos aprender a atualizar arquivos
 ```javascript
@@ -156,7 +156,7 @@ http.createServer(function (req, res) {
 
 }).listen(port);
 ```
-![alt text](image-8.png)
+![alt text](img/image-8.png)
 
 11 - Vamos aprender a substituir arquivos
 ```javascript
@@ -174,7 +174,7 @@ http.createServer(function (req, res) {
     });
 }).listen(port);
 ```
-![alt text](image-9.png)
+![alt text](img/image-9.png)
 
 12 - Vamos aprender a excluir arquivos
 ```javascript
@@ -194,7 +194,7 @@ http.createServer(function (req, res) {
 }).listen(port);
 
 ```
-![alt text](image-10.png)
+![alt text](img/image-10.png)
 
 13 - Vamos aprender a renomear arquivos
 ```javascript
@@ -213,7 +213,7 @@ http.createServer(function (req, res) {
     
 }).listen(port);
 ```
-![alt text](image-11.png)
+![alt text](img/image-11.png)
 
 14 - o Módulo URL
 ```javascript	
@@ -237,7 +237,7 @@ http.createServer(function (req, res) {
     
 }).listen(port);
 ```
-![alt text](image-12.png)
+![alt text](img/image-12.png)
 
 15 - Packages
 O que é um package?
@@ -255,7 +255,7 @@ O que é um package?
 npm install upper-case ignore
 ```
 
-![alt text](image-13.png)
+![alt text](img/image-13.png)
 
 16 - Eventos em Node.js
 
@@ -277,7 +277,7 @@ http.createServer(function (req, res) {
     });
 }).listen(port);
 ```
-![alt text](image-14.png)
+![alt text](img/image-14.png)
 
 
 17 - O módulo Events
@@ -311,7 +311,7 @@ var myEventHandler = function () {
 }
 ```
 
-![alt text](image-15.png)
+![alt text](img/image-15.png)
 
 
 18 - Upload de arquivos
@@ -415,7 +415,7 @@ http.createServer(function (req, res) {
 
 }).listen(port);
 ```
-![alt text](image-16.png)
+![alt text](img/image-16.png)
 
 
 
