@@ -419,3 +419,180 @@ http.createServer(function (req, res) {
 
 
 
+19 - Bônus: Trabalhando com SQLLite/MySQL
+
+O Node.js pode ser usado para criar aplicativos de banco de dados.
+
+https://medium.com/swlh/creating-a-crud-application-using-node-js-and-sqlite3-a57d4a39ab69 
+
+https://www.w3schools.com/nodejs/nodejs_mysql.asp
+
+
+# Creating a CRUD Application Using Node.js and SQLite3 | by Souvik Paul | The Startup | Medium
+
+Hello world, welcome to the blog. Here we’ll create a simple application using Node.js that will perform basic CRUD operations (Create, Read, update, and Delete) on SQLite3 database on your local machine.
+
+You can also find the entire project in my GitHub repository —
+
+The basic outline of our project is shown below -
+
+**Step 1:** First of all, make sure that you have Node.js and SQLite3 installed in your local machine. Then, open the terminal and create one directory which will be dedicated for our project. Navigate into that directory and run `npm init` . Then you will be asked to enter various details about your application, which will be stored as a json file named ‘Package.json’. Then you have to run — `npm install express --save` to install the ‘express’ module and — `npm install sqlite3 --save` to install ‘sqlite3’ module.
+
+**Step 2:** Now, we’ll create our server application file with the name of ‘index.js’ in the same directory. Then we’ll open this file in any text editor like Visual studio code, Notepad, Notepad++, Sublime Text 3 etc and start writing the codes.
+
+We’ll import all the necessary modules -
+
+```
+var sqlite3 = require('sqlite3').verbose();
+var express = require('express');
+var http = require('http');
+```
+
+
+Notice that the execution mode is set to verbose to produce long stack traces.
+
+```
+var app = express();
+var server = http.createServer(app);
+var db = new sqlite3.Database('./database/employee.db');
+```
+
+
+In the above code, we have created an instance of express, named ‘app’ and we have also created a database named ‘employee’ in the ‘database’ directory which is present in our current directory.
+
+Then, we’ll create a table named ‘emp’ in the database having two columns- ‘id’ and ‘name’ using the following code -
+
+```
+db.run('CREATE TABLE IF NOT EXISTS emp(id TEXT, name TEXT)');
+```
+
+
+The above code will make sure that ‘emp’ table won’t be created again and again whenever we run the application.
+
+**Step 3:** Now, it is the time to write the codes for listening to the GET requests made by the browser.
+
+To make the user understand about the things he/she can do, we’ll display an introductory message on the browser when he/she enters `http://localhost:3000` .
+
+```
+app.get('/', function(req,res){
+  res.send("<h3> Hi there, You are going to perform CRUD operations.............[CREATE] Please enter 'http://localhost:3000/add/(id number)/(name)' to add new employee to the database.........................[READ] 'http://localhost:3000/view/(id number)' to view an employee.........................[UPDATE] 'http://localhost:3000/update/(id number)/(new name)' to update an employee.....................[DELETE] 'http://localhost:3000/del/(id number)' to delete an employee...............................Before closing this window, kindly enter 'http://localhost:3000/close' to close the database connection <h3>");
+});
+```
+
+
+The above code looks very big, but don’t worry there’s nothing much in it. The browser will display the above code as follows-
+
+**CREATE**
+
+To make a new entry in the ‘emp’ table, user must enter the URL which looks like this — `http://localhost:3000/add/(id number)/(name)` , where, ‘id number’ and ‘name’ can be anything that the user wants. So, to execute the user’s request, following code is responsible —
+
+```
+app.get('/add/:id/:name', function(req,res){
+  db.serialize(()=>{
+    db.run('INSERT INTO emp(id,name) VALUES(?,?)', [req.params.id, req.params.name], function(err) {
+      if (err) {
+        return console.log(err.message);
+      }
+      console.log("New employee has been added");
+      res.send("New employee has been added into the database with ID = "+req.params.id+ " and Name = "+req.params.name);
+    });});});
+```
+
+
+In the above code, the serialize() method puts the execution mode into serialized mode. It means that only one statement can execute at a time. Other statements will wait in a queue until all the previous statements are executed.
+
+**READ**
+
+To view any entry in the ‘emp’ table, the URL that the user needs to enter is — `http://localhost:3000/view/(id number)` , where ‘id number’ can be anything that the user wants to enter. So, the code mentioned below is responsible for execution of the user’s request -
+
+```
+app.get('/view/:id', function(req,res){
+  db.serialize(()=>{
+    db.each('SELECT id ID, name NAME FROM emp WHERE id =?', [req.params.id], function(err,row){     
+      if(err){
+        res.send("Error encountered while displaying");
+        return console.error(err.message);
+      }
+      res.send(` ID: ${row.ID},    Name: ${row.NAME}`);
+      console.log("Entry displayed successfully");
+    });
+  });
+});
+```
+
+
+In the above code, the each() method executes an SQL query with specified parameters and calls a callback for every row in the result set.
+
+**UPDATE**
+
+To update any entry in the ‘emp’ table, the URL that the user needs to enter is — `http://localhost:3000/update/(id number)/(new name)` , where ‘id number’ and ‘new name’ can be anything that the user wants to enter. So, the code mentioned below is responsible for execution of the user’s request -
+
+```
+app.get('/update/:id/:name', function(req,res){
+  db.serialize(()=>{
+    db.run('UPDATE emp SET name = ? WHERE id = ?', [req.params.name,req.params.id], function(err){
+      if(err){
+        res.send("Error encountered while updating");
+        return console.error(err.message);
+      }
+      res.send("Entry updated successfully");
+      console.log("Entry updated successfully");
+    });
+  });
+});
+```
+
+
+The above code will change the name of the employee corresponding to the specified ‘id number’.
+
+**DELETE**
+
+To delete any entry in the ‘emp’ table, the format of the URL should be — `http://localhost:3000/del/(id number)` . For this, the code is as follows -
+
+```
+app.get('/del/:id', function(req,res){
+  db.serialize(()=>{
+    db.run('DELETE FROM emp WHERE id = ?', req.params.id, function(err) {
+      if (err) {
+        res.send("Error encountered while deleting");
+        return console.error(err.message);
+      }
+      res.send("Entry deleted");
+      console.log("Entry deleted");
+    });
+  });});
+```
+
+
+**Step 4:** Now that we have written the codes for the basic CRUD operations, we’ll now write the code for closing the database as we have opened it in Step 2. For this, we have already displayed in the introductory message in Step 3, that the user needs to enter `http://localhost:3000/close` to close the database connection. So, the code that will execute this request will be -
+
+```
+app.get('/close', function(req,res){
+  db.close((err) => {
+    if (err) {
+      res.send('There is some error in closing the database');
+      return console.error(err.message);
+    }
+    console.log('Closing the database connection.');
+    res.send('Database connection successfully closed');
+  });});
+```
+
+
+**Step 5:** Now, we need to make our server application listen to all the requests made by the browser, which will be achieved by the following command-
+
+```
+server.listen(3000,function(){ 
+    console.log("Server listening on port: 3000");
+});
+```
+
+
+**Step 6:** Now that we have written all the codes for our server application, we’ll save it and go back to terminal to run this using the command `node index.js`. The following message will be displayed in the console -
+
+```
+Server listening on port: 3000
+```
+
+
+So, now our server is up and running. We will open the browser and enter `http://localhost:3000` to start doing the CRUD operations.
