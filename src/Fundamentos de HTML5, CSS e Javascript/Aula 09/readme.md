@@ -596,3 +596,186 @@ Server listening on port: 3000
 
 
 So, now our server is up and running. We will open the browser and enter `http://localhost:3000` to start doing the CRUD operations.
+
+
+
+Criando uma API RESTful com NodeJS e Express — Inicializando o projeto e o método GET
+=====================================================================================
+
+[Link](https://medium.com/xp-inc/https-medium-com-tiago-jlima-developer-criando-uma-api-restful-com-nodejs-e-express-9cc1a2c9d4d8)
+
+
+Sabemos que a linguagem Javascript se tornou uma das mais importantes do mundo, podemos codar em vários lugares como no Arduino/Raspberry, Data Science, Machine Learning, Chatbots, entre outros… Então porque não usá-lo para criar nossa API RESTful 🤟.
+
+*   **REST:** conjunto de princípios de arquitetura
+*   **RESTful:** capacidade de determinado sistema aplicar os princípios de REST.
+
+Bom, primeiramente precisamos de uma plataforma de desenvolvimento server-side e de um motor Javascript, então usaremos o NodeJS e o poderoso motor V8, e para nos auxiliar na entrega da nossa API usaremos o [Express](http://expressjs.com/pt-br/) um dos frameworks mais utilizados 😍.
+
+Lista de motores Javascript
+===========================
+
+*   [V8](https://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29) — open source, desenvolvido pelo Google, escrito em C++
+*   [Rhin](https://en.wikipedia.org/wiki/Rhino_%28JavaScript_engine%29)o — gerenciado pela Mozilla Foundation, open source, desenvolvido inteiramente em Java
+*   [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey_%28JavaScript_engine%29) — a primeira engine Javascript, que um dia empoderou o Netscape Navigator, e hoje empodera o Firefox
+*   [JavaScriptCore](https://en.wikipedia.org/wiki/JavaScriptCore) — open source, comercializado como Nitro desenvolvido pela Apple para o Safari
+*   [KJS](https://en.wikipedia.org/wiki/KJS_%28KDE%29) — KDE’s engine originalmente desenvolvido por Harri Porten para o projeto KDE Konqueror web browser
+*   [Chakra (JScript9)](https://en.wikipedia.org/wiki/Chakra_%28JScript_engine%29) — Internet Explorer
+*   [Chakra (JavaScript)](https://en.wikipedia.org/wiki/Chakra_%28JavaScript_engine%29) — Microsoft Edge
+*   [Nashorn](https://en.wikipedia.org/wiki/Nashorn_%28JavaScript_engine%29), open source como parte do OpenJDK, escrito pela Oracle Java Languages e Tool Group
+*   [JerryScript](https://en.wikipedia.org/wiki/JerryScript) — é uma engine leve para a internet das coisas(IOT).
+
+Configurando nosso ambiente
+===========================
+
+**Windows:** Vamos baixar e instalar o [NodeJS](https://nodejs.org/en/download/) que virá junto com o package manager, mais conhecido como NPM, e seguir a instalação com “next” “next”, neste momento instalei a versão: v10_.16.0._
+
+> Dica: podemos gerenciar as versões do NodeJS com o [NVM](https://github.com/nvm-sh/nvm), farei um artigo sobre.
+
+Abra seu terminal e verifique se foi instalado, eu uso o [**cmder**](https://cmder.net) no windows**,** muito top.
+
+$ node -v && npm -v  
+v10.16.0  
+6.10.3
+
+**Linux:**
+
+Baixar o binário [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
+
+Extrair o pacote em um novo diretório: `/usr/local/lib/node`
+
+sudo mkdir -p /usr/local/lib/node  
+sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs
+
+Setar variável de ambiente no`~/.profile`
+
+\# Nodejs  
+export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+
+Atualizar profile
+
+. ~/.profile
+
+Testar instalação
+
+$ node -v && npm -v
+
+**Mac OSX:**
+
+$ brew install node
+
+Criando nossa estrutura
+=======================
+
+Inicialmente vamos criar o nosso package.json, ele é responsável por descrever nosso projeto, informando engines, scripts de ambientes, e outras coisas...
+
+$ npm init -y
+
+Agora criaremos nossa estrutura de pastas.
+
+./api/ => Contém nosso código da api.  
+./api/controllers/ => Contém todos controladores da api.  
+./api/data/ => Contém nossos mocks.  
+./api/routes/ => Contém as rotas da api.  
+./config/ => Contém as configurações do servidor.  
+./package.json => Listagem das dependências do projeto.
+
+Além do Express vamos precisar de alguns pacotes para nos auxiliar.
+
+Nodemon
+=======
+
+Toda vez que alterarmos os arquivos da aplicação teremos que derrubar e subir novamente, isso não é muito produtivo não é?, então vamos usar o [nodemon](https://nodemon.io/) para monitorar os ajustes e restartar o nosso servidor.
+
+> \*Importante: Usem o nodemon somente em dev, em produção existem outros pacotes como [PM2](https://pm2.keymetrics.io/), [Forever](https://www.npmjs.com/package/forever), criarei um post sobre PM2 e Forever.
+
+> Dica: para restartar a aplicação com nodemon ligado no terminal, é só digitar “rs”.
+
+Body Parser
+===========
+
+NodeJS em si não sabe converter os dados da requisição para o formato que queremos, o [body-parser](https://www.npmjs.com/package/body-parser) é um middleware capaz de converter o _body_ da requisição para vários formatos. Um desses formatos é _json_, exatamente o que queremos.
+
+Config
+======
+
+Toda vez que tivermos que mudar alguma variável de ambiente porque nosso cliente pediu, teremos que alterar em vários arquivos. Este pacote [config](https://www.npmjs.com/package/config) nos permite organizar a configuração da nossa aplicação e estender em qualquer arquivo.
+
+Vamos instalar os pacotes e o nosso queridinho [Express](https://expressjs.com/pt-br/), utilizaremos as versões fixas para termos o projeto igual.
+
+$ npm i -g [\[email protected\]](/cdn-cgi/l/email-protection) && npm i --save [\[email protected\]](/cdn-cgi/l/email-protection) && npm i --save [\[email protected\]](/cdn-cgi/l/email-protection) && npm i --save [\[email protected\]](/cdn-cgi/l/email-protection)
+
+> Dica: a flag “_i”_ _significa “install” e o “— save” para gravar o pacote no nosso arquivo package.json._
+
+Agora vamos criar nosso principal arquivo de configuração da nossa aplicação dentro da pasta **“**./config/**default.json”,** é neste arquivo que estará as configurações de ambientes, banco de dados, autenticação...
+
+Agora vamos configurar nossa aplicação Express, criaremos nosso arquivo dentro da pasta **“**./config/**express.js”**.
+
+Pronto, agora vamos criar nosso arquivo que inicia o servidor dentro da pasta raiz do projeto **“**./**server.js”**.
+
+Agora vamos subir nosso servidor com nodemon + o nome do arquivo “./server.js” 🙌
+
+$ nodemon server.js
+
+Vocês devem estar pensando “Poh liminhaaaa, mas não tem um jeito melhor de subir nosso servidor sem precisar colocar o nome do arquivo inicial”, e a resposta é sim! 😅
+
+Lembra do nosso arquivo “./**package.json”**, pois é, é nele que vamos criar nossos scripts, então vamos criar o nosso primeiro script de start da nossa aplicação com nodemon.
+
+Agora vamos iniciar nosso servidor.
+
+$ npm start
+
+> Dica: para derrubar aplicação no terminal pressionem “CTRL+C”.
+
+Resultado.
+
+Pronto, temos nosso servidor rodando na porta 8080, só que ao acessar o endereço: [http://localhost:8080/](http://localhost:8080/) deve retornar **“Cannot GET /”**, então vamos criar nossa primeira rota
+
+Criaremos a “/customer-wallets” do tipo GET, então vamos lá
+
+*   ./api/data**/customerWallets.json** \=> mock
+*   ./api/controllers**/customerWallets.js** \=> controller
+*   ./api/routes**/customerWallets.js** \=> router
+
+Primeiro precisamos dos dados, então vamos iniciar mock, dentro do arquivo ./api/data**/customerWallets.json.**
+
+Agora vamos configurar nosso controller da rota “./api/controller**/customerWallets.js”**
+
+Agora vamos configurar a rota “./api/routes**/customerWallets.js”**
+
+Na linha 1 receberemos nosso app express e usaremos para criar nossa rota na linha 4, na linha 2 importamos nosso controller.
+
+Pronto, agora temos que consumir essa rota, então vamos importar na configuração do express “./config/**express.js”**
+
+Perceba que ao importar a rota na linha 7, temos que passar o app(express).
+
+Pronto, agora vamos usar o [Postman](https://www.getpostman.com/) para consumir nossa rota “/api/v1/customer-wallets” do tipo GET.
+
+Poh muito top Liminhaa, mas toda rota nova, tem que importar no express? isso é pouco produtivo né, existe algo automágico que faça os imports**? Sim meu jovenzinhoooo, existe!** 🤩
+
+Consign
+=======
+
+Pois é, ter que importar nossas rotas, controllers, models é pouco produtivo, então o [consign](https://www.npmjs.com/package/consign) nos ajuda detectando e importando na nossa aplicação Express, então vamos instalar.
+
+$ npm i [\[email protected\]](/cdn-cgi/l/email-protection) --save
+
+Agora vamos configurar nossa aplicação, vamos abrir o arquivo “./config/**express.js”.**
+
+Agora vamos alterar os arquivos para seguir o novo tipo de import. Vamos começar pelo arquivo “./api/routes/**customerWallets.js”.**
+
+Percebam que na linha 2, como iremos importar a partir de agora, “app/nome\_pasta/arquivo”.
+
+Agora vamos alterar o controller “./api/controllers/**customerWallets.js”.**
+
+Importante, agora temos que injetar o “app” dentro do nosso controller
+
+Na linha 2 importamos o nosso mock “app/nome\_pasta/arquivo”.
+
+Agora sim, temos uma aplicação mais produtiva e o legal é que agora se parece com importação com namespaces, segue resultado.
+
+Meus jovenzinhos, por enquanto é isso, nos próximos artigos iremos implementar os outros métodos POST, PUT, PATCH, DELETE, conectar com MongoDB, Autenticação com JWT e muito mais… espero que gostem.
+
+Segue link do projeto [Github](https://github.com/TL-Developer/API_RESTFul_NODEJS) e vamos evoluindo.
+
+Até a próxima galera, um abração.
