@@ -170,6 +170,7 @@ tsc nome-do-arquivo.ts
 ## Aula 09 - JavaScript no Servidor - NODE.JS
 
 - [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp)
+- [Node.Js Microsoft Learn](https://learn.microsoft.com/en-us/training/paths/build-javascript-applications-nodejs/)
 
 
 ## Links interessantes:
