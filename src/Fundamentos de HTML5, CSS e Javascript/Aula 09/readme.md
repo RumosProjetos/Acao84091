@@ -18,6 +18,12 @@ npm install -g npx
 
 - [Node.Js com SQLLite](https://www.linode.com/docs/guides/getting-started-with-nodejs-sqlite/)
 
+- [Learn nodejs](https://learn.microsoft.com/en-us/training/modules/intro-to-nodejs/)
+
+- [Node.js Introduction](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
+
+- [NPMJS](https://www.npmjs.com/package/npm)
+
 
 ### Início Rápido
 
@@ -226,7 +232,7 @@ http.createServer(function (req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html' });
 
     //var adr = 'http://localhost:1337/default.htm?year=2017&month=february';
-    var q = url.parse(req, true);
+    var q = url.parse(req:url, true);
 
     console.log(q.host); //returns 'localhost:8080'
     console.log(q.pathname); //returns '/default.htm'
