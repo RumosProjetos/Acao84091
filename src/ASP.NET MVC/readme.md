@@ -13,12 +13,15 @@
 
 
 
-### Aula 02 - Middleware
+## Aula 02 - Middleware
 
 - [Middleware](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-8.0)
 
 
 - [Dependency injection in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0)
+
+
+- [Exercício 01 - Middleware](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD03_LAK.md)
 
 ```csharp	
 using DependencyInjectionSample.Interfaces;
