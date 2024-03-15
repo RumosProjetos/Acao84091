@@ -23,6 +23,245 @@
 
 - [Exercício 01 - Middleware](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD03_LAK.md)
 
+<details>
+  <summary>Em português</summary>
+# Módulo 3: Configurando Middleware e Serviços no ASP.NET Core
+
+Onde quer que um caminho para um arquivo comece com *[Repository Root]*, substitua-o pelo caminho absoluto para a pasta na qual reside o repositório 20486. Por exemplo, se você clonou ou extraiu o repositório 20486 para **C:\Users\John Doe\Downloads\20486**, altere o caminho: **[Repository Root]\AllFiles\20486D\Mod01** para **C:\Users\John Doe\Downloads\20486\AllFiles\20486D\Mod01**.
+
+# Laboratório: Configurando Middleware e Serviços no ASP.NET Core
+
+### Configuração do Laboratório
+
+Tempo Estimado: **75 minutos**
+
+### Etapas de Preparação
+
+Certifique-se de ter clonado o diretório 20486D do GitHub. Ele contém os segmentos de código para os laboratórios e demonstrações neste curso. (**https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/tree/master/Allfiles**).
+
+###	Exercício 1: Trabalhando com Arquivos Estáticos
+
+#### Tarefa 1: Criar um novo projeto usando o modelo de projeto ASP.NET Core vazio
+
+1. Inicie o Microsoft Visual Studio 2017.
+
+2. Na janela **Página Inicial - Microsoft Visual Studio**, no menu **ARQUIVO**, aponte para **Novo** e clique em **Projeto**.
+
+3. Na caixa de diálogo **Novo Projeto**, no painel de navegação, expanda **Instalado** e clique em **Visual C#**.
+
+4. Na caixa de diálogo **Novo Projeto**, no painel de resultados, clique em **Aplicativo Web ASP.NET Core**.
+
+5. Na caixa **Nome**, insira **PollBall**.
+
+6. Na caixa **Localização**, insira **[Repository Root]Allfiles\Mod03\Labfiles\01_PollBall_begin** e clique em **OK**.
+
+7. Na caixa de diálogo **Nova Aplicação Web ASP.NET Core - PollBall**, no painel de resultados, clique em **Vazio**. Certifique-se de que as caixas de seleção estejam desmarcadas e clique em **OK**.
+
+8. Na janela **PollBall - Microsoft Visual Studio**, no menu **DEBUG**, clique em **Iniciar Sem Depuração**.
+
+9. No Microsoft Edge, na barra de endereços, observe o número da porta que aparece no final do URL **http://localhost:[port]**. Você usará o número da porta durante este laboratório.
+
+10. No Microsoft Edge, clique em **Fechar**.
+
+11. Na janela **PollBall - Microsoft Visual Studio**, no **Solution Explorer**, clique em **Startup.cs**.
+
+12. Na janela de código **Startup.cs**, exclua qualquer comentário existente no arquivo.
+
+13. Na janela de código **Startup.cs**, exclua o método **Configure** com seu conteúdo.
+
+14. Na janela de código **Startup.cs**, coloque o cursor abaixo do método **ConfigureServices** e insira o seguinte código:
+```cs
+    public void Configure(IApplicationBuilder app)
+    {
+        app.Run(async (context) =>
+        {
+             await context.Response.WriteAsync("Este texto foi gerado pelo middleware app.Run.");
+        });
+    }
+```
+
+#### Tarefa 2: Executar o aplicativo
+
+1. Na janela **PollBall - Microsoft Visual Studio**, no menu **ARQUIVO**, clique em **Salvar Tudo**.
+
+2. Na janela **PollBall - Microsoft Visual Studio**, no menu **DEBUG**, clique em **Iniciar Sem Depuração**.
+> **Observação**: O navegador exibe **Este texto foi gerado pelo middleware app.Run**.
+
+3. No Microsoft Edge, clique em **Fechar**.
+
+#### Tarefa 3: Adicionar um arquivo HTML à pasta wwwroot
+
+1. Na janela **PollBall - Microsoft Visual Studio**, no **Solution Explorer**, clique com o botão direito em **wwwroot**, aponte para **Adicionar** e clique em **Nova Pasta**.
+
+2. Na caixa **NovaPasta**, insira **css** e pressione Enter.
+
+3. No Explorador de Arquivos, vá para **[Repository Root]Allfiles\Mod03\Labfiles\01_PollBall_begin**.
+
+4. Na janela **01_PollBall_begin**, clique com o botão direito em **style.css** e clique em **Copiar**.
+
+5. No Explorador de Arquivos, navegue até **[Repository Root]Allfiles\Mod03\Labfiles\01_PollBall_begin\PollBall\PollBall\wwwroot\css**.
+
+6. No Explorador de Arquivos, clique com o botão direito em um espaço vazio e clique em **Colar**.
+    > **Observação**: Verifique no Solution Explorer, sob **wwwroot**, na pasta **css**, que o arquivo **style.css** está sendo exibido.
+
+7. No Explorador de Arquivos, vá para **[Repository Root]Allfiles\Mod03\Labfiles\01_PollBall_begin**.
+
+8. Na janela **01_PollBall_begin**, clique com o botão direito em **images** e clique em **Copiar**.
+
+9. No Explorador de Arquivos, vá para **[Repository Root]Allfiles\Mod03\Labfiles\01_PollBall_begin\PollBall\PollBall\wwwroot**.
+
+10. No Explorador de Arquivos, clique com o botão direito em um espaço vazio e clique em **Colar**.
+    > **Observação**: Verifique no Solution Explorer, sob **wwwroot**, que a pasta **images** está sendo exibida.
+
+11. Na janela **PollBall - Microsoft Visual Studio**, no **Solution Explorer**, clique com o botão direito em **wwwroot**, aponte para **Adicionar** e clique em **Novo Item**.
+
+12. Na caixa de diálogo **Adicionar Novo Item - PollBall**, expanda **Instalado**, clique em **ASP.NET Core** e clique em **Página HTML**.
+
+13. Na caixa de diálogo **Adicionar Novo Item - PollBall**, na caixa **Nome**, insira **poll-questions** e clique em **Adicionar**.
+
+14. Na janela de código **poll-questions.html**, no elemento **BODY**, insira o seguinte código e pressione Enter.
+```cs
+    <p>
+        <h1>Enquete de Jogos de Bola Favoritos</h1>
+        Por favor, selecione seu jogo de bola favorito e pressione Enviar Enquete.
+    </p>
+```
+
+15. No elemento **BODY**, abaixo do elemento **P**, insira o seguinte código:
+```cs
+    <form class="submit-form">
+        <div class="main-div">
+
+        </div>
+        <div
+
+ class="submit-batch">
+            <input type="submit" value="Enviar Enquete" />
+        </div>
+    </form>
+```
+
+16. No elemento **DIV**, no atributo de classe **main-div**, insira o seguinte código abaixo do código que você acabou de adicionar e pressione Enter.
+```cs
+    <div class="main-batch1">
+        <div class="item">
+            <div class="img-item"><img src="images\basketball.png" /></div>
+            <div class="input-item"><input type="radio" name="favorite" value="Basquete"> Basquete</div>
+        </div>
+        <div class="item">
+            <div class="img-item"><img src="images\football.png" /></div>
+            <div class="input-item"><input type="radio" name="favorite" value="Futebol"> Futebol</div>
+        </div>
+        <div class="item">
+            <div class="img-item"><img src="images\soccer.png" /></div>
+            <div class="input-item"><input type="radio" name="favorite" value="Futebol"> Futebol</div>
+        </div>
+        <div class="item">
+            <div class="img-item"><img src="images\volleyball.png" /></div>
+            <div class="input-item"><input type="radio" name="favorite" value="Vôlei"> Vôlei</div>
+        </div>
+    </div>
+```
+
+17. No elemento **DIV**, no atributo de classe **main-div**, abaixo do código que você acabou de adicionar, insira o seguinte código:
+```cs
+    <div class="main-batch2">
+        <div class="item">
+            <div class="img-item"><img src="images\billiard.png" /></div>
+            <div class="input-item"><input type="radio" name="favorite" value="Bilhar"> Bilhar</div>
+        </div>
+        <div class="item">
+            <div class="img-item"><img src="images\golf.png" /></div>
+            <div class="input-item"><input type="radio" name="favorite" value="Golfe"> Golfe</div>
+        </div>
+        <div class="item">
+            <div class="img-item"><img src="images\hockey.png" /></div>
+            <div class="input-item"><input type="radio" name="favorite" value="Hóquei"> Hóquei</div>
+        </div>
+        <div class="item">
+            <div class="img-item"><img src="images\tennis.png" /></div>
+            <div class="input-item"><input type="radio" name="favorite" value="Tênis"> Tênis</div>
+        </div>
+    </div>
+```
+
+#### Tarefa 4: Executar o aplicativo – conteúdo do arquivo HTML não é exibido
+
+1. Na janela **PollBall - Microsoft Visual Studio**, no menu **ARQUIVO**, clique em **Salvar Tudo**.
+
+2. Na janela **PollBall - Microsoft Visual Studio**, no menu **DEBUG**, clique em **Iniciar Sem Depuração**.
+
+3. No Microsoft Edge, na barra de endereços, insira **http://localhost:[port]/poll-questions.html** e pressione Enter.
+    > **Observação**: O navegador exibe **Este texto foi gerado pelo middleware app.Run.** e não o conteúdo do arquivo **poll-questions.html**.
+
+4. No Microsoft Edge, clique em **Fechar**.
+
+#### Tarefa 5: Habilitar o uso de arquivos estáticos
+
+1. Na janela **PollBall - Microsoft Visual Studio**, no **Solution Explorer**, clique em **Startup.cs**.
+
+2. Na janela de código **Startup.cs**, localize o seguinte código:
+```cs
+    public void Configure(IApplicationBuilder app)
+    {
+```
+
+3. Coloque o cursor após o sinal de **{** (chaves de abertura), pressione Enter, insira o seguinte código e pressione Enter.
+```cs
+    app.UseStaticFiles();
+```
+
+#### Tarefa 6: Executar o aplicativo – conteúdo do arquivo HTML é exibido
+
+1. Na janela **PollBall - Microsoft Visual Studio**, no menu **ARQUIVO**, clique em **Salvar Tudo**.
+
+2. Na janela **PollBall - Microsoft Visual Studio**, no menu **DEBUG**, clique em **Iniciar Sem Depuração**.
+
+3. No Microsoft Edge, na barra de endereços, insira **http://localhost:[port]/poll-questions.html** e pressione Enter.
+    > **Observação**: O navegador exibe o conteúdo do arquivo **poll-questions.html**, mas o conteúdo HTML ainda não foi estilizado por um arquivo CSS.
+
+4. No Microsoft Edge, clique em **Fechar**.
+
+5. No Solution Explorer, em **wwwroot**, clique em **poll-questions.html**.
+
+6. Na janela de código **poll-questions.html**, no elemento **HEAD**, abaixo do elemento **TITLE**, insira o seguinte código:
+```cs
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+```
+
+7. Na janela **PollBall - Microsoft Visual Studio**, no menu **ARQUIVO**, clique em **Salvar Tudo**.
+
+8. Na janela **PollBall - Microsoft Visual Studio**, no menu **DEBUG**, clique em **Iniciar Sem Depuração**.
+
+9. No Microsoft Edge, na barra de endereços, insira **http://localhost:[port]/poll-questions.html** e pressione Enter.
+    > **Observação**: O navegador exibe o conteúdo do arquivo **poll-questions.html** que foi estilizado usando o arquivo **style.css**.
+
+10. No Microsoft Edge, clique em **Fechar**.
+
+#### Tarefa 7: Adicionar um arquivo HTML fora da pasta wwwroot
+
+1. No Explorador de Arquivos, navegue até **[Repository Root]Allfiles\Mod03\Labfiles\01_PollBall_begin**, clique com o botão direito em **test.html** e clique em **Copiar**. 
+
+2. No Explorador de Arquivos, navegue até **[Repository Root]Allfiles\Mod03\Labfiles\01_PollBall_begin\PollBall\PollBall**, clique com o botão direito em um espaço vazio e clique em **Colar**.
+
+#### Tarefa 8: Executar o aplicativo – conteúdo do arquivo HTML fora da pasta wwwroot não é exibido
+
+1. Na janela **PollBall - Microsoft Visual Studio**, no menu **DEBUG**, clique em **Iniciar Sem Depuração**.
+
+2. No Microsoft Edge, na barra de endereços, insira **http://localhost:[port]/test.html** e pressione Enter.
+    > **Observação**: O navegador exibe **Este texto foi gerado pelo middleware app.Run.** Por padrão, o navegador não pode exibir arquivos estáticos que estão fora do diretório **
+
+wwwroot**.
+
+3. No Microsoft Edge, clique em **Fechar**.
+
+> **Resultado**: No final deste exercício, você será capaz de trabalhar com arquivos estáticos dentro de um projeto Microsoft ASP.NET Core.
+</details> 
+
+**Cuidado** O exercício foi feito no VS2017, para o VS2022 utilizamos o projeto em branco e adicionamos o código do exercício.
+
+![alt text](image-1.png)
+
 ```csharp	
 using DependencyInjectionSample.Interfaces;
 using DependencyInjectionSample.Services;
