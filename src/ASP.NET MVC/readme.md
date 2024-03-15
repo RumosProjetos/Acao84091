@@ -12,6 +12,12 @@
 - [Exercício 02](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD02_LAK.md)
 
 
+
+### Aula 02 - Middleware
+
+- [Middleware](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-8.0)
+
+
 - [Dependency injection in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0)
 
 ```csharp	
@@ -28,3 +34,173 @@ builder.Services.AddSingleton<IMyDependencySing, MyDependencySing2>();
 
 var app = builder.Build();
 ```
+
+[Solid Principles](https://blog.stackademic.com/solid-principles-explained-with-real-time-examples-e39d1c167ba5)
+
+![SOLID Principles](image.png)
+
+# Princípios SOLID
+
+Os princípios SOLID são um conjunto de cinco princípios de design que visam orientar a criação de software mantível, flexível e compreensível. Cada princípio concentra-se em um aspecto diferente do design de software e ajuda a garantir que sua base de código seja modular, extensível e fácil de manter.
+
+## Princípio da Responsabilidade Única (SRP)
+
+Este princípio afirma que uma classe deve ter apenas uma razão para mudar, ou seja, deve ter uma única responsabilidade ou função.
+
+**Exemplo:** Pense em um telefone celular. Um telefone celular possui vários componentes como câmera, tela sensível ao toque, alto-falante, etc. Cada um desses componentes tem sua própria função distinta. Aplicando o SRP no código, você criaria classes separadas para cada componente em vez de ter uma única classe que manipula todas as funcionalidades.
+
+```java
+// Antes do SRP
+class MobilePhone {
+    void makeCall() { /* ... */ }
+    void takePhoto() { /* ... */ }
+    void playMusic() { /* ... */ }
+}
+
+// Depois do SRP
+class Call {
+    void makeCall() { /* ... */ }
+}
+class Camera {
+    void takePhoto() { /* ... */ }
+}
+
+class MusicPlayer {
+    void playMusic() { /* ... */ }
+}
+```
+
+## Princípio Aberto/Fechado (OCP)
+
+Este princípio sugere que as classes devem estar abertas para extensão, mas fechadas para modificação. Isso significa que você deve ser capaz de adicionar nova funcionalidade sem alterar o código existente.
+
+**Exemplo:** Considere uma biblioteca de formas geométricas. Em vez de modificar as classes de forma existentes ao adicionar novas formas, você poderia criar uma interface comum para todas as formas e estender essa interface para criar novas formas. Desta forma, o código existente permanece inalterado enquanto novas formas podem ser facilmente adicionadas.
+
+```java
+// Antes do OCP
+class Circle {
+    double radius;
+
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Depois do OCP
+interface Shape {
+    double area();
+}
+
+class Circle implements Shape {
+    double radius;
+
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Rectangle implements Shape {
+    double width;
+    double height;
+
+    @Override
+    public double area() {
+        return width * height;
+    }
+}
+```
+
+## Princípio de Substituição de Liskov (LSP)
+
+Este princípio enfatiza que objetos de classes derivadas devem ser capazes de substituir objetos de suas classes base sem afetar a correção do programa.
+
+**Exemplo:** Imagine um cenário onde você tem uma classe base “Pássaro” e classes derivadas “Pardal” e “Avestruz”. Se você seguir o LSP, você deve ser capaz de usar qualquer instância de uma classe derivada (por exemplo, “Pardal”) onde uma instância da classe base (“Pássaro”) é esperada, sem causar comportamentos inesperados.
+
+```java
+class Bird {
+    void fly() { /* ... */ }
+}
+
+class Sparrow extends Bird {
+    @Override
+    void fly() { /* ... */ }
+}
+
+class Ostrich extends Bird {
+    // Esta classe não sobrescreve fly()
+}
+```
+
+## Princípio da Segregação de Interfaces (ISP)
+
+Este princípio afirma que os clientes não devem ser forçados a depender de interfaces que não usam. Em outras palavras, mantenha as interfaces pequenas e focadas.
+
+**Exemplo:** Em um aplicativo de mensagens, você pode ter interfaces para enviar, receber e exibir mensagens. Em vez de ter uma única interface grande para todas as operações de mensagens, você dividiria em interfaces menores para que as classes só precisem implementar os métodos relevantes para elas.
+
+```java
+// Antes do ISP
+interface Messaging {
+    void send();
+    void receive();
+    void display();
+}
+
+// Depois do ISP
+interface Sender {
+    void send();
+}
+
+interface Receiver {
+    void receive();
+}
+
+interface Displayable {
+    void display();
+}
+```
+
+## Princípio da Inversão de Dependência (DIP)
+
+Este princípio incentiva que módulos de alto nível dependam de abstrações (interfaces ou classes abstratas) em vez de implementações concretas. Também sugere que os módulos de baixo nível não devem depender de módulos de alto nível, mas ambos devem depender de abstrações.
+
+**Exemplo:** Suponha que você tenha um aplicativo de reprodução de música. Em vez de ter o módulo de alto nível depender diretamente de formatos de áudio específicos (por exemplo, MP3, WAV), você definiria uma abstração (interface) para reprodução de áudio. O módulo de alto nível dependeria dessa abstração, e as classes de formato de áudio de baixo nível a implementariam.
+
+```java
+// Antes do DIP
+class MusicPlayer {
+    void playMP3() { /* ... */ }
+}
+
+class AudioApp {
+    private MusicPlayer musicPlayer = new MusicPlayer();
+
+    void playAudio() {
+        musicPlayer.playMP3();
+    }
+}
+
+// Depois do DIP
+interface AudioPlayer {
+    void play();
+}
+
+class MP3Player implements AudioPlayer {
+    @Override
+    public void play() { /* ... */ }
+}
+
+class AudioApp {
+    private AudioPlayer audioPlayer;
+
+    AudioApp(AudioPlayer audioPlayer) {
+        this.audioPlayer = audioPlayer;
+    }
+
+    void playAudio() {
+        audioPlayer.play();
+    }
+}
+```
+
+Aplicar esses princípios SOLID em sua base de código pode levar a um software mais modular, mantível e extensível. No entanto, é importante observar que cada princípio nem sempre é uma regra estrita, e pode haver casos em que um compromisso é necessário. O objetivo é encontrar um equilíbrio que atenda às necessidades específicas do seu projeto, enquanto ainda segue o espírito dos princípios.
