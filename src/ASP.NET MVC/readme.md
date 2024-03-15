@@ -63,21 +63,14 @@ Certifique-se de ter clonado o diretório 20486D do GitHub. Ele contém os segme
 
 10. No Microsoft Edge, clique em **Fechar**.
 
-11. Na janela **PollBall - Microsoft Visual Studio**, no **Solution Explorer**, clique em **Startup.cs**.
+11. Na janela **PollBall - Microsoft Visual Studio**, no **Solution Explorer**, clique em **Program.cs**.
 
-12. Na janela de código **Startup.cs**, exclua qualquer comentário existente no arquivo.
-
-13. Na janela de código **Startup.cs**, exclua o método **Configure** com seu conteúdo.
-
-14. Na janela de código **Startup.cs**, coloque o cursor abaixo do método **ConfigureServices** e insira o seguinte código:
+12. Na janela de código **Program.cs**, insira o seguinte código:
 ```cs
-    public void Configure(IApplicationBuilder app)
-    {
         app.Run(async (context) =>
         {
              await context.Response.WriteAsync("Este texto foi gerado pelo middleware app.Run.");
         });
-    }
 ```
 
 #### Tarefa 2: Executar o aplicativo
