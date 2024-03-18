@@ -23,11 +23,12 @@
 
 - [Exercício 01 - Middleware](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD03_LAK.md)
 
-<details>
-  <summary>Em português</summary>
-# Módulo 3: Configurando Middleware e Serviços no ASP.NET Core
+### Módulo 3: Configurando Middleware e Serviços no ASP.NET Core
 
 Onde quer que um caminho para um arquivo comece com *[Repository Root]*, substitua-o pelo caminho absoluto para a pasta na qual reside o repositório 20486. Por exemplo, se você clonou ou extraiu o repositório 20486 para **C:\Users\John Doe\Downloads\20486**, altere o caminho: **[Repository Root]\AllFiles\20486D\Mod01** para **C:\Users\John Doe\Downloads\20486\AllFiles\20486D\Mod01**.
+
+<details>
+  <summary>Em português</summary>
 
 # Laboratório: Configurando Middleware e Serviços no ASP.NET Core
 
@@ -274,6 +275,169 @@ var app = builder.Build();
 
 ![SOLID Principles](image.png)
 
+
+<details>
+<summary> Em português </summary>
+
+### Exercício 2: Criando Middleware Personalizado
+
+#### Tarefa 1: Criar um middleware
+
+1. Na janela **PollBall - Microsoft Visual Studio**, no Solution Explorer, clique em **Startup.cs**.
+
+2. Na janela de código **Startup.cs**, localize o seguinte código:
+```cs
+    public void Configure(IApplicationBuilder app)
+    {
+```
+
+3. Coloque o cursor após o sinal de **{** (chaves de abertura), pressione Enter, insira o seguinte código e pressione Enter.
+```cs
+    app.Use(async (context, next) =>
+    {
+    
+    });
+```
+
+4. Coloque o cursor dentro do bloco de código **app.Use**, e então insira o seguinte código:
+```cs
+    if (context.Request.Query.ContainsKey("favorite"))
+    {
+    
+    }
+``` 
+
+5. No bloco de código **if**, insira o seguinte código e pressione Enter duas vezes.
+```cs
+    string selectedValue = context.Request.Query["favorite"];
+```
+
+6. No bloco de código **if**, abaixo da última instrução inserida, insira o seguinte código:
+```cs
+    await context.Response.WriteAsync("O valor selecionado é: " + selectedValue);
+```
+7. No bloco de código **app.Use**, coloque o cursor após o sinal de **}** (chaves de fechamento) da instrução **if**, pressione Enter e, em seguida, insira o seguinte código:
+```cs
+    else 
+    {
+        await next.Invoke();
+    }
+```
+#### Tarefa 2: Executar a aplicação
+
+1. Na janela **PollBall - Microsoft Visual Studio**, no menu **FILE**, clique em **Salvar Tudo**.
+
+2. Na janela **PollBall - Microsoft Visual Studio**, no menu **DEBUG**, clique em **Iniciar sem Depuração**.
+
+3. No Microsoft Edge, na barra de endereços, digite **http://localhost:[port]/poll-questions.html**, e então pressione Enter.
+
+4. No Microsoft Edge, clique em **Basquete**, e depois clique em **Enviar Enquete**.
+     >**Nota**: O navegador exibe **O valor selecionado é: Basquete**, o qual é gerado pelo middleware **app.Use**.
+
+5. No Microsoft Edge, clique em **Fechar**.
+ 
+#### Tarefa 3: Alterar a ordem dos middlewares
+
+1. Na janela **PollBall - Microsoft Visual Studio**, no Solution Explorer, clique em **Startup.cs**.
+
+2. Na janela de código **Startup.cs**, selecione o seguinte código:
+```cs
+    app.UseStaticFiles();
+```
+
+3. Clique com o botão direito do mouse no código selecionado e clique em **Recortar**.
+
+4. Na janela de código **Startup.cs**, localize o seguinte código:
+```cs
+    public void Configure(IApplicationBuilder app)
+    {
+```
+
+5. Coloque o cursor após o sinal de **{** (chaves de abertura), pressione Enter, clique com o botão direito do mouse na posição do cursor, clique em **Colar** e, em seguida, pressione Enter.
+
+6. Na janela **PollBall - Microsoft Visual Studio**, no menu **FILE**, clique em **Salvar Tudo**.
+
+7. Na janela **PollBall - Microsoft Visual Studio**, no menu **DEBUG**, clique em **Iniciar sem Depuração**.
+
+8. No Microsoft Edge, na barra de endereços, digite **http://localhost:[port]/poll-questions.html**, e então pressione Enter.
+
+9. No Microsoft Edge, clique em **Basquete**, e depois clique em **Enviar Enquete**.
+     >**Nota**: O navegador exibe o conteúdo do arquivo **poll-questions.html** localizado na pasta **wwwroot**, porque a solicitação foi capturada pelo middleware **UseStaticFiles** sem executar o middleware **app.Use**.
+
+10. No Microsoft Edge, clique em **Fechar**.
+
+11. Na janela de código **Startup.cs**, selecione o seguinte código:
+```cs
+    app.UseStaticFiles();
+```
+
+12. Clique com o botão direito do mouse no código selecionado e clique em **Recortar**.
+
+13. Na janela de código **Startup.cs**, localize o seguinte código:
+```cs
+    app.Use(async (context, next) =>
+    {
+        if (context.Request.Query.ContainsKey("favorite"))
+        {
+            string selectedValue = context.Request.Query["favorite"];
+            await context.Response.WriteAsync("O valor selecionado é: " + selectedValue);
+        }
+        else
+        {
+            await next.Invoke();
+        }
+    });
+```
+
+14. Coloque o cursor no final do código localizado, pressione Enter duas vezes, clique com o botão direito do mouse na posição do cursor e, em seguida, clique em **Colar**. 
+
+15. Na janela de código **Startup.cs**, selecione o seguinte código:
+```cs
+    else 
+    {
+        await next.Invoke();
+    }
+```
+
+16. Substitua o código selecionado pelo seguinte código:
+```cs
+    //else 
+    //{
+    //    await next.Invoke();
+    //}
+```
+
+17. Na janela **PollBall - Microsoft Visual Studio**, no menu **FILE**, clique em **Salvar Tudo**.
+
+18. Na janela **PollBall - Microsoft Visual Studio**, no menu **DEBUG**, clique em **Iniciar sem Depuração**.
+
+19. No Microsoft Edge, na barra de endereços, digite **http://localhost:[port]/poll-questions.html**, e então pressione Enter.
+
+    >**Nota**: O navegador exibe uma página vazia. Comentando a chamada do método **next.Invoke()** impediu a invocação do método **UseStaticFiles**. 
+
+20. No Microsoft Edge, clique em **Fechar**.
+
+21. Na janela de código **Startup.cs**, selecione o seguinte código:
+```cs
+    //else 
+    //{
+    //    await next.Invoke();
+    //}
+```
+
+22. Substitua o código selecionado pelo seguinte código:
+```cs
+    else 
+    {
+        await next.Invoke();
+    }
+```
+ 
+>**Resultado**: Ao final deste exercício, você será capaz de criar um middleware personalizado e receber dados de formulário enviados para ele.
+
+</details>
+
+
 # Princípios SOLID
 
 Os princípios SOLID são um conjunto de cinco princípios de design que visam orientar a criação de software mantível, flexível e compreensível. Cada princípio concentra-se em um aspecto diferente do design de software e ajuda a garantir que sua base de código seja modular, extensível e fácil de manter.
@@ -439,3 +603,10 @@ class AudioApp {
 ```
 
 Aplicar esses princípios SOLID em sua base de código pode levar a um software mais modular, mantível e extensível. No entanto, é importante observar que cada princípio nem sempre é uma regra estrita, e pode haver casos em que um compromisso é necessário. O objetivo é encontrar um equilíbrio que atenda às necessidades específicas do seu projeto, enquanto ainda segue o espírito dos princípios.
+
+
+# Aula 03 - Controllers e Views
+
+[Exercícios Controllers](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD04_LAK.md)
+
+[Exercícios Views](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD05_LAK.md)
