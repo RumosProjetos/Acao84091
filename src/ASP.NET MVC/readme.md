@@ -616,3 +616,8 @@ Aplicar esses princípios SOLID em sua base de código pode levar a um software 
 [Documentação Views](https://learn.microsoft.com/pt-br/aspnet/core/mvc/views/overview)
 
 [Exercícios Views](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD05_LAK.md)
+
+
+[Exporting ViewComponents](https://www.youtube.com/watch?v=VvyKrdavLrs&ab_channel=Asp.NetMonsters)
+
+[Why Should you use ViewComponents instead of Partial Views](https://www.telerik.com/blogs/why-you-should-use-view-components-not-partial-views-aspnet-core)
