@@ -605,8 +605,14 @@ class AudioApp {
 Aplicar esses princípios SOLID em sua base de código pode levar a um software mais modular, mantível e extensível. No entanto, é importante observar que cada princípio nem sempre é uma regra estrita, e pode haver casos em que um compromisso é necessário. O objetivo é encontrar um equilíbrio que atenda às necessidades específicas do seu projeto, enquanto ainda segue o espírito dos princípios.
 
 
-# Aula 03 - Controllers e Views
+# Aula 03 - Controllers
 
 [Exercícios Controllers](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD04_LAK.md)
+
+
+# Aula 04 - Views
+[AspNetCore MVC](https://dotnet.microsoft.com/en-us/apps/aspnet/mvc)
+
+[Documentação Views](https://learn.microsoft.com/pt-br/aspnet/core/mvc/views/overview)
 
 [Exercícios Views](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD05_LAK.md)
