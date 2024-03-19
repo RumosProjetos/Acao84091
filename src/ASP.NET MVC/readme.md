@@ -621,3 +621,7 @@ Aplicar esses princípios SOLID em sua base de código pode levar a um software 
 [Exporting ViewComponents](https://www.youtube.com/watch?v=VvyKrdavLrs&ab_channel=Asp.NetMonsters)
 
 [Why Should you use ViewComponents instead of Partial Views](https://www.telerik.com/blogs/why-you-should-use-view-components-not-partial-views-aspnet-core)
+
+[Create reusable UI using the Razor class library project in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-8.0&tabs=visual-studio)
+
+[Consume ASP.NET Core Razor components from a Razor class library (RCL)](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/class-libraries?view=aspnetcore-8.0&tabs=visual-studio)
