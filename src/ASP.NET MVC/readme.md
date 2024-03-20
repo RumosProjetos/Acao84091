@@ -251,3 +251,8 @@ Aplicar esses princípios SOLID em sua base de código pode levar a um software 
 [Documentação EF](https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx)
 
 [Exercícios Entity](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD07_LAK.md)
+
+
+[Padrao CQRS](https://martinfowler.com/bliki/CQRS.html)
+
+[Padrao CQRS - Microsoft](https://learn.microsoft.com/pt-pt/azure/architecture/patterns/cqrs)
