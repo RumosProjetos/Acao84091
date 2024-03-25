@@ -256,3 +256,14 @@ Aplicar esses princípios SOLID em sua base de código pode levar a um software 
 [Padrao CQRS](https://martinfowler.com/bliki/CQRS.html)
 
 [Padrao CQRS - Microsoft](https://learn.microsoft.com/pt-pt/azure/architecture/patterns/cqrs)
+
+
+# Aula 06 - Entity Framework
+
+[Para garantir transações entre entidades diferentes usar Unit Of Work](
+https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
+
+
+# Aula 07 - Testing and throubleshoting
+
+[Exercícios Testing](https://github.com/MicrosoftLearning/20486D-DevelopingASPNETMVCWebApplications/blob/master/Instructions/20486D_MOD10_LAK.md)
